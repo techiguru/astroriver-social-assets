@@ -5,7 +5,9 @@
 #   Combust (within 8 deg of the Sun) 19 Oct 08:29 -> 29 Oct 10:29 IST.  Into Virgo 6 Nov 01:29 IST.
 #   Station direct Sat 14 Nov 05:59 IST at 28 deg 37' Virgo.  Back into Libra 22 Nov.  Shadow ends 16 Dec.
 #   3 Oct station abroad (article): London 08:13, New York/Toronto 03:13, Pacific 00:13, Sydney 17:13.
-# Words for "what to delay / what still works" follow the article. Founder approves before posting.
+# Words for "what to delay / what still works" follow the article. Rewritten 1 Oct for plain readers (founder: followers
+# are simple people, not astrologers) and for search (OpenRush, India: "venus retrograde 2026" ~880/mo, "shukra asta 2026"
+# ~1,300/mo, "venus retrograde meaning" ~210/mo): no degrees, nakshatra or 'combust/debilitation' on the images. Founder approves before posting.
 import os, asyncio, math
 from playwright.async_api import async_playwright
 HERE = os.path.dirname(os.path.abspath(__file__)); F = 'file://' + HERE + '/fonts/'
@@ -96,13 +98,13 @@ def loop_art(ox, oy, sc=1.0, labels=True):
     if labels:
         f1, f2 = 17*sc, 21*sc
         s += (f'<text x="{ox+(xR+40)*sc:.1f}" y="{oy+(yU-50)*sc:.1f}" text-anchor="end" font-family="IN" font-weight="700" font-size="{f1:.1f}" letter-spacing="2.5" fill="#A8590A">3 OCT · TURNS BACK</text>'
-              f'<text x="{ox+(xR+40)*sc:.1f}" y="{oy+(yU-24)*sc:.1f}" text-anchor="end" font-family="LO" font-size="{f2:.1f}" fill="#6B5B4B">14°15′ Libra</text>')
+              f'<text x="{ox+(xR+40)*sc:.1f}" y="{oy+(yU-24)*sc:.1f}" text-anchor="end" font-family="LO" font-size="{f2:.1f}" fill="#6B5B4B">in Libra</text>')
         s += (f'<text x="{ox+110*sc:.1f}" y="{oy+(yM+50)*sc:.1f}" font-family="IN" font-weight="700" font-size="{f1:.1f}" letter-spacing="2.5" fill="#A8590A">14 NOV</text>'
               f'<text x="{ox+110*sc:.1f}" y="{oy+(yM+74)*sc:.1f}" font-family="IN" font-weight="700" font-size="{f1:.1f}" letter-spacing="2.5" fill="#A8590A">TURNS</text>'
               f'<text x="{ox+110*sc:.1f}" y="{oy+(yM+98)*sc:.1f}" font-family="IN" font-weight="700" font-size="{f1:.1f}" letter-spacing="2.5" fill="#A8590A">FORWARD</text>'
-              f'<text x="{ox+110*sc:.1f}" y="{oy+(yM+124)*sc:.1f}" font-family="LO" font-size="{f2:.1f}" fill="#6B5B4B">28°37′ Virgo</text>')
+              f'<text x="{ox+110*sc:.1f}" y="{oy+(yM+124)*sc:.1f}" font-family="LO" font-size="{f2:.1f}" fill="#6B5B4B">in Virgo</text>')
         s += (f'<text x="{sx:.1f}" y="{oy+(yM+40)*sc:.1f}" text-anchor="middle" font-family="IN" font-weight="700" font-size="{f1:.1f}" letter-spacing="2.5" fill="#A8590A">19–29 OCT</text>'
-              f'<text x="{sx:.1f}" y="{oy+(yM+64)*sc:.1f}" text-anchor="middle" font-family="LO" font-size="{f2:.1f}" fill="#6B5B4B">hidden in the Sun’s light</text>')
+              f'<text x="{sx:.1f}" y="{oy+(yM+64)*sc:.1f}" text-anchor="middle" font-family="LO" font-size="{f2:.1f}" fill="#6B5B4B">Shukra asta</text>')
     return s
 
 def page(w, h, body, river_svg, tag_xy, tr_top, wm_top, foot_b, art=''):
@@ -127,12 +129,12 @@ pts = lambda items: ''.join(f'<div class="pt"><span class="k">{k}</span><span cl
 rows = lambda items: ''.join(f'<div class="pt" style="gap:28px"><span class="k" style="font:700 26px IN;min-width:190px;letter-spacing:.3px">{k}</span><span class="v" style="font-size:31px">{v}</span></div>' for k, v in items)
 
 HEAD = 'Venus turns back on <em>3&nbsp;October</em>.'
-SUB = 'Saturday, 12:43 IST, in Libra. Retrograde until 14&nbsp;November: six weeks to review, not&nbsp;to&nbsp;begin.'
-LINK1, LINK2 = 'Where it falls for your lagna:', 'astroriver.com/journal/venus-retrograde-2026'
+SUB = 'Saturday, 12:43 IST. For six weeks Venus seems to move backwards in the sky: a time to review, not&nbsp;to&nbsp;begin.'
+LINK1, LINK2 = 'What it means for you, sign by sign:', 'astroriver.com/journal/venus-retrograde-2026'
 slides = []
 slides.append(page(W, H, f"""
 <div class="flow" style="top:600px;bottom:220px;justify-content:flex-start">
- {chip('RETROGRADE', 22)}
+ {chip('VENUS RETROGRADE 2026', 22)}
  <h1 style="font-size:84px;margin-top:22px">{HEAD}</h1>
  <div class="b" style="font-size:34px;margin-top:24px">{SUB}</div>
  <div class="m" style="margin-top:20px;font-size:29px;color:{SAF}">Swipe &#8594;</div>
@@ -142,15 +144,15 @@ slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
  <div class="eb">1 · The path</div>
  <h2>Six weeks,<br>step by step.</h2>
- <div style="margin-top:36px">{rows([('3 Oct, 12:43', 'Turns retrograde at 14°15′ Libra, in&nbsp;Swati.'), ('19–29 Oct', 'Combust: hidden in the Sun’s&nbsp;light.'), ('6 Nov', 'Back into Virgo, its sign of&nbsp;debilitation.'), ('14 Nov, 05:59', 'Turns direct at 28°37′&nbsp;Virgo.'), ('22 Nov', 'Back into Libra.')])}</div>
- <div class="m" style="margin-top:26px;font-size:25px">Times in IST, Lahiri sidereal. Western forecasts say Scorpio; the moment is the same. On 3 October it is 08:13 in London, 03:13 in New York and 17:13 in&nbsp;Sydney.</div>
+ <div style="margin-top:36px">{rows([('3 Oct, 12:43', 'Turns back, in&nbsp;Libra.'), ('19–29 Oct', '<b style="font-weight:600">Shukra asta</b>: hidden in the Sun’s light. No&nbsp;weddings.'), ('6 Nov', 'Into Virgo, where Venus is at its&nbsp;weakest.'), ('14 Nov, 05:59', 'Starts moving forward&nbsp;again.'), ('22 Nov', 'Back in Libra. All&nbsp;clear.')])}</div>
+ <div class="m" style="margin-top:26px;font-size:25px">Times in IST. Western astrology says Scorpio; it is the same event. On 3&nbsp;October it is 08:13 in London, 03:13 in New York and 17:13 in&nbsp;Sydney.</div>
 </div>""", sr(1), TAGS[1], 58, 560, 56))
 
 slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
  <div class="eb">2 · What to hold off on</div>
  <h2>Wait while the<br>light is wrong.</h2>
- <div style="margin-top:36px">{pts([('&#8212;', 'A marriage date fixed only because it “feels&nbsp;right”.'), ('&#8212;', 'Luxury bought for status rather than&nbsp;use.'), ('&#8212;', 'A launch that needs everyone’s liking more than the&nbsp;truth.'), ('&#8212;', 'A contract where goodwill does the work the clauses&nbsp;should.')])}</div>
+ <div style="margin-top:36px">{pts([('&#8212;', 'A marriage date fixed only because it “feels&nbsp;right”.'), ('&#8212;', 'Luxury bought for status rather than&nbsp;use.'), ('&#8212;', 'Launching something that depends on people liking&nbsp;it.'), ('&#8212;', 'Signing a deal on trust, without reading the&nbsp;terms.')])}</div>
  <div class="m" style="margin-top:28px;font-size:27px">For anything that matters, wait until Venus is out of Virgo on 22&nbsp;November.</div>
 </div>""", sr(2), TAGS[2], 58, 560, 56))
 
@@ -158,7 +160,7 @@ slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
  <div class="eb">3 · What still works</div>
  <h2>Retrogrades give<br>things back.</h2>
- <div style="margin-top:36px">{pts([('1', 'Keeping promises already&nbsp;made.'), ('2', 'Repairing a relationship without announcing&nbsp;it.'), ('3', 'Money discipline that needs no&nbsp;applause.'), ('4', 'Going back to a person, a project or a purchase you left too&nbsp;fast.')])}</div>
+ <div style="margin-top:36px">{pts([('1', 'Keeping promises already&nbsp;made.'), ('2', 'Repairing a relationship without announcing&nbsp;it.'), ('3', 'Saving money&nbsp;quietly.'), ('4', 'Going back to a person, a project or a purchase you left too&nbsp;fast.')])}</div>
  <div class="link1" style="margin-top:34px">{LINK1}</div>
  <div class="link2">{LINK2}</div>
 </div>""", sr(3), TAGS[3], 58, 560, 56))
@@ -169,9 +171,9 @@ slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
  <div class="eb">4 · Your own chart</div>
  <h2 style="font-size:66px">Where does it fall<br><em>for you</em>?</h2>
- <div class="m" style="margin-top:18px;font-size:29px">It depends on your lagna and your Moon. Three ways to get your&nbsp;answer:</div>
+ <div class="m" style="margin-top:18px;font-size:29px">It depends on your own birth chart. Three ways to get your&nbsp;answer:</div>
  <div style="margin-top:10px">
-  {opt("A transit report", "Venus’s six weeks, read against your own&nbsp;chart.", True)}
+  {opt("A written report", "Venus’s six weeks, read against your own&nbsp;chart.", True)}
   {opt("A private consultation", "Live, by audio call or chat.", False)}
   {opt("Ask an AI astrologer", "Online at astroriver.com, any time.", False)}
  </div>
@@ -182,10 +184,10 @@ slides.append(page(W, H, f"""
 # WhatsApp status / Pinterest, 1080x1920
 story = page(1080, 1920, f"""
 <div class="flow" style="top:800px;bottom:250px;justify-content:flex-start">
- {chip('RETROGRADE', 26)}
+ {chip('VENUS RETROGRADE 2026', 26)}
  <h1 style="font-size:100px;margin-top:26px">{HEAD}</h1>
  <div class="b" style="font-size:40px;margin-top:30px">{SUB}</div>
- <div style="margin-top:40px">{rows([('19–29 Oct', 'Hidden in the Sun’s&nbsp;light.'), ('14 Nov', 'Turns direct, in&nbsp;Virgo.')])}</div>
+ <div style="margin-top:40px">{rows([('19–29 Oct', 'Shukra asta. No&nbsp;weddings.'), ('14 Nov', 'Starts moving forward&nbsp;again.')])}</div>
  <div class="link1" style="margin-top:40px;font-size:32px">{LINK1}</div>
  <div class="link2" style="font-size:31px">{LINK2}</div>
 </div>""", river(1742, 1728, 1716, True, True), (470, 1680), 90, 980, 90, loop_art(0, 170, 1.0))
@@ -196,7 +198,7 @@ html,body{{width:1600px;height:900px}} .s{{width:1600px;height:900px}}</style></
 <div class="wm" style="top:330px;left:260px">astroriver.com</div><div class="tr" style="top:52px">astroriver.com</div>
 <svg class="r" width="1600" height="900">{loop_art(740, 100, 0.78)}</svg>
 <div class="flow" style="top:100px;bottom:190px;right:900px">
- {chip('RETROGRADE', 19)}
+ {chip('VENUS RETROGRADE 2026', 19)}
  <h1 style="font-size:72px;margin-top:20px">{HEAD}</h1>
  <div class="b" style="font-size:29px;margin-top:22px">{SUB}</div>
  <div class="link1" style="margin-top:26px;font-size:25px">{LINK1}</div>
