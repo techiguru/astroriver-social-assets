@@ -16,6 +16,15 @@ exec(open(os.path.join(HERE, 'planet_palette.py')).read())
 _n, _s, _t, _tone, GROUND, DEEP, IV, ACC = PALETTE['ketu']
 BG, MUT, SAF, SAF2, LINE, RIVER = DEEP, '#E2DBD0', ACC, ACC, '#86817B', '#D77B09'
 CARD_HOT, CARD = '#5C5853', '#64605B'
+# Readability trials (founder, 1 Oct: "too smokey, not readable"): KETU_VARIANT=light | deep
+V = os.environ.get('KETU_VARIANT', '')
+if V == 'light':   # pale smoke, ink type
+    GROUND = DEEP = BG = '#D3CCC4'; IV, MUT, SAF, SAF2, LINE = '#211B12', '#5A5048', '#9A520B', '#9A520B', '#B8AFA5'
+    CARD_HOT, CARD = '#E4DED7', '#DAD4CD'
+elif V == 'deep':  # deep warm smoke, ivory type
+    GROUND = DEEP = BG = '#4A4542'; IV, MUT, SAF, SAF2, LINE = '#F3EDE2', '#D9D0C3', '#F2C98E', '#F2C98E', '#625C58'
+    CARD_HOT, CARD = '#56514D', '#504B48'
+PREFIX = f'ketu-{V}-' if V else 'ketu-'
 CSS = f"""
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay[wght].ttf');font-weight:400 900;}}
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay-Italic[wght].ttf');font-weight:400 900;font-style:italic;}}
@@ -181,8 +190,8 @@ html,body{{width:1600px;height:900px}} .s{{width:1600px;height:900px}}</style></
 </div></body></html>"""
 
 async def main():
-    jobs = [(f'ketu-slide-{i+1}-of-{N}', s, W, H) for i, s in enumerate(slides)]
-    jobs += [('ketu-status-1080x1920', story, 1080, 1920), ('ketu-x-1600x900', x, 1600, 900)]
+    jobs = [(f'{PREFIX}slide-{i+1}-of-{N}', s, W, H) for i, s in enumerate(slides)]
+    jobs += [(f'{PREFIX}status-1080x1920', story, 1080, 1920), (f'{PREFIX}x-1600x900', x, 1600, 900)]
     async with async_playwright() as p:
         b = await p.chromium.launch()
         for name, html, w, h in jobs:
