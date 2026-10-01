@@ -5,7 +5,7 @@
 # left out); the same count from the Moon is Chandra Manglik; Venus is not used. Exceptions named on the image: Mars
 # in Aries or Scorpio (own sign), in Capricorn (exalted), both partners Manglik; "and more". Our article
 # /journal/5th-7th-house-love-marriage carries the mangal dosha paragraph ("a chart is never judged by Mars alone").
-# The AI astrologer lives at astroriver.com/lobby (the site's own "Ask an AI astrologer" link).
+# The AI astrologer: people log in at astroriver.com (founder: just say astroriver.com; the login lives at /login).
 # The kundli is the North Indian diamond chart; the lagna is the top diamond, houses run anticlockwise.
 import os, asyncio, math
 from playwright.async_api import async_playwright
@@ -102,12 +102,12 @@ html,body{{width:{w}px;height:{h}px}} .s{{width:{w}px;height:{h}px}}</style></he
 <div class="foot" style="bottom:{foot_b}px"><span class="n">Astro River</span><span class="u">astroriver.com</span></div>
 </div></body></html>"""
 
-W, H, N = 1080, 1350, 5
-Y = [1212, 1178, 1204, 1172, 1206, 1196]
+W, H, N = 1080, 1350, 6
+Y = [1212, 1178, 1204, 1172, 1206, 1180, 1196]
 def sr(i):
     a, b = Y[i], Y[i+1]
     return river(a, b, (a+b)/2 + (16 if i % 2 else -16), i == 0, i == N-1)
-TAGS = [(640, 1150), (560, 1148), (700, 1150), (600, 1150), (620, 1162)]
+TAGS = [(640, 1150), (560, 1148), (700, 1150), (600, 1150), (620, 1162), (660, 1150)]
 FL = 'top:110px;bottom:210px'
 pts = lambda items: ''.join(f'<div class="pt"><span class="k">{k}</span><span class="v">{v}</span></div>' for k, v in items)
 def houses(items, big=False):
@@ -133,15 +133,14 @@ slides.append(page(W, H, f"""
 </div>""", sr(0), TAGS[0], 40, 700, 56, mars_glyph(540, 290, 110)))
 
 slides.append(page(W, H, f"""
-<div class="flow" style="top:96px;bottom:200px;justify-content:flex-start">
+<div class="flow" style="top:90px;bottom:200px;justify-content:center">
  <div class="eb">1 · Find your Mars</div>
- <h2 style="font-size:60px">Is Mars in a red&nbsp;box?</h2>
- <div class="b" style="font-size:29px;margin-top:14px">Open your kundli. Mars is written <b style="font-weight:700">Ma</b>, or <b style="font-family:NSD;font-weight:600">मं</b> in Hindi. If it sits in one of the five red houses, that is mangal&nbsp;dosha.</div>
- <div style="height:490px"></div>
- <div class="m" style="font-size:25px">Then do the same from your Moon: the house your Moon is in counts as 1. Mars in a red box from there is <b style="font-weight:600;color:{IV}">Chandra Manglik</b>, read with the same&nbsp;weight.</div>
- <div class="m" style="font-size:22px;margin-top:12px">North Indian chart. In a South Indian chart the lagna is marked As, and the houses run&nbsp;clockwise.</div>
-</div>
-<svg class="r" width="{W}" height="{H}">{kundli(310, 318, 460)}</svg>""", sr(1), TAGS[1], 58, 560, 56))
+ <h2 style="font-size:64px">Is Mars in a red&nbsp;box?</h2>
+ <div class="b" style="font-size:31px;margin-top:16px">Open your kundli. Mars is written <b style="font-weight:700">Ma</b>, or <b style="font-family:NSD;font-weight:600">मं</b> in Hindi. If it sits in one of the five red houses, that is mangal&nbsp;dosha.</div>
+ <div style="display:flex;justify-content:center;margin:24px 0 22px"><svg width="500" height="500">{kundli(2, 2, 496, fs=32)}</svg></div>
+ <div class="b" style="font-size:29px;color:{MUT}">Then do the same from your Moon: the house your Moon sits in counts as&nbsp;1. Mars in a red box from there is <b style="font-weight:600;color:{IV}">Chandra Manglik</b>, read with the same&nbsp;weight.</div>
+ <div class="m" style="font-size:23px;margin-top:14px">North Indian chart. In a South Indian chart the lagna is marked As, and the houses run&nbsp;clockwise.</div>
+</div>""", sr(1), TAGS[1], 58, 560, 56))
 
 slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
@@ -161,22 +160,31 @@ slides.append(page(W, H, f"""
  <div class="link2" style="font-size:26px">{LINK2}</div>
 </div>""", sr(3), TAGS[3], 58, 560, 56))
 
-opt = lambda t, sub, hot: (f'<div style="border:{"2.5px solid "+SAF if hot else "1.5px solid "+LINE};background:{CARD_HOT if hot else CARD};border-radius:18px;padding:24px 30px;margin-top:16px">'
-                           f'<div style="font:700 {38 if hot else 33}px PF;color:{IV}">{t}</div><div style="font:400 27px/1.45 LO;color:{MUT};margin-top:6px">{sub}</div></div>')
+opt = lambda t, sub, hot: (f'<div style="border:{"2.5px solid "+SAF if hot else "1.5px solid "+LINE};background:{CARD_HOT if hot else CARD};border-radius:18px;padding:26px 32px;margin-top:18px">'
+                           f'<div style="font:700 {40 if hot else 36}px PF;color:{IV}">{t}</div><div style="font:400 29px/1.45 LO;color:{MUT};margin-top:8px">{sub}</div></div>')
 slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
  <div class="eb">4 · Not sure where your Mars is?</div>
- <h2 style="font-size:64px">Ask. It takes<br>a&nbsp;minute.</h2>
- <div style="margin-top:14px">
-  {opt("Ask our AI astrologer", "Give it your birth date, time and place and ask: am I Manglik? It reads your real chart, shows you where your Mars sits, and which exceptions apply. Any time, day or&nbsp;night.", True)}
- </div>
- <div class="link2" style="font-size:30px;margin-top:14px">astroriver.com/lobby</div>
- <div style="margin-top:30px">
-  {opt("A private consultation", "The whole chart, read live by audio call or&nbsp;chat.", False)}
- </div>
- <div style="margin-top:26px;font:500 25px 'IN';letter-spacing:3px;color:{MUT}">ON WHATSAPP</div>
- <div style="margin-top:6px;font:700 44px 'IN';color:{SAF2};letter-spacing:.5px">+91 70091 27641</div>
+ <h2 style="font-size:70px">Ask our AI astrologer.<br>It takes a&nbsp;minute.</h2>
+ <div class="b" style="font-size:32px;margin-top:24px">Give it your birth date, time and place, and ask: <em>am I Manglik?</em></div>
+ <div style="margin-top:30px">{pts([('1', 'It draws your real chart, not a guess from your sun&nbsp;sign.'), ('2', 'It shows you where your Mars sits, from the lagna and from the&nbsp;Moon.'), ('3', 'It tells you which exceptions apply to&nbsp;you.')])}</div>
+ <div class="b" style="font-size:30px;margin-top:30px">Any time, day or night. Log in and ask.</div>
+ <div class="link2" style="font-size:40px;margin-top:8px">astroriver.com</div>
+ <div class="m" style="margin-top:34px;font-size:29px;color:{SAF}">See the other options &#8594;</div>
 </div>""", sr(4), TAGS[4], 58, 560, 56))
+
+slides.append(page(W, H, f"""
+<div class="flow" style="{FL}">
+ <div class="eb">5 · Want a human to read it?</div>
+ <h2 style="font-size:64px">Two more ways.</h2>
+ <div style="margin-top:20px">
+  {opt("A private consultation", "The whole chart, read live, by audio call orThe whole chart, read live by Dr. Armaan Sharma or the Institute&#8217;s astrologers, by audio call or&nbsp;chat.nbsp;chat. Your questions, notThe whole chart, read live by Dr. Armaan Sharma or the Institute&#8217;s astrologers, by audio call or&nbsp;chat.nbsp;ours.", True)}
+  {opt("Order a written report", "Your marriage houses, Mars, Venus and the navamsa, worked in full and sent to you to keep.", False)}
+ </div>
+ <div style="margin-top:40px;font:500 25px 'IN';letter-spacing:3px;color:{MUT}">CONNECT ON WHATSAPP</div>
+ <div style="margin-top:8px;font:700 50px 'IN';color:{SAF2};letter-spacing:.5px">+91 70091 27641</div>
+ <div class="m" style="margin-top:22px;font-size:26px">Send your birth date, time and place, and say what you want to&nbsp;know.</div>
+</div>""", sr(5), TAGS[5], 58, 560, 56))
 
 story = page(1080, 1920, f"""
 <div class="flow" style="top:600px;bottom:250px;justify-content:flex-start">
@@ -185,8 +193,8 @@ story = page(1080, 1920, f"""
  <div class="b" style="font-size:40px;margin-top:30px">{SUB}</div>
  <div class="b" style="font-size:32px;margin-top:36px;color:{MUT}">Mars in the 1st, 4th, 7th, 8th or 12th house from the lagna is mangal dosha. Exceptions apply, and there are&nbsp;many.</div>
  <div style="height:400px"></div>
- <div class="link1" style="font-size:30px">Not sure where your Mars is? Ask our AI astrologer:</div>
- <div class="link2" style="font-size:31px">astroriver.com/lobby</div>
+ <div class="link1" style="font-size:30px">Not sure where your Mars is? Ask our AI astrologer, any time:</div>
+ <div class="link2" style="font-size:31px">astroriver.com</div>
 </div>
 <svg class="r" width="1080" height="1920">{mars_glyph(540, 330, 115)}{kundli(370, 1232, 340, fs=24)}</svg>""", river(1742, 1728, 1716, True, True), (470, 1680), 90, 980, 90)
 
@@ -199,7 +207,7 @@ html,body{{width:1600px;height:900px}} .s{{width:1600px;height:900px}}</style></
  <h1 style="font-size:92px;margin-top:18px">{HEAD}</h1>
  <div class="b" style="font-size:30px;margin-top:22px">{SUB}</div>
  <div class="b" style="font-size:25px;margin-top:22px;color:{MUT}">Mars in a red house is mangal dosha. Exceptions apply, and there are&nbsp;many.</div>
- <div class="link2" style="font-size:24px;margin-top:22px">astroriver.com/lobby</div>
+ <div class="link2" style="font-size:24px;margin-top:22px">Ask our AI astrologer: astroriver.com</div>
 </div>
 <svg class="r" width="1600" height="900">{river(794, 782, 774, True, True, 1600)}</svg>
 <div class="tag" style="left:700px;top:746px">astroriver.com</div>
