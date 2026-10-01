@@ -14,7 +14,19 @@ os.makedirs(os.path.join(HERE, 'out'), exist_ok=True)
 BG, IV, MUT, SAF, SAF2, LINE, RIVER = '#F3EDE2', '#211B12', '#6B5B4B', '#A8590A', '#A8590A', '#DCCFBA', '#D77B09'
 CARD_HOT, CARD = '#FBF1E3', '#F7F0E5'
 RED, RED_FILL, RED_LINE = '#9C5048', '#F3D9CF', '#C98A7C'   # Mars red earth from the planet palette, softened for a tint
+KFILL, KLINE, KTEXT, KHOT_FILL, KHOT_LINE, KHOT_TEXT, WM_OP = '#FBF8F2', '#8C7254', '#8C7254', RED_FILL, RED, RED, '.045'
+GLYPH_RING, GLYPH = RED_FILL, RED
 PREFIX = 'manglik-'
+V = os.environ.get('MANGLIK_VARIANT', 'ivory')
+if V == 'mars':   # Mars's own colour from the locked palette (planet_palette.py): red earth, ivory type, apricot accent
+    exec(open(os.path.join(HERE, 'planet_palette.py')).read())
+    _n, _s, _t, _tone, GROUND, DEEP, TXT, ACC = PALETTE['mars']
+    BG, IV, MUT, SAF, SAF2, LINE = DEEP, TXT, '#F0D9CF', ACC, ACC, '#B5685F'
+    CARD_HOT, CARD = '#AA5C53', '#A3564D'
+    RED = '#F7CFA0'
+    KFILL, KLINE, KTEXT, KHOT_FILL, KHOT_LINE, KHOT_TEXT, WM_OP = '#F6EEE3', '#B98E80', '#9C7A6E', '#B9574C', '#7A3029', '#FFF4E8', '.07'
+    GLYPH_RING, GLYPH = '#B0625A', '#F7CFA0'
+    PREFIX = 'manglik-mars-'
 CSS = f"""
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay[wght].ttf');font-weight:400 900;}}
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay-Italic[wght].ttf');font-weight:400 900;font-style:italic;}}
@@ -26,7 +38,7 @@ CSS = f"""
 html,body{{background:{BG};overflow:hidden}}
 .s{{position:relative;z-index:0;background:{BG};color:{IV};font-family:'LO',serif}}
 .tr{{position:absolute;right:102px;font:500 21px 'IN';letter-spacing:2.5px;color:{MUT}}}
-.wm{{position:absolute;left:70px;font:italic 400 176px 'PF';color:{IV};opacity:.045;transform:rotate(-13deg);transform-origin:left top;white-space:nowrap}}
+.wm{{position:absolute;left:70px;font:italic 400 176px 'PF';color:{IV};opacity:{WM_OP};transform:rotate(-13deg);transform-origin:left top;white-space:nowrap}}
 .flow{{position:absolute;left:100px;right:100px;display:flex;flex-direction:column;justify-content:center}}
 .eb{{font:600 22px 'IN';letter-spacing:5px;color:{SAF};text-transform:uppercase}}
 h1{{font:700 96px/1.06 'PF';letter-spacing:-.5px;margin-top:24px}}
@@ -62,11 +74,11 @@ def mars_glyph(cx, cy, r):
     # the Mars symbol: a circle and an arrow to the upper right, inside a warm ring
     a = math.radians(-45); ex, ey = cx + r*0.70*math.cos(a), cy + r*0.70*math.sin(a)
     tip_x, tip_y = cx + r*1.30*math.cos(a), cy + r*1.30*math.sin(a)
-    return (f'<circle cx="{cx}" cy="{cy}" r="{r*2.1}" fill="{RED_FILL}" opacity=".55"/>'
+    return (f'<circle cx="{cx}" cy="{cy}" r="{r*2.1}" fill="{GLYPH_RING}" opacity=".55"/>'
             f'<circle cx="{cx}" cy="{cy}" r="{r*1.7}" fill="none" stroke="{SAF}" stroke-opacity=".35" stroke-width="1.5"/>'
-            f'<circle cx="{cx}" cy="{cy}" r="{r*0.72}" fill="none" stroke="{RED}" stroke-width="{r*0.13:.1f}"/>'
-            f'<line x1="{ex:.1f}" y1="{ey:.1f}" x2="{tip_x:.1f}" y2="{tip_y:.1f}" stroke="{RED}" stroke-width="{r*0.13:.1f}" stroke-linecap="round"/>'
-            f'<path d="M{tip_x:.1f},{tip_y:.1f} l{-r*0.42:.1f},0 M{tip_x:.1f},{tip_y:.1f} l0,{r*0.42:.1f}" stroke="{RED}" stroke-width="{r*0.13:.1f}" stroke-linecap="round" fill="none"/>')
+            f'<circle cx="{cx}" cy="{cy}" r="{r*0.72}" fill="none" stroke="{GLYPH}" stroke-width="{r*0.13:.1f}"/>'
+            f'<line x1="{ex:.1f}" y1="{ey:.1f}" x2="{tip_x:.1f}" y2="{tip_y:.1f}" stroke="{GLYPH}" stroke-width="{r*0.13:.1f}" stroke-linecap="round"/>'
+            f'<path d="M{tip_x:.1f},{tip_y:.1f} l{-r*0.42:.1f},0 M{tip_x:.1f},{tip_y:.1f} l0,{r*0.42:.1f}" stroke="{GLYPH}" stroke-width="{r*0.13:.1f}" stroke-linecap="round" fill="none"/>')
 
 def kundli(x0, y0, S, shade=(1, 4, 7, 8, 12), fs=30):
     """North Indian chart. House 1 is the top diamond; houses run anticlockwise."""
@@ -78,17 +90,17 @@ def kundli(x0, y0, S, shade=(1, 4, 7, 8, 12), fs=30):
     for h, pts in polys.items():
         d = 'M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in pts) + ' Z'
         hot = h in shade
-        out += f'<path d="{d}" fill="{RED_FILL if hot else "#FBF8F2"}" stroke="{RED if hot else "#8C7254"}" stroke-width="{3 if hot else 1.6}" stroke-opacity="{1 if hot else .55}"/>'
+        out += f'<path d="{d}" fill="{KHOT_FILL if hot else KFILL}" stroke="{KHOT_LINE if hot else KLINE}" stroke-width="{3 if hot else 1.6}" stroke-opacity="{1 if hot else .55}"/>'
     # labels at each house's centre
     for h, pts in polys.items():
         cx = sum(p[0] for p in pts) / len(pts); cy = sum(p[1] for p in pts) / len(pts)
         if len(pts) == 3:   # pull the triangle labels a little toward the corner so they sit in the open part
             kx, ky = pts[0]; cx, cy = cx*0.72 + kx*0.28, cy*0.72 + ky*0.28
         hot = h in shade
-        out += (f'<text x="{cx:.1f}" y="{cy + fs*0.36:.1f}" text-anchor="middle" font-family="PF" font-weight="700" font-size="{fs}" fill="{RED if hot else "#8C7254"}">{h}</text>')
+        out += (f'<text x="{cx:.1f}" y="{cy + fs*0.36:.1f}" text-anchor="middle" font-family="PF" font-weight="700" font-size="{fs}" fill="{KHOT_TEXT if hot else KTEXT}">{h}</text>')
     # the lagna mark
-    out += f'<text x="{S/2:.1f}" y="{S/4 + fs*1.25:.1f}" text-anchor="middle" font-family="IN" font-weight="600" font-size="{fs*0.5:.0f}" letter-spacing="2" fill="{RED}">LAGNA</text>'
-    out += f'<rect x="0" y="0" width="{S}" height="{S}" fill="none" stroke="#8C7254" stroke-width="2.2"/></g>'
+    out += f'<text x="{S/2:.1f}" y="{S/4 + fs*1.25:.1f}" text-anchor="middle" font-family="IN" font-weight="600" font-size="{fs*0.5:.0f}" letter-spacing="2" fill="{KHOT_TEXT}">LAGNA</text>'
+    out += f'<rect x="0" y="0" width="{S}" height="{S}" fill="none" stroke="{KLINE}" stroke-width="2.2"/></g>'
     return out
 
 def page(w, h, body, river_svg, tag_xy, tr_top, wm_top, foot_b, art=''):
@@ -175,11 +187,11 @@ slides.append(page(W, H, f"""
 
 slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
- <div class="eb">5 · Want a human to read it?</div>
- <h2 style="font-size:64px">Two more ways.</h2>
- <div style="margin-top:20px">
-  {opt("A private consultation", "Chat or talk on an audio call with the Institute&#8217;s senior astrologers. The whole chart, read&nbsp;live.", True)}
-  {opt("Order a written report", "Your marriage houses, Mars, Venus and the navamsa, worked in full and sent to you to keep.", False)}
+ <div class="eb">5 · Talk to an astrologer</div>
+ <h2 style="font-size:60px">You may also connect with our Institute&#8217;s senior&nbsp;astrologers.</h2>
+ <div style="margin-top:22px">
+  {opt("By chat or audio call", "Your whole chart, read live, with your questions&nbsp;answered.", True)}
+  {opt("Or order a written report", "Your marriage houses, Mars, Venus and the navamsa, worked in full and sent to you to&nbsp;keep.", False)}
  </div>
  <div style="margin-top:40px;font:500 25px 'IN';letter-spacing:3px;color:{MUT}">CONNECT ON WHATSAPP</div>
  <div style="margin-top:8px;font:700 50px 'IN';color:{SAF2};letter-spacing:.5px">+91 70091 27641</div>
