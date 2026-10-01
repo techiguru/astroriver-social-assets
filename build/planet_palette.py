@@ -10,6 +10,8 @@
 #   accent  eyebrow, italic word, ring text, crescent
 # The saffron river line (#D77B09), the fonts, the tags and the footer are the same on every planet.
 # Only the planet series is coloured; shradh/calendar posts stay ivory, transits stay sand.
+# 1 Oct 2026, same day: Ketu changed from mid smoke (#8A847E, ivory type) to pale smoke with ink type
+# (founder: "too smokey, not readable" -> "Pale smoke dark text").
 
 IVORY, INK = '#F3EDE2', '#211B12'
 
@@ -23,5 +25,5 @@ PALETTE = {
     'venus':   ('Venus',   'Shukra',  'white',      'rose cream',      '#EBD9CF', '#EBD9CF', INK,   '#A8590A'),
     'saturn':  ('Saturn',  'Shani',   'black',      'slate',           '#4E4D52', '#4E4D52', IVORY, '#E9A85A'),
     'rahu':    ('Rahu',    'Rahu',    'blue',       'dusk indigo',     '#4B5675', '#4B5675', IVORY, '#F0B061'),
-    'ketu':    ('Ketu',    'Ketu',    'smoke',      'smoke',           '#8A847E', '#6C6762', IVORY, '#FBE0B8'),
+    'ketu':    ('Ketu',    'Ketu',    'smoke',      'pale smoke',      '#D3CCC4', '#D3CCC4', INK,   '#9A520B'),
 }

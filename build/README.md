@@ -33,8 +33,10 @@ own colour from the tradition**, softened so the grid stays elegant (founder, 1 
 | Venus · Shukra | white | rose cream | `#EBD9CF` | same | ink |
 | Saturn · Shani | black | slate | `#4E4D52` | same | ivory |
 | Rahu | blue | dusk indigo | `#4B5675` | same | ivory |
-| Ketu | smoke | smoke | `#8A847E` | `#6C6762` | ivory |
+| Ketu | smoke | pale smoke | `#D3CCC4` | same | ink |
 
+- Ketu was first locked as a mid smoke with ivory type; the same day it proved too faint to read and
+  the founder chose pale smoke with dark text.
 - Founder's rulings: Rahu is blue, Ketu is smoke, Saturn is black. Red need not be blood red and
   black need not be deep black. The earlier "never blue" rule is withdrawn; it was about the old
   dark-blue site look, not about Rahu.
