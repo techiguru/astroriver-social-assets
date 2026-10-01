@@ -7,24 +7,44 @@ the same bytes as the published image.
     pip install playwright
     python3 planet_series_rahu.py        # -> out/rahu-*.png
 
-## The brand system (decided 29 Sep 2026)
+## The brand system (decided 29 Sep 2026; planet colours locked 1 Oct 2026)
 
-One frame, one light ground, one dark ground. A series is told apart by its **structure on the
-cover**, never by a colour of its own. Do not add a new colour for a new series.
+One frame. Shradh, calendar, teaching and transit posts stay light; a series is told apart by its
+**structure on the cover**. The one exception is the planet series: **each planet is posted in its
+own colour from the tradition**, softened so the grid stays elegant (founder, 1 Oct 2026).
 
 | Series | Ground | Cover signature | Script to copy |
 |---|---|---|---|
-| Shradh and calendar days | Ivory `#F3EDE2` | A date table; reads like a calendar page | `chaturthi_panchami.py`, `bharani_hindi.py` |
+| Shradh and calendar days | Ivory `#F3EDE2` | A date table; reads like a calendar page | `chaturthi_panchami.py`, `shashthi.py`, `bharani_hindi.py` |
 | River Journal teaching | Ivory `#F3EDE2` | The diagram on the cover, RIVER JOURNAL label | `money_houses.py`, `sade_sati_and_bharani.py` |
 | Transits | Sand `#EADFCB` | NAKSHATRA TRANSIT / SIGN TRANSIT pill, plus the wheel or planet art | `transit_mars_pushya.py` |
-| Planet series (hooks) | Warm ink `#211B12` | Planet or eclipse art, one big question | `planet_series_rahu.py` |
+| Planet series (hooks) | **The planet's own colour** (below) | Planet or eclipse art, one big question | `planet_series_ketu.py` |
 | Products (from 11 Oct) | Ivory | Product art; no new colour | to be made |
 
-- The dark ground is used only for hook posts, so the grid gets one dark tile every three or
-  four posts. Lessons stay light because they are read.
-- The one dark is the warm ink `#211B12`, the site's own heading colour, as used on the 29 Sep
-  Rahu post. Never blue. If the finished emblem's colour is ever to be carried onto posts, that
-  is a single decision taken with a test post shown to the founder, not a drift.
+### The planet palette (locked 1 Oct 2026; values in `planet_palette.py`)
+
+| Planet | Tradition | Tone | Cover ground | Inner slides | Text |
+|---|---|---|---|---|---|
+| Sun · Surya | copper red | terracotta | `#B4674C` | `#9A543C` | ivory |
+| Moon · Chandra | white | moonstone | `#DEDDD8` | same | ink |
+| Mars · Mangal | red | red earth | `#9C5048` | same | ivory |
+| Mercury · Budh | green | durva sage | `#8E9C7C` | same | ink |
+| Jupiter · Guru | yellow | pitambar yellow | `#EBC458` | same | ink |
+| Venus · Shukra | white | rose cream | `#EBD9CF` | same | ink |
+| Saturn · Shani | black | slate | `#4E4D52` | same | ivory |
+| Rahu | blue | dusk indigo | `#4B5675` | same | ivory |
+| Ketu | smoke | smoke | `#8A847E` | `#6C6762` | ivory |
+
+- Founder's rulings: Rahu is blue, Ketu is smoke, Saturn is black. Red need not be blood red and
+  black need not be deep black. The earlier "never blue" rule is withdrawn; it was about the old
+  dark-blue site look, not about Rahu.
+- The cover uses the ground; inner slides, status and X images use the inner tone, one step
+  deeper where small text needs it (ivory at 4.5:1 or better).
+- The saffron river line `#D77B09`, fonts, tags and footer are the same on every planet. Only the
+  planet series is coloured, about one tile in three or four.
+- The 29 Sep Rahu post (warm ink `#211B12`) stays as published.
+- Do not change a palette value without the founder's say. `planet_colours_v3.py` drew the
+  approved sheet and sample covers.
 - Hindi posts keep their series' look with the हिंदी label.
 - Sand is the light ground's warm shade, not a third colour.
 

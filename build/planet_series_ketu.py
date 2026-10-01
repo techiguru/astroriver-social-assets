@@ -1,6 +1,7 @@
 # Planet Series #2 — Ketu: "Why does the one beside you feel so far away?" Pair to the Rahu post of 29 Sep.
-# Same uniform, copied from planet_series_rahu.py: warm ink ground, ivory type, saffron accents; the eclipse
-# art is mirrored (the bright edge on the other side: the eclipse as it ends, Ketu the tail).
+# Redrawn 1 Oct 2026 in Ketu's colour from the locked planet palette (planet_palette.py): smoke. The cover is
+# the palette's smoke ground; the inner slides, status and X image use its one-step-deeper smoke so the small
+# text reads. Layout, words and the mirrored eclipse are unchanged from the approved dark version.
 # Astrology lines follow live pages: /journal/5th-7th-house-love-marriage ("Ketu there brings detachment,
 # the partner who is spiritually present and materially absent, or the marriage that ends in withdrawal
 # rather than conflict"; Venus colours every relationship reading; the navamsa is the chart of marriage);
@@ -11,7 +12,10 @@ import os, asyncio
 from playwright.async_api import async_playwright
 HERE = os.path.dirname(os.path.abspath(__file__)); F = 'file://' + HERE + '/fonts/'
 os.makedirs(os.path.join(HERE, 'out'), exist_ok=True)
-BG, INK, IV, MUT, SAF, SAF2, LINE = '#211B12', '#211B12', '#F3EDE2', '#B8A78F', '#E3901F', '#F0A640', '#3B3128'
+exec(open(os.path.join(HERE, 'planet_palette.py')).read())
+_n, _s, _t, _tone, GROUND, DEEP, IV, ACC = PALETTE['ketu']
+BG, MUT, SAF, SAF2, LINE, RIVER = DEEP, '#E2DBD0', ACC, ACC, '#86817B', '#D77B09'
+CARD_HOT, CARD = '#5C5853', '#64605B'
 CSS = f"""
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay[wght].ttf');font-weight:400 900;}}
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay-Italic[wght].ttf');font-weight:400 900;font-style:italic;}}
@@ -47,10 +51,10 @@ def river(a, b, mid, start_dot, end_ring, W=1080):
     m = W / 2
     p = f"M{xs},{a} C{xs+200},{a+14} {m-180},{mid} {m},{mid} C{m+180},{mid} {m+280},{b} {xe},{b}"
     q = f"M{xs},{a+16} C{xs+200},{a+30} {m-180},{mid+20} {m},{mid+20} C{m+180},{mid+20} {m+280},{b+16} {xe},{b+16}"
-    extra = f'<circle cx="100" cy="{a}" r="9" fill="{SAF}"/>' if start_dot else ''
+    extra = f'<circle cx="100" cy="{a}" r="9" fill="{RIVER}"/>' if start_dot else ''
     if end_ring:
-        extra += f'<circle cx="{xe}" cy="{b}" r="22" fill="none" stroke="{SAF}" stroke-width="3"/><circle cx="{xe}" cy="{b}" r="9" fill="{SAF}"/>'
-    return f'<path d="{q}" fill="none" stroke="{LINE}" stroke-width="3"/><path d="{p}" fill="none" stroke="{SAF}" stroke-width="4.5" stroke-linecap="round"/>{extra}'
+        extra += f'<circle cx="{xe}" cy="{b}" r="22" fill="none" stroke="{RIVER}" stroke-width="3"/><circle cx="{xe}" cy="{b}" r="9" fill="{RIVER}"/>'
+    return f'<path d="{q}" fill="none" stroke="{LINE}" stroke-width="3"/><path d="{p}" fill="none" stroke="{RIVER}" stroke-width="4.5" stroke-linecap="round"/>{extra}'
 
 def eclipse(cx, cy, r):
     # Ketu: the same eclipse seen from its other end; the bright edge on the upper left, as the shadow moves off
@@ -130,7 +134,7 @@ slides.append(page(W, H, f"""
  <div class="link2">{LINK2}</div>
 </div>""", sr(3), TAGS[3], 58, 560, 56))
 
-opt = lambda t, sub, hot: (f'<div style="border:{"2.5px solid "+SAF if hot else "1.5px solid "+LINE};background:{"#2E251A" if hot else "#262017"};border-radius:18px;padding:24px 30px;margin-top:16px">'
+opt = lambda t, sub, hot: (f'<div style="border:{"2.5px solid "+SAF if hot else "1.5px solid "+LINE};background:{CARD_HOT if hot else CARD};border-radius:18px;padding:24px 30px;margin-top:16px">'
                            f'<div style="font:700 {38 if hot else 33}px PF;color:{IV}">{t}</div><div style="font:400 27px/1.45 LO;color:{MUT};margin-top:6px">{sub}</div></div>')
 slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
@@ -145,6 +149,8 @@ slides.append(page(W, H, f"""
  <div style="margin-top:32px;font:500 25px 'IN';letter-spacing:3px;color:{MUT}">REPORT OR CONSULTATION, ON WHATSAPP</div>
  <div style="margin-top:6px;font:700 44px 'IN';color:{SAF2};letter-spacing:.5px">+91 70091 27641</div>
 </div>""", sr(4), TAGS[4], 58, 560, 56))
+
+slides[0] = slides[0].replace(BG, GROUND)
 
 # WhatsApp status / Pinterest, 1080x1920
 story = page(1080, 1920, f"""
