@@ -178,7 +178,7 @@ slides.append(page(W, H, f"""
  <div class="eb">5 · Want a human to read it?</div>
  <h2 style="font-size:64px">Two more ways.</h2>
  <div style="margin-top:20px">
-  {opt("A private consultation", "The whole chart, read live, by audio call orThe whole chart, read live by Dr. Armaan Sharma or the Institute&#8217;s astrologers, by audio call or&nbsp;chat.nbsp;chat. Your questions, notThe whole chart, read live by Dr. Armaan Sharma or the Institute&#8217;s astrologers, by audio call or&nbsp;chat.nbsp;ours.", True)}
+  {opt("A private consultation", "Chat or talk on an audio call with the Institute&#8217;s senior astrologers. The whole chart, read&nbsp;live.", True)}
   {opt("Order a written report", "Your marriage houses, Mars, Venus and the navamsa, worked in full and sent to you to keep.", False)}
  </div>
  <div style="margin-top:40px;font:500 25px 'IN';letter-spacing:3px;color:{MUT}">CONNECT ON WHATSAPP</div>
