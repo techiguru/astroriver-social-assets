@@ -27,6 +27,15 @@ if V == 'mars':   # Mars's own colour from the locked palette (planet_palette.py
     KFILL, KLINE, KTEXT, KHOT_FILL, KHOT_LINE, KHOT_TEXT, WM_OP = '#F6EEE3', '#B98E80', '#9C7A6E', '#B9574C', '#7A3029', '#FFF4E8', '.07'
     GLYPH_RING, GLYPH = '#B0625A', '#F7CFA0'
     PREFIX = 'manglik-mars-'
+if V == 'ivoryred':   # founder, 1 Oct: the red ground reads badly; try ivory with shades of the Mars red earth
+    _r = '#9C5048'   # Mars red earth (locked palette); 4.9:1 on ivory, so it can carry small text
+    SAF, SAF2, MUT, LINE = _r, _r, '#6E554B', '#E2CCC2'
+    CARD_HOT, CARD = '#F8E6DE', '#F7F0E5'
+    RED, RED_FILL = _r, '#EBC9BE'
+    KFILL, KLINE, KTEXT, KHOT_FILL, KHOT_LINE, KHOT_TEXT, WM_OP = '#FBF8F2', '#A98A7E', '#8C6E62', RED_FILL, _r, '#7A3029', '.045'
+    GLYPH_RING, GLYPH = '#EED6CD', _r
+    PREFIX = 'manglik-ivoryred-'
+COVER = os.environ.get('MANGLIK_COVER', 'glyph')   # 'kundli': the cover's picture is the chart itself, not the Mars symbol
 CSS = f"""
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay[wght].ttf');font-weight:400 900;}}
 @font-face{{font-family:'PF';src:url('{F}PlayfairDisplay-Italic[wght].ttf');font-weight:400 900;font-style:italic;}}
@@ -142,7 +151,9 @@ slides.append(page(W, H, f"""
  <h1 style="font-size:112px;margin-top:18px">{HEAD}</h1>
  <div class="b" style="font-size:36px;margin-top:26px">{SUB}</div>
  <div class="m" style="margin-top:20px;font-size:29px;color:{SAF}">Swipe &#8594;</div>
-</div>""", sr(0), TAGS[0], 40, 700, 56, mars_glyph(540, 290, 110)))
+</div>""", sr(0), TAGS[0], 40, 700, 56, kundli(335, 76, 410, fs=27) if COVER == 'kundli' else mars_glyph(540, 290, 110)))
+if COVER == 'kundli':
+    PREFIX += 'kcover-'
 
 slides.append(page(W, H, f"""
 <div class="flow" style="top:90px;bottom:200px;justify-content:center">
