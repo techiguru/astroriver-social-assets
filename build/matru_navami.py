@@ -119,7 +119,7 @@ slides.append(page(W, H, f"""
 <div class="flow" style="{FL}">
  <div class="eb">2 · At home</div>
  <h2>Simple, and enough.</h2>
- <div style="margin-top:34px">{pts([('1', 'Face south. Pour water with black sesame, through kusha grass if you have it, and say her&nbsp;name.'), ('2', 'With each offering, say <i>svadhā</i>: Om pitṛbhyaḥ svadhā&nbsp;namaḥ.'), ('3', 'Feed someone in her memory. Set portions aside for a crow, a cow and a&nbsp;dog.')])}</div>
+ <div style="margin-top:34px">{pts([('1', 'Face south. Pour water with black sesame, through kusha grass if you have it, and say her&nbsp;name.'), ('2', 'With each offering, say <i>Swadha</i>: Om Pitribhyah Swadha&nbsp;Namah.'), ('3', 'Feed someone in her memory. Set portions aside for a crow, a cow and a&nbsp;dog.')])}</div>
  <div class="m" style="margin-top:30px;font-size:28px">No priest nearby, or the family far apart? The Institute arranges tarpan and shradh in your family&#8217;s&nbsp;name.</div>
  <div style="margin-top:24px;font:500 25px 'IN';letter-spacing:3px;color:{MUT}">ON WHATSAPP</div>
  <div style="margin-top:6px;font:700 44px 'IN';color:{SAF2};letter-spacing:.5px">+91 70091 27641</div>
