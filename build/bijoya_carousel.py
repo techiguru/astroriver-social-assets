@@ -39,10 +39,10 @@ def s1(out):                                                                    
     im = Image.fromarray((p * a + base * (1 - a)).astype(np.uint8)); im, d = frame(im)
     d.text((W / 2, H - 52), 'astroriver.com', font=font(INTER, 26, 500), fill=IVORY, anchor='ms')
     d.text((W / 2, 205), 'BIJOYA DASHAMI  ·  WED 21 OCT', font=font(INTER, 26, 600), fill=(200, 100, 30), anchor='ms')
-    d.text((W / 2, 292), 'Dussehra was yesterday.', font=font(PF, 64, 600), fill=MAROON, anchor='ms')
-    d.text((W / 2, 368), 'So why is Bengal’s Bijoya', font=font(PF, 64, 600), fill=MAROON, anchor='ms')
+    d.text((W / 2, 292), 'If Dussehra was yesterday,', font=font(PF, 62, 600), fill=MAROON, anchor='ms')   # the founder's hook, 21 Oct:
+    d.text((W / 2, 366), 'why is Bengal celebrating it', font=font(PF, 62, 600), fill=MAROON, anchor='ms')  # one festival, two days
     d.text((W / 2, 488), 'today?', font=font(PFI, 124, 700), fill=MAROON, anchor='ms')
-    text(d, (W / 2, 560), 'दशहरा कल था, बंगाल में विजया दशमी आज क्यों?', SEMI, 34, DGOLD, 'ms')
+    text(d, (W / 2, 560), 'दशहरा कल था, तो बंगाल आज क्यों मना रहा है?', SEMI, 34, DGOLD, 'ms')
     im.save(os.path.join(out, 'bijoya-1.jpg'), quality=95)
 
 
