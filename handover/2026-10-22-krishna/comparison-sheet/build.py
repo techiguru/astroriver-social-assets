@@ -26,7 +26,7 @@ rows=[
  row('Food and vastra for the brahmins', '', T1, T2),
  row('Photos and a recording of your sankalp', '', T1, T2),
 ]
-woods=[('Surya','Aak'),('Chandra','Palash'),('Mangal','Khair'),('Budh','Apamarg'),('Brihaspati','Peepal'),('Shukra','Gular'),('Shani','Shami'),('Rahu','Durva'),('Ketu','Kusha')]
+woods=[('Surya','Aak (Arka)'),('Chandra','Palash'),('Mangal','Khair (Khadira)'),('Budh','Apamarg'),('Brihaspati','Peepal (Ashvattha)'),('Shukra','Gular (Udumbara)'),('Shani','Shami'),('Rahu','Durva'),('Ketu','Kusha')]
 wood_html=''.join(f'<div class="w"><div class="wg">{g}</div><div class="ww">{w}</div></div>' for g,w in woods)
 html=f'''<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -55,8 +55,8 @@ tr.g td{{background:#f6ecdc;font-weight:700;font-size:11px;letter-spacing:.09em;
 .diff{{margin:0 0 14px;background:#fff;border:1.5px solid #ead9bf;border-left:5px solid #5b21b6;border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.5}}
 .diff b{{color:#5b21b6}}
 h2{{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 10px}}
-.woods{{display:grid;grid-template-columns:210px 1fr;gap:16px;background:#fff;border:1.5px solid #ead9bf;border-radius:16px;padding:14px;margin-bottom:14px}}
-.woods img{{width:210px;height:210px;object-fit:cover;border-radius:12px;display:block}}
+.woods{{display:grid;grid-template-columns:190px 1fr;gap:16px;background:#fff;border:1.5px solid #ead9bf;border-radius:16px;padding:14px;margin-bottom:14px}}
+.woods img{{width:190px;height:190px;object-fit:cover;border-radius:12px;display:block}}
 .cap{{font-size:10.5px;color:#8a7763;margin-top:4px}}
 .woods p{{font-size:14px;line-height:1.5;margin:0 0 10px}}
 .wgrid{{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}}
@@ -67,7 +67,7 @@ h2{{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 10px}}
 .ch.b .lbl{{background:#5b21b6;color:#fff}}
 .ch h3{{font-size:17px;margin:0 0 6px;color:#2b2118}} .ch p{{font-size:14px;line-height:1.5;margin:0}}
 .steps{{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}}
-.st{{background:#fff;border:1.5px solid #ead9bf;border-radius:14px;padding:12px;font-size:13.5px;line-height:1.45}}
+.st{{background:#fff;border:1.5px solid #ead9bf;border-radius:14px;padding:10px 11px;font-size:13px;line-height:1.4}}
 .st .n{{width:26px;height:26px;border-radius:50%;background:#d97706;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:7px;font-size:13px}}
 .ask{{background:#5b21b6;color:#fff;border-radius:18px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}}
 .ask .t{{font-family:'Playfair Display',serif;font-size:21px}} .ask .s{{font-size:14px;opacity:.92;margin-top:4px}}
@@ -93,17 +93,17 @@ h2{{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 10px}}
 <div class="wgrid">{wood_html}</div></div></div>
 <h2>Which suits you?</h2>
 <div class="choose">
-<div class="ch"><div class="lbl">Shanti Pujan</div><h3>When several parts of life feel unsettled at once</h3><p>Or before a new chapter: a move, a venture, a big decision. All nine grahas are honoured together, by the full procedure, for balance and a strong start.</p></div>
-<div class="ch b"><div class="lbl">Sampoorna Mahapujan</div><h3>When one challenge stands out and presses hard</h3><p>Rarely is one graha alone the cause; the tradition holds that results come from how the grahas act on one another. This pujan touches all nine, and the grahas behind the challenge you name receive extra attention in the jaap.</p></div>
+<div class="ch"><div class="lbl">Shanti Pujan · ₹24,800</div><h3>When several parts of life feel unsettled at once</h3><p>Or before a new chapter: a move, a venture, a big decision. All nine grahas are honoured together, by the full procedure, for balance and a strong start.</p></div>
+<div class="ch b"><div class="lbl">Sampoorna Mahapujan · ₹53,100</div><h3>When one challenge stands out and presses hard</h3><p>Rarely is one graha alone the cause; the tradition holds that results come from how the grahas act on one another. This pujan touches all nine, and the grahas behind the challenge you name receive extra attention in the jaap.</p></div>
 </div>
 <h2>After you book</h2>
 <div class="steps">
-<div class="st"><div class="n">1</div>Choose your pujan and share the names for the sankalp.</div>
-<div class="st"><div class="n">2</div>With the Mahapujan, we arrange your call with your Astrologer: name the one challenge pressing you most, and the muhurat is chosen.</div>
-<div class="st"><div class="n">3</div>The pandits perform the pujan in your name and gotra. You do not need to be present.</div>
-<div class="st"><div class="n">4</div>Photos and a recording of your sankalp are sent to you after the ceremony.</div>
+<div class="st"><div class="n">1</div><b>Your sankalp</b><br>Choose your pujan and share the names for the sankalp.</div>
+<div class="st"><div class="n">2</div><b>Your call</b><br>With the Mahapujan, we arrange your call with your Astrologer: name the one challenge pressing you most, and the muhurat is chosen.</div>
+<div class="st"><div class="n">3</div><b>The pujan</b><br>The pandits perform the pujan in your name and gotra. You do not need to be present.</div>
+<div class="st"><div class="n">4</div><b>See it done</b><br>Photos and a recording of your sankalp are sent to you after the ceremony.</div>
 </div>
-<div class="ask"><div><div class="t">Ready to book, or a question first?</div><div class="s">Message our client care on WhatsApp.</div></div><div class="num">+91 70091 27641</div></div>
+<div class="ask"><div><div class="t">Ready to book, or a question first?</div><div class="s">Message our client care on WhatsApp.</div></div><a class="num" href="https://wa.me/917009127641" style="text-decoration:none">+91 70091 27641</a></div>
 <div class="foot">astroriver.com/alchemies/navagraha-shanti-puja · We can only pray; the rest is in nature's hands. No result can be promised.</div>
 </div></body></html>'''
 open(os.path.join(D,'sheet.html'),'w').write(html)
