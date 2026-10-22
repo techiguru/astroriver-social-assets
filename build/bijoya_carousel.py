@@ -128,6 +128,33 @@ def s5(out):                                                                    
     im.save(os.path.join(out, 'bijoya-5.jpg'), quality=95)
 
 
+
+def story(out):
+    """9:16 for WhatsApp Status and stories: the cover's question, a one-line answer (nobody can swipe a status), Maa
+    Katyayani below, the greeting in three scripts. Text sits below a story's own top bar."""
+    SH = 1920
+    pic = cv2.imread(os.path.dirname(HERE) + '/posts/navratri-2026-sources/day6-katyayani.png')
+    pic = cv2.resize(pic, (W, round(pic.shape[0] * W / pic.shape[1])), interpolation=cv2.INTER_AREA)[..., ::-1].astype(np.float32)
+    top = 900; p = np.zeros((SH, W, 3), np.float32); p[:] = IVORY; p[top:] = pic[235:235 + SH - top]
+    a = np.clip((np.arange(SH) - top) / 160, 0, 1)[:, None, None]; base = np.zeros_like(p); base[:] = IVORY
+    im = Image.fromarray((p * a + base * (1 - a)).astype(np.uint8)); d = ImageDraw.Draw(im)
+    d.text((W / 2, 220), 'A S T R O   R I V E R', font=font(PF, 38, 700), fill=MAROON, anchor='ms'); r = 248
+    d.line([(W / 2 - 170, r), (W / 2 - 14, r)], fill=GOLD, width=2); d.line([(W / 2 + 14, r), (W / 2 + 170, r)], fill=GOLD, width=2)
+    d.polygon([(W / 2, r - 7), (W / 2 + 7, r), (W / 2, r + 7), (W / 2 - 7, r)], fill=GOLD)
+    d.text((W / 2, 330), 'BIJOYA DASHAMI  ·  WED 21 OCT', font=font(INTER, 26, 600), fill=(200, 100, 30), anchor='ms')
+    d.text((W / 2, 418), 'If Dussehra was yesterday,', font=font(PF, 62, 600), fill=MAROON, anchor='ms')
+    d.text((W / 2, 492), 'why is Bengal celebrating it', font=font(PF, 62, 600), fill=MAROON, anchor='ms')
+    d.text((W / 2, 614), 'today?', font=font(PFI, 124, 700), fill=MAROON, anchor='ms')
+    text(d, (W / 2, 686), 'दशहरा कल था, तो बंगाल आज क्यों मना रहा है?', SEMI, 34, DGOLD, 'ms')
+    d.text((W / 2, 770), 'One Dashami, two rules. Both are right.', font=font(PFI, 42, 600), fill=INK, anchor='ms')
+    fb = ImageFont.truetype(BENGALI, 52, layout_engine=ImageFont.Layout.RAQM)       # the greeting on the ivory, not on the lion
+    text(d, (W / 2 - 130, 852), 'शुभ विजया', BOLD, 52, DGOLD, 'ms'); d.text((W / 2 + 130, 852), 'শুভ বিজয়া', font=fb, fill=DGOLD, anchor='ms')
+    sh = Image.new('RGBA', (W, SH), (0, 0, 0, 0)); ImageDraw.Draw(sh).text((W / 2, 1860), 'astroriver.com', font=font(INTER, 28, 600), fill=(40, 5, 5, 230), anchor='ms')
+    from PIL import ImageFilter; im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(6))).convert('RGB'); d = ImageDraw.Draw(im)
+    d.text((W / 2, 1860), 'astroriver.com', font=font(INTER, 28, 600), fill=IVORY, anchor='ms')
+    im.save(os.path.join(out, 'bijoya-story.jpg'), quality=95)
+
+
 if __name__ == '__main__':
     o = sys.argv[1]; os.makedirs(o, exist_ok=True)
-    for f in (s1, s2, s3, s4, s5): f(o)
+    for f in (s1, s2, s3, s4, s5, story): f(o)
