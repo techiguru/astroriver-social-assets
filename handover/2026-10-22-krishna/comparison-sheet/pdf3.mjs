@@ -1,5 +1,6 @@
-import { chromium } from '/tmp/claude-0/-home-user/20cf7b22-bc2f-5af3-b08c-4c2b799ce3e4/scratchpad/wt-131/node_modules/playwright/index.mjs';
-const d='/tmp/claude-0/-home-user/20cf7b22-bc2f-5af3-b08c-4c2b799ce3e4/scratchpad/compare3';
+import { chromium } from '/opt/node-tools/node_modules/playwright/index.mjs';
+import { dirname } from 'path'; import { fileURLToPath } from 'url';
+const d=dirname(fileURLToPath(import.meta.url));
 const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});
 const p=await (await b.newContext()).newPage();
 await p.goto('file://'+d+'/sheet.html',{waitUntil:'networkidle'}); await p.waitForTimeout(800);

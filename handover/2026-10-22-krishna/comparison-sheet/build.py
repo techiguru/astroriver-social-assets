@@ -12,17 +12,17 @@ def txt(t): return f'<span class="txt">{t}</span>'
 rows=[
  grp('The ceremony and the havan'),
  row('Time at the pujan', '', txt('Up to 3 days'), txt('4–5 days'), '', 'and longer hours each day'),
- row('Each graha’s own beej-mantra jaap', 'Each of the nine called by its own seed mantra, chanted for it on its own', DASH, T2, '', 'Nine jaaps, one for each graha'),
- row('Havan for all nine grahas', 'In the Mahapujan each graha receives its own samidha, the wood the tradition gives it', T1, T2, 'One havan for all nine', 'Nine sacred woods in the fire'),
- row('Additional Vedic processes', 'Offered to Shiva, as the tradition does, for the health and long life of you and your family', DASH, T2),
+ row('Each graha’s own beej-mantra jaap', 'Each graha’s own beej mantra is chanted for it', DASH, T2),
+ row('Navagraha stotra and havan for all nine', 'In the Mahapujan each graha receives its own samidha, the wood the tradition gives it', T1, T2, 'One havan for all nine', 'With each graha’s own samidha'),
+ row('Additional Vedic processes', 'For these the tradition turns to Shiva', DASH, T2),
  row('Navagraha mandal sthapana, each graha invoked one by one', '', T1, T2),
- row('Ganesh puja, Kalash puja and the Navagraha stotra', '', T1, T2),
+ row('Ganesh puja and Kalash puja', '', T1, T2),
  grp('Your focus'),
  row('Extra attention to the challenge you name', 'The grahas behind it receive extra attention in the jaap', DASH, T2),
  grp('If needed'),
- row('A call with your Astrologer', 'Arranged by client care, before the pujan', DASH, T2),
+ row('A call with your Astrologer', 'We arrange it, before the puja', DASH, T2),
  grp('In both'),
- row('Sankalp in your name and gotra', 'You and up to three family members: four names', T1, T2),
+ row('Sankalp in your name and gotra', 'Up to four names; each further name ₹2,100', T1, T2),
  row('Food and vastra for the brahmins', '', T1, T2),
  row('Photos and a recording of your sankalp', '', T1, T2),
 ]
@@ -66,7 +66,7 @@ h2{{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 10px}}
 .ch .lbl{{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 10px;margin-bottom:8px;background:#f3e6d2;color:#7c4a12}}
 .ch.b .lbl{{background:#5b21b6;color:#fff}}
 .ch h3{{font-size:17px;margin:0 0 6px;color:#2b2118}} .ch p{{font-size:14px;line-height:1.5;margin:0}}
-.steps{{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}}
+.steps{{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}}
 .st{{background:#fff;border:1.5px solid #ead9bf;border-radius:14px;padding:12px;font-size:13.5px;line-height:1.45}}
 .st .n{{width:26px;height:26px;border-radius:50%;background:#d97706;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:7px;font-size:13px}}
 .ask{{background:#5b21b6;color:#fff;border-radius:18px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}}
@@ -78,7 +78,7 @@ h2{{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 10px}}
 <div class="top"><img src="https://astroriver.com/astro-river-seal.svg"><div><div class="brand">Astro River Institute</div><div class="since">Jalandhar · since 2008</div></div></div>
 <div class="kicker">Navagraha Shanti Puja</div>
 <h1>Shanti Pujan or Sampoorna Mahapujan?</h1>
-<p class="sub">Both are your own ceremony for all nine grahas, performed in full, in your name and gotra. The Sampoorna Mahapujan is the deeper of the two: each graha is worshipped on its own, and the challenge you name is given extra attention.</p>
+<p class="sub">Both are your own ceremony for all nine grahas, performed in full, in your name and gotra. The Sampoorna Mahapujan takes four to five days and adds the additional Vedic processes, each graha’s own beej-mantra jaap and its own samidha in the havan, and extra attention to the challenge you name.</p>
 <table><tr><th style="text-align:left;font-family:Inter;font-size:12px;color:#8a7763;font-weight:600;background:#fff">What you get</th>
 <th class="a">Shanti Pujan<div class="p">₹24,800</div><div class="gst">including GST</div><div class="tag">All nine, together</div></th>
 <th class="b">Sampoorna Mahapujan<div class="p">₹53,100</div><div class="gst">including GST</div><div class="tag">When one challenge presses</div></th></tr>
@@ -86,23 +86,24 @@ h2{{font-family:'Playfair Display',serif;font-size:24px;margin:0 0 10px}}
 </table>
 </div>
 <div class="page pb">
-<div class="diff">The difference is <b>₹28,300</b>. It brings more days and longer hours at the pujan, a beej-mantra jaap for each of the nine grahas, nine sacred woods in the havan, the additional Vedic processes, and extra attention to the challenge you name.</div>
-<h2>Nine grahas, nine sacred woods</h2>
+<div class="diff">The difference is <b>₹28,300</b>. It brings four to five days with longer hours each day, the additional Vedic processes, each graha’s own beej-mantra jaap and its own samidha in the havan, and extra attention to the challenge you name.</div>
+<h2>The wood the tradition gives each graha</h2>
 <div class="woods"><div><img src="homam-mandal.jpg"><div class="cap">Representative picture</div></div>
-<div><p>In the Shanti Pujan one havan is offered for all nine grahas. In the Sampoorna Mahapujan each graha also receives its own samidha in the fire, the wood the tradition gives it, with its own beej mantra.</p>
+<div><p>In Shanti Pujan, one havan is offered for all nine. In the Mahapujan each graha receives its own samidha in the fire, the wood the tradition gives it:</p>
 <div class="wgrid">{wood_html}</div></div></div>
 <h2>Which suits you?</h2>
 <div class="choose">
-<div class="ch"><div class="lbl">Shanti Pujan</div><h3>When life asks for balance</h3><p>When several parts of life feel unsettled at once, or before a new chapter: a move, a venture, a big decision. All nine grahas are honoured together, by the full procedure.</p></div>
-<div class="ch b"><div class="lbl">Our suggestion · Sampoorna Mahapujan</div><h3>When one challenge stands out and presses hard</h3><p>In relationships, in health, or opposition that will not ease. Rarely is one graha alone behind it; results come from how the grahas act on one another. The Mahapujan worships all nine, each on its own, and the grahas behind your challenge receive extra attention in the jaap.</p></div>
+<div class="ch"><div class="lbl">Shanti Pujan</div><h3>When several parts of life feel unsettled at once</h3><p>Or before a new chapter: a move, a venture, a big decision. All nine grahas are honoured together, by the full procedure, for balance and a strong start.</p></div>
+<div class="ch b"><div class="lbl">Sampoorna Mahapujan</div><h3>When one challenge stands out and presses hard</h3><p>Rarely is one graha alone the cause; the tradition holds that results come from how the grahas act on one another. This pujan touches all nine, and the grahas behind the challenge you name receive extra attention in the jaap.</p></div>
 </div>
 <h2>After you book</h2>
 <div class="steps">
-<div class="st"><div class="n">1</div>You share the names and gotra for the sankalp and, for the Mahapujan, the challenge to focus on.</div>
-<div class="st"><div class="n">2</div>The pandits perform the pujan and the havan in your name and gotra. You do not need to be present.</div>
-<div class="st"><div class="n">3</div>Photos and a recording of your sankalp are sent to you.</div>
+<div class="st"><div class="n">1</div>Choose your pujan and share the names for the sankalp.</div>
+<div class="st"><div class="n">2</div>With the Mahapujan, we arrange your call with your Astrologer: name the one challenge pressing you most, and the muhurat is chosen.</div>
+<div class="st"><div class="n">3</div>The pandits perform the pujan in your name and gotra. You do not need to be present.</div>
+<div class="st"><div class="n">4</div>Photos and a recording of your sankalp are sent to you after the ceremony.</div>
 </div>
 <div class="ask"><div><div class="t">Ready to book, or a question first?</div><div class="s">Message our client care on WhatsApp.</div></div><div class="num">+91 70091 27641</div></div>
-<div class="foot">astroriver.com/alchemies/navagraha-shanti-puja · We perform the pujan and we pray; the rest is in nature's hands. No result can be promised.</div>
+<div class="foot">astroriver.com/alchemies/navagraha-shanti-puja · We can only pray; the rest is in nature's hands. No result can be promised.</div>
 </div></body></html>'''
 open(os.path.join(D,'sheet.html'),'w').write(html)
