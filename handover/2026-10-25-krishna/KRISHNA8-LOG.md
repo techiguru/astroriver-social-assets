@@ -17,3 +17,7 @@
 - 17:50 Tech 5: #157 + #173 merged & live on founder's go. Tech 5 at 30%: keep only for #135 go, then retire. Told JD5 to fix Diwali hub seoTitle {year}; JD4 to merge main + use {year}; Content 3 to add Diwali 2027 row on new branch (due before 11 Nov).
 - K8 context 25.5% at 17:50.
 - WARNING: session lineage depth 7 of limit 8. KRISHNA 8's children are depth 8 (max). A KRISHNA 9 created by K8 may NOT be able to create worker chats. At move time: ask founder to start KRISHNA 9 himself (new chat) or check create_session from a depth-8 session first.
+- 18:05 Full-size pictures exported via Canva holder design DAHZCe0SLBA → brand/festival-pictures-2026-10-25/ (04636ee), public raw URLs sent to JD4/JD5.
+- JD4: EN+HI Karwa preview @2021b1f (tech3-karwa-v3), placeholders until pictures; told PR open, katha title fix, stamps at merge. JD5: Dhanteras EN+HI preview @2840a47 (tech3-dhanteras-v3); Dhanteras tithi cap kept; PR open.
+- Content 3: In short all 5 batches on tech3-in-short 1ced3c0 (held). Diwali 2027 roll tech3-diwali-2027-roll 7f899b3 (unmerged) — must land with Lakshmi tithi cap before 12 Nov (else NDelhi 2027 box wrong). Now checking Hindi drafts for Karwa + Dhanteras.
+- Vancouver Dhanteras: Drik +1h (assumes BC permanent DST). JD5 told keep tzdata.
