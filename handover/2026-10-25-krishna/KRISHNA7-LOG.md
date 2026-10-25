@@ -15,3 +15,4 @@
 - Krishna does NOT move to a new chat without his permission. At 30%, 40%, 50%, 60% context: tell him in ONE line and ask "change now or not yet?".
 - Worker chats: Krishna may still move them after 30%, but ONLY once their current task is complete.
 - He asked: "I thought we were updating design of article pages. Wait. Read Krishna 6,5,4,3 chats in full. Then come back to me." → 4 readers launched.
+- KRISHNA 4 reader done (no Journal design talk in K4; see agent report).
