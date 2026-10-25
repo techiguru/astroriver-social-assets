@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diwali 2026 — Astro River</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F0; --paper:#FFFFFF; --ink:#241D33; --ink2:#4A4060; --mute:#7A6F86; --line:#EADFCE;
+  --indigo:#2B2457; --saffron:#B45309; --gold:#E9B949; --cream:#FFF4E2; --rose:#C2410C;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:40px; --s8:56px;
+  --gutter:20px; --section:40px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.serif{font-family:Fraunces,Georgia,serif}
+
+/* site header */
+.site{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);background:var(--paper);border-bottom:1px solid var(--line)}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:19px;color:var(--indigo)}
+.site-r{display:flex;gap:var(--s3);align-items:center}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600}
+.lang span{padding:4px 10px}.lang .on{background:var(--indigo);color:#fff}
+.burger{width:22px;height:14px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);position:relative}
+.burger:after{content:"";position:absolute;left:0;right:0;top:4px;border-top:2px solid var(--ink)}
+.navlinks{display:none}
+
+/* article header */
+.ahead{padding:var(--s5) var(--gutter) var(--s4)}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron)}
+h1{font-family:Fraunces,serif;font-weight:700;font-size:29px;line-height:1.14;color:var(--indigo);margin-top:var(--s2)}
+.dek{font-size:16px;line-height:1.5;color:var(--ink2);margin-top:var(--s3)}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:var(--s4);font-size:13px;color:var(--mute)}
+.meta .acts{display:flex;gap:var(--s2)}
+.iconbtn{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:14px;background:var(--paper);color:var(--ink2)}
+.cover img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.cover figcaption{font-size:12px;color:var(--mute);padding:var(--s2) var(--gutter) 0}
+
+/* sticky section tabs */
+.tabs{position:sticky;top:0;z-index:5;background:rgba(251,247,240,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin-top:var(--s4)}
+.tabs-in{display:flex;gap:var(--s2);overflow-x:auto;padding:var(--s3) var(--gutter);scrollbar-width:none}
+.tab{flex:0 0 auto;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink2);white-space:nowrap}
+.tab.on{background:var(--indigo);border-color:var(--indigo);color:#fff}
+.progress{height:3px;background:var(--line)}.progress i{display:block;height:3px;width:18%;background:var(--saffron)}
+
+/* body */
+.layout{padding:0 var(--gutter)}
+.main > section{margin-top:var(--section)}
+.main > section:first-child{margin-top:var(--s5)}
+h2{font-family:Fraunces,serif;font-weight:600;font-size:23px;line-height:1.2;color:var(--indigo)}
+h2 .n{font-size:14px;font-family:Inter,sans-serif;font-weight:600;color:var(--saffron);letter-spacing:.08em;display:block;margin-bottom:var(--s1)}
+h2 + p,h2 + .block{margin-top:var(--s3)}
+p{font-size:16.5px;line-height:1.65;color:var(--ink)}
+p + p{margin-top:var(--s4)}
+.block{margin-top:var(--s4)}
+
+/* this-year card */
+.year{background:linear-gradient(160deg,#2B2457 0%,#3B1F4F 100%);color:#fff;border-radius:18px;padding:var(--s5) var(--s5) var(--s4)}
+.year-top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s3)}
+.year .eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.bigdate{font-family:Fraunces,serif;font-size:23px;white-space:nowrap;font-weight:600;line-height:1.15;margin-top:var(--s1)}
+.city{font-size:12px;font-weight:600;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.times{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-top:var(--s4)}
+.t{background:rgba(255,255,255,.08);border-radius:12px;padding:var(--s3)}
+.t span{display:block;font-size:12px;color:rgba(255,255,255,.75)}
+.t b{display:block;font-size:16px;white-space:nowrap;color:var(--gold);margin-top:2px}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:var(--s4);list-style:none}
+.days li{text-align:center;border-radius:10px;padding:8px 2px;background:rgba(255,255,255,.06);font-size:10.5px;line-height:1.3;color:rgba(255,255,255,.85)}
+.days b{display:block;font-size:15px;color:#fff}
+.days .on{background:var(--gold);color:var(--indigo)}.days .on b{color:var(--indigo)}
+.year .note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:var(--s3)}
+
+/* in short */
+.short{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:var(--s4) var(--s5)}
+.short h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+.short dl{margin-top:var(--s2)}
+.short div{display:grid;grid-template-columns:92px 1fr;gap:var(--s3);padding:10px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.5}
+.short div:first-child{border-top:0}
+.short dt{font-weight:600;color:var(--indigo)}
+
+/* verse */
+.verse{background:var(--cream);border-radius:16px;padding:var(--s5);border-left:4px solid var(--saffron)}
+.verse .dev{font-family:"Noto Serif Devanagari",serif;font-size:19px;line-height:1.6;color:var(--indigo)}
+.verse .tr{font-style:italic;font-size:14.5px;color:var(--ink2);margin-top:var(--s2)}
+.verse .en{font-family:Fraunces,serif;font-size:18px;line-height:1.4;margin-top:var(--s3);color:var(--ink)}
+.verse .src{font-size:12px;color:var(--mute);margin-top:var(--s3)}
+
+/* figure */
+figure.inl img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}
+figure.inl figcaption{font-size:12px;color:var(--mute);margin-top:var(--s2)}
+
+/* tip */
+.tip{display:grid;grid-template-columns:36px 1fr;gap:var(--s3);background:#EEF3EA;border-radius:14px;padding:var(--s4)}
+.tip .ic{width:36px;height:36px;border-radius:50%;background:#3F6B3A;color:#fff;display:grid;place-items:center;font-weight:700}
+.tip h4{font-size:14px;font-weight:600;color:#2F5130}
+.tip p{font-size:14.5px;line-height:1.5;margin-top:2px}
+
+/* inline booking */
+.book{display:grid;grid-template-columns:76px 1fr;gap:var(--s4);align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:var(--s3)}
+.book img{width:76px;height:76px;object-fit:cover;border-radius:10px}
+.book h4{font-family:Fraunces,serif;font-size:16.5px;line-height:1.25;color:var(--indigo)}
+.book .row{display:flex;justify-content:space-between;align-items:center;margin-top:var(--s2)}
+.price{font-weight:600;font-size:15px}
+.btn{display:inline-block;background:var(--indigo);color:#fff;font-weight:600;font-size:13.5px;padding:8px 16px;border-radius:999px}
+.btn.gold{background:var(--gold);color:var(--indigo)}
+
+/* five days */
+.five{list-style:none;border:1px solid var(--line);border-radius:16px;background:var(--paper);overflow:hidden}
+.five li{display:grid;grid-template-columns:58px 1fr;gap:var(--s4);padding:var(--s4);border-top:1px solid var(--line)}
+.five li:first-child{border-top:0}
+.five .d{align-self:start;text-align:center;border-radius:10px;background:var(--cream);padding:6px 0;font-size:11px;font-weight:600;color:var(--saffron);line-height:1.2}
+.five .d b{display:block;font-size:20px;color:var(--indigo);font-family:Fraunces,serif}
+.five li.on .d{background:var(--indigo);color:var(--gold)}.five li.on .d b{color:#fff}
+.five h4{font-size:15.5px;font-weight:600;color:var(--ink)}
+.five p{font-size:14px;line-height:1.5;color:var(--ink2);margin-top:2px}
+.five a{font-size:13.5px;font-weight:600;color:var(--saffron);display:inline-block;margin-top:var(--s1)}
+
+/* quote */
+.pull{font-family:Fraunces,serif;font-size:22px;line-height:1.35;color:var(--indigo);padding:var(--s2) 0 var(--s2) var(--s5);border-left:3px solid var(--gold)}
+.pull small{display:block;font-family:Inter,sans-serif;font-size:12px;color:var(--mute);margin-top:var(--s2)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s2)}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:var(--s3);text-align:center}
+.fact b{display:block;font-family:Fraunces,serif;font-size:17px;color:var(--indigo)}
+.fact span{font-size:11.5px;color:var(--mute)}
+
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.q{border-bottom:1px solid var(--line);padding:var(--s4) 0}
+.q h4{display:flex;justify-content:space-between;gap:var(--s3);font-size:15.5px;font-weight:600;color:var(--ink)}
+.q h4:after{content:"+";color:var(--saffron);font-size:20px;line-height:1}
+.q.open h4:after{content:"–"}
+.q p{font-size:15px;line-height:1.6;color:var(--ink2);margin-top:var(--s2)}
+
+/* end */
+.react{display:flex;justify-content:space-between;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:var(--s3) var(--s4)}
+.react span{font-size:14px;font-weight:600}
+.react .em{display:flex;gap:var(--s2)}
+.react .em i{font-style:normal;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:17px}
+.share{display:flex;gap:var(--s2);margin-top:var(--s3)}
+.share a{flex:1;text-align:center;font-size:13.5px;font-weight:600;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
+.share a.wa{background:#1F7A4D;color:#fff;border-color:#1F7A4D}
+.more{display:flex;gap:var(--s3);overflow-x:auto;margin:var(--s3) calc(-1*var(--gutter)) 0;padding:0 var(--gutter);scrollbar-width:none}
+.card{flex:0 0 232px;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.card div{padding:var(--s3)}
+.card small{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--saffron);text-transform:uppercase}
+.card h4{font-family:Fraunces,serif;font-size:16px;line-height:1.25;margin-top:var(--s1);color:var(--indigo)}
+.ask{background:var(--indigo);color:#fff;border-radius:18px;padding:var(--s5)}
+.ask h3{font-family:Fraunces,serif;font-size:21px;line-height:1.2}
+.ask p{color:rgba(255,255,255,.8);font-size:14.5px;margin-top:var(--s2)}
+.ask .row{display:flex;align-items:center;gap:var(--s3);margin-top:var(--s4)}
+.ask s{opacity:.6;font-size:14px}.ask .pr{font-size:18px;font-weight:600;color:var(--gold)}
+.foot{margin-top:var(--s8);padding:var(--s6) var(--gutter);background:#1E1830;color:rgba(255,255,255,.7);font-size:13px}
+.foot b{font-family:Fraunces,serif;color:#fff;font-size:17px}
+.rail{display:none}
+.sec-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+
+/* ---------- desktop ---------- */
+@media (min-width:960px){
+  :root{--gutter:40px;--section:56px}
+  .site{height:68px;padding:0 max(40px,calc((100vw - 1180px)/2))}
+  .navlinks{display:flex;gap:var(--s5);font-size:14px;font-weight:500;color:var(--ink2)}
+  .burger{display:none}
+  .hero{max-width:1180px;margin:0 auto;padding:var(--s7) 40px 0;display:grid;grid-template-columns:1fr 1fr;gap:var(--s7);align-items:start}
+  .ahead{padding:0}
+  h1{font-size:44px;line-height:1.1}
+  .dek{font-size:18px}
+  .hero{align-items:stretch}
+  .cover{display:flex;flex-direction:column}
+  .cover img{border-radius:18px;aspect-ratio:auto;flex:1;min-height:0;height:100%}
+  h1{font-size:40px}
+  .cover figcaption{padding:var(--s2) 0 0}
+  .year.top{margin-top:var(--s5)}
+  .year-in-body{display:none}
+  .tabs{margin-top:var(--s7)}
+  .tabs-in{justify-content:center;gap:var(--s3)}
+  .layout{max-width:1180px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:minmax(0,720px) 340px;gap:var(--s8);justify-content:space-between}
+  p{font-size:17.5px}
+  h2{font-size:28px}
+  .rail{display:block}
+  .rail .stick{position:sticky;top:80px;margin-top:var(--s5);display:grid;gap:var(--s4)}
+  .railbook{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .railbook img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .railbook > div{padding:var(--s4) var(--s5) var(--s5)}
+  .railbook h4{font-family:Fraunces,serif;font-size:19px;line-height:1.25;color:var(--indigo)}
+  .railbook p{font-size:14px;color:var(--ink2);margin-top:var(--s2)}
+  .railbook .row{display:flex;justify-content:space-between;align-items:center;margin-top:var(--s4)}
+  .book.inbody,.ask.inbody{display:none}
+  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);align-items:center}
+  .more{display:grid;grid-template-columns:repeat(3,1fr);margin:var(--s3) 0 0;padding:0;overflow:visible}
+  .card{flex:none}
+  .foot{padding:var(--s7) max(40px,calc((100vw - 1180px)/2))}
+}
+@media (max-width:959px){ .year.top{display:none} .figrow figure{margin-top:var(--s4)} }
+
+/* v2 additions */
+.updated{display:inline-flex;align-items:center;gap:6px;margin-top:var(--s3);font-size:12px;font-weight:600;color:#2F5130;background:#EEF3EA;border-radius:999px;padding:4px 10px}
+.sharerow{display:flex;gap:var(--s2);margin-top:var(--s4);align-items:center}
+.si{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}
+.si i{width:17px;height:17px;background:#fff;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+.si.wa{background:#25D366}.si.fb{background:#1877F2}.si.xx{background:#111}.si.tg{background:#229ED9}.si.pin{background:#E60023}
+.si.ln{background:var(--paper);border:1px solid var(--line);color:var(--ink2);font-size:15px}
+.sharelbl{font-size:12px;font-weight:600;color:var(--mute);margin-right:var(--s1)}
+.mshare{display:flex;gap:var(--s2);margin-top:var(--s4)}
+.mshare a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
+.mshare a.wa{background:#1F7A4D;border-color:#1F7A4D;color:#fff}
+.mshare a.wa i{width:16px;height:16px;background:#fff;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+.yacts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--s2);margin-top:var(--s4)}
+.yacts a{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;padding:9px 4px;border-radius:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;white-space:nowrap}
+.yacts a.pri{background:var(--gold);border-color:var(--gold);color:var(--indigo)}
+.verse{position:relative}
+.vshare{position:absolute;top:var(--s4);right:var(--s4);font-size:12px;font-weight:600;color:var(--saffron);background:#fff;border:1px solid #F1D9B5;border-radius:999px;padding:4px 10px}
+h2{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s3)}
+h2 .hl{font-family:Inter,sans-serif;font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:8px;padding:2px 7px;margin-bottom:4px;flex:0 0 auto}
+h2 .ht{display:block}
+.follow{display:grid;grid-template-columns:44px 1fr;gap:var(--s3);align-items:center;background:#E7F5EC;border:1px solid #BFE3CC;border-radius:16px;padding:var(--s4)}
+.follow .wl{width:44px;height:44px;border-radius:50%;background:#25D366;display:grid;place-items:center}
+.follow .wl i{width:24px;height:24px;background:#fff;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+.follow h4{font-size:15px;font-weight:600;color:#14532D}
+.follow p{font-size:13.5px;line-height:1.45;color:#2F5130;margin-top:2px}
+.follow .btn{background:#1F7A4D;margin-top:var(--s2);font-size:13px;padding:7px 14px}
+.sources{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:var(--s4) var(--s5)}
+.sources ol{margin:var(--s2) 0 0 18px;font-size:14px;line-height:1.55;color:var(--ink2)}
+.sources li + li{margin-top:6px}
+.sources .how{font-size:13px;color:var(--mute);margin-top:var(--s3);border-top:1px solid var(--line);padding-top:var(--s3)}
+.mbar{display:none}
+.list{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:var(--s4) var(--s5)}
+.list ol{list-style:none;margin-top:var(--s2)}
+.list li{display:grid;grid-template-columns:26px 1fr;gap:var(--s2);padding:10px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.4;font-weight:500;color:var(--ink)}
+.list li:first-child{border-top:0}
+.list li b{font-family:Fraunces,serif;color:var(--saffron);font-size:17px}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);margin-top:var(--s3)}
+.tools a{font-size:13px;font-weight:600;color:var(--indigo);background:var(--cream);border-radius:10px;padding:10px;text-align:center}
+@media (max-width:959px){
+  .sharerow{display:none}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:9;background:var(--indigo);border-radius:16px;padding:8px;gap:6px;box-shadow:0 8px 24px rgba(30,20,60,.3)}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;color:#fff;font-size:13px;font-weight:600;padding:10px 4px;border-radius:10px}
+  .mbar a.wa{background:#1F7A4D}
+  .mbar a i{width:15px;height:15px;background:#fff;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+  .rail2{display:none}
+}
+@media (min-width:960px){
+  .mshare{display:none}
+  .follow.inbody{display:none}
+  .rail{display:flex;flex-direction:column}
+  .rail > .half{flex:1}
+  .rail .stick{margin-top:var(--s5)}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="logo">Astro River</a>
+  <nav class="navlinks"><a>Panchang</a><a>Rashifal</a><a>Free tools</a><a>Pujas</a><a style="color:var(--indigo);font-weight:600">Journal</a></nav>
+  <div class="site-r"><div class="lang"><span class="on">EN</span><span>हि</span></div><div class="burger"></div></div>
+</header>
+
+<div class="hero">
+  <div class="ahead" data-spec="Article header">
+    <div class="kicker">Festival · Diwali 2026</div>
+    <h1>Diwali 2026: the date, the Lakshmi puja muhurat, and the five days</h1>
+    <p class="dek">Diwali falls on Sunday 8 November. Your city's puja time, all five days, and why the puja is done at dusk.</p>
+    <span class="updated">✓ Updated for 2026 · times for your city</span>
+    <div class="meta"><span>Astro River Journal · 8 min read · 25 Oct</span><span class="acts"><span class="iconbtn">▶</span><span class="iconbtn">🔖</span></span></div>
+    <div class="sharerow"><span class="sharelbl">Share</span><a class="si wa" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/whatsapp.svg)"><i></i></a><a class="si fb" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/facebook.svg)"><i></i></a><a class="si xx" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/x.svg)"><i></i></a><a class="si tg" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/telegram.svg)"><i></i></a><a class="si pin" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/pinterest.svg)"><i></i></a><a class="si ln">🔗</a></div>
+    <div class="mshare"><a class="wa" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/whatsapp.svg)"><i></i>WhatsApp</a><a>↗ Share</a></div>
+
+    <div class="year top">
+      <div class="year-top"><div><div class="eyebrow">This year</div><div class="bigdate">Sunday 8 November</div></div><span class="city">Gurgaon ▾</span></div>
+      <div class="times"><div class="t"><span>Lakshmi puja muhurat</span><b>5:54 – 7:50 pm</b></div><div class="t"><span>Pradosh kaal</span><b>5:31 – 8:09 pm</b></div></div>
+      <ol class="days"><li>Fri<b>6</b>Dhanteras</li><li>Sat<b>7</b>Choti Diwali</li><li class="on">Sun<b>8</b>Diwali</li><li>Tue<b>10</b>Govardhan</li><li>Wed<b>11</b>Bhai Dooj</li></ol>
+      <div class="yacts"><a class="pri">🔔 Remind me</a><a>📅 Calendar</a><a>↗ Share card</a></div>
+    </div>
+  </div>
+  <figure class="cover" data-spec="Cover picture">
+    <img src="s1.jpg" alt="">
+    <figcaption>Lakshmi on the lotus, in the miniature tradition.</figcaption>
+  </figure>
+</div>
+
+<nav class="tabs" data-spec="Section links (stick on scroll)"><div class="tabs-in">
+  <a class="tab on">This year</a><a class="tab">In short</a><a class="tab">Which day</a><a class="tab">The puja</a><a class="tab">Five days</a><a class="tab">The sky</a><a class="tab">Questions</a>
+</div><div class="progress"><i></i></div></nav>
+
+<div class="layout">
+<main class="main">
+
+  <section class="year-in-body" data-spec="This year card">
+    <div class="year">
+      <div class="year-top"><div><div class="eyebrow">This year</div><div class="bigdate">Sunday 8 November</div></div><span class="city">Gurgaon ▾</span></div>
+      <div class="times"><div class="t"><span>Lakshmi puja muhurat</span><b>5:54 – 7:50 pm</b></div><div class="t"><span>Pradosh kaal</span><b>5:31 – 8:09 pm</b></div></div>
+      <ol class="days"><li>Fri<b>6</b>Dhanteras</li><li>Sat<b>7</b>Choti Diwali</li><li class="on">Sun<b>8</b>Diwali</li><li>Tue<b>10</b>Govardhan</li><li>Wed<b>11</b>Bhai Dooj</li></ol>
+      <div class="yacts"><a class="pri">🔔 Remind me</a><a>📅 Calendar</a><a>↗ Share card</a></div>
+      <div class="note">New Delhi clock time. Where your family follows its own panchang, follow that.</div>
+    </div>
+  </section>
+
+  <section data-spec="In short">
+    <div class="short"><h3>In short</h3><dl>
+      <div><dt>What it is</dt><dd>The new moon (Amavasya) of Kartika, about twenty days after Dussehra.</dd></div>
+      <div><dt>The worship</dt><dd>Lakshmi with Ganesha, in the evening at pradosh.</dd></div>
+      <div><dt>Which day</dt><dd>The day Amavasya holds at dusk, so the evening fixes the date.</dd></div>
+      <div><dt>The sky</dt><dd>The Sun is always in Libra at Diwali, its weakest sign.</dd></div>
+    </dl></div>
+  </section>
+
+  <section data-spec="Section">
+    <h2><span class="ht"><span class="n">01</span>Which day is Diwali?</span><span class="hl">🔗</span></h2>
+    <p>Diwali is a tithi, the lunar day of Amavasya, and a tithi can begin at any hour. So the festival needs a rule for which evening it is kept on. The Nirnaya Sindhu gives it, quoting the Bhavishya Purana:</p>
+    <div class="block verse"><span class="vshare">↗ Share verse</span>
+      <div class="dev">दीपान्दत्त्वा प्रदोषे तु लक्ष्मीं पूज्य यथाविधि ।</div>
+      <div class="tr">Dīpān dattvā pradoṣe tu lakṣmīṁ pūjya yathā-vidhi.</div>
+      <div class="en">“Having set out the lamps at pradosh, and worshipped Lakshmi as the rite prescribes…”</div>
+      <div class="src">Nirnaya Sindhu, quoting the Bhavishya Purana</div>
+    </div>
+    <p class="block">So Diwali is the evening on which Amavasya is running at dusk. In most years that is the same date in India, the Gulf, Britain and North America.</p>
+  </section>
+
+  <section data-spec="Section">
+    <h2><span class="ht"><span class="n">02</span>The Lakshmi puja: at dusk, in a fixed sign</span><span class="hl">🔗</span></h2>
+    <div class="figrow block">
+      <p style="margin:0">Pradosh is the first part of the night after sunset, about two and a half hours. The puja is done inside it. Many families choose the part of it when Taurus, a fixed sign, is rising, so that what comes in stays.</p>
+      <figure class="inl"><img src="s4.jpg" alt=""><figcaption>The Lakshmi puja thali, set before sunset.</figcaption></figure>
+    </div>
+    <div class="block tip"><div class="ic">✓</div><div><h4>Do this on Diwali evening</h4><p>Light the first lamp at the main door, begin the puja inside the muhurat, and keep one lamp burning through the night.</p></div></div>
+    <div class="block follow inbody"><div class="wl" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/whatsapp.svg)"><i></i></div><div><h4>Festival dates on WhatsApp</h4><p>Muhurats for every festival, a day before. Follow our channel.</p><span class="btn">Follow</span></div></div>
+    <div class="block book inbody"><img src="s2.jpg" alt=""><div><h4>Lakshmi Puja in your name and gotra</h4><div class="row"><span class="price">₹11,700</span><span class="btn">Book</span></div></div></div>
+  </section>
+
+  <section data-spec="Section">
+    <h2><span class="ht"><span class="n">03</span>The five days</span><span class="hl">🔗</span></h2>
+    <ol class="block five">
+      <li><div class="d">FRI<b>6</b>NOV</div><div><h4>Dhanteras</h4><p>Dhanvantari's day, for buying gold, silver and vessels. A lamp for Yama at nightfall.</p><a>Read: Dhanteras →</a></div></li>
+      <li><div class="d">SAT<b>7</b>NOV</div><div><h4>Choti Diwali</h4><p>Naraka Chaturdashi. Lamps in the evening, oil bath before dawn.</p></div></li>
+      <li class="on"><div class="d">SUN<b>8</b>NOV</div><div><h4>Diwali</h4><p>Lakshmi puja at pradosh, on the Amavasya.</p></div></li>
+      <li><div class="d">TUE<b>10</b>NOV</div><div><h4>Govardhan Puja</h4><p>The first day of the bright half.</p></div></li>
+      <li><div class="d">WED<b>11</b>NOV</div><div><h4>Bhai Dooj</h4><p>Sisters mark their brothers with tilak. Kept in the afternoon.</p></div></li>
+    </ol>
+  </section>
+
+  <section data-spec="Section">
+    <h2><span class="ht"><span class="n">04</span>The sky on Diwali night</span><span class="hl">🔗</span></h2>
+    <p>Every year Diwali falls when the Sun is in Libra, its weakest sign. The new moon is the Moon joining the Sun there, so the festival of lamps is lit on the night the sky gives least light of its own.</p>
+    <div class="block facts"><div class="fact"><b>Libra</b><span>Sun</span></div><div class="fact"><b>Libra</b><span>Moon</span></div><div class="fact"><b>Amavasya</b><span>Tithi</span></div></div>
+    <blockquote class="block pull">“When the thousand-rayed Sun stands in Libra… let men with torches show the ancestors their way.”<small>Nirnaya Sindhu, quoting the jyotisha texts</small></blockquote>
+  </section>
+
+  <section data-spec="Questions">
+    <h2><span class="ht"><span class="n">05</span>Questions we are asked</span><span class="hl">🔗</span></h2>
+    <div class="block faq">
+      <div class="q open"><h4>Diwali kab hai, when is Diwali this year?</h4><p>Sunday 8 November 2026. The box at the top gives all five days for your country.</p></div>
+      <div class="q"><h4>What is the Lakshmi puja muhurat?</h4></div>
+      <div class="q"><h4>Can the Lakshmi puja be done at midnight?</h4></div>
+      <div class="q"><h4>Is Diwali on the same day in the USA, UK and India?</h4></div>
+      <div class="q"><h4>What is bought on Dhanteras?</h4></div>
+    </div>
+  </section>
+
+  <section data-spec="Sources">
+    <div class="sources"><div class="sec-label">Sources</div><ol>
+      <li>Nirnaya Sindhu, the seventeenth-century digest of observances: the rule for which evening Diwali is kept.</li>
+      <li>Bhavishya Purana, as quoted in the Nirnaya Sindhu: the verse on lamps and Lakshmi puja at pradosh.</li>
+      <li>Sun and Moon positions computed for each city (Lahiri ayanamsa).</li>
+    </ol><div class="how">Updated 25 October 2026 for this year's dates. Where your family or temple follows its own panchang, follow that.</div></div>
+  </section>
+
+  <section data-spec="Reactions + share">
+    <div class="react"><span>Was this useful?</span><span class="em"><i>🙏</i><i>🪔</i><i>❤️</i></span></div>
+    <div class="mshare" style="display:flex"><a class="wa" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/whatsapp.svg)"><i></i>Share on WhatsApp</a><a>🔗 Copy link</a></div>
+  </section>
+
+  <section data-spec="More from the Journal">
+    <div class="sec-label">More from the Journal</div>
+    <div class="more">
+      <a class="card"><img src="s3.jpg" alt=""><div><small>Fri 6 Nov</small><h4>Dhanteras: the date, the Yama lamp and what to buy</h4></div></a>
+      <a class="card"><img src="s5.jpg" alt=""><div><small>Sky notes</small><h4>This year's sky on Diwali night</h4></div></a>
+      <a class="card"><img src="s6.jpg" alt=""><div><small>Festival</small><h4>Karwa Chauth: moonrise for your city</h4></div></a>
+    </div>
+  </section>
+
+  <section class="ask inbody" data-spec="Ask card">
+    <h3>A question about your own chart?</h3>
+    <p>Ask our astrologer one question, answered from your birth chart.</p>
+    <div class="row"><s>₹399</s><span class="pr">₹99</span><span class="btn gold">Ask now</span></div>
+  </section>
+
+</main>
+
+<aside class="rail">
+ <div class="half"><div class="stick">
+  <div class="railbook"><img src="s2.jpg" alt=""><div><h4>Lakshmi Puja in your name and gotra</h4><p>Performed by our pandits on Diwali evening, wherever you live.</p><div class="row"><span class="price">₹11,700</span><span class="btn">Book</span></div></div></div>
+  <div class="ask"><h3>A question about your own chart?</h3><p>Ask our astrologer one question.</p><div class="row"><s>₹399</s><span class="pr">₹99</span><span class="btn gold">Ask now</span></div></div>
+ </div></div>
+ <div class="half"><div class="stick">
+  <div class="follow"><div class="wl" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/whatsapp.svg)"><i></i></div><div><h4>Festival dates on WhatsApp</h4><p>Muhurats for every festival, a day before.</p><span class="btn">Follow</span></div></div>
+  <div class="list"><div class="sec-label">Read next</div><ol>
+   <li><b>1</b>Dhanteras: the date, the Yama lamp and what to buy</li>
+   <li><b>2</b>Karwa Chauth: moonrise for your city</li>
+   <li><b>3</b>This year's sky on Diwali night</li>
+   <li><b>4</b>Pitru Paksha: the fortnight of the ancestors</li>
+  </ol></div>
+  <div class="list"><div class="sec-label">Free tools</div><div class="tools"><a>Kundli</a><a>Kundli matching</a><a>Manglik dosha</a><a>Today's panchang</a></div></div>
+ </div></div>
+</aside>
+</div>
+
+<footer class="foot"><b>Astro River</b><div style="margin-top:8px">Panchang · Rashifal · Free tools · Pujas · Journal</div></footer>
+<div class="mbar"><a class="wa" style="--ic:url(https://cdn.jsdelivr.net/npm/simple-icons@11.0.0/icons/whatsapp.svg)"><i></i>WhatsApp</a><a>↗ Share</a><a>🔔 Remind me</a></div>
+</body>
+</html>
