@@ -29,3 +29,7 @@
 - 18:3x FOUNDER: Dhanteras cover = 2 Kubera+Lakshmi (MAHZCjBvBmE); Karwa inside = B haveli dusk (MAHZCoXNmF0). Files in brand/festival-pictures-2026-10-25/.
 - 18:5x GSC: founder asked (again) which URLs to submit. Answered: resubmit sitemap + Request indexing ~10/day priority list. Sitemap (142 URLs) MISSES all /alchemies/* shop pages, /alchemies, /ask, /inscriptions → tech task after #180/#181 merge (+ IndexNow for Bing). SEO tags on Karwa/Dhanteras previews checked OK (title ≤60, desc, canonical, hreflang en/hi/x-default, og, Article+FAQ+Breadcrumb, 1 h1). Fix sent JD5: HI Dhanteras title → "धनतेरस {year} कब है? …".
 - JD4: Karwa card overlap fixed (d464f3c). #180/#181 conflict in 4 files; Karwa first, JD5 merges main after.
+- 18:53 DHANTERAS v3 EN+HI LIVE: #181 merged → main 84273d3 (founder go in JD5). Order changed: Karwa #180 must merge main (JD5's merge recipe sent to JD4); founder must type "Merge PR #180 yourself on GitHub" in JD4.
+- Hindi title change CANCELLED: D-175 (founder 26 Sep) = Hindi titles lead with Latin keyword. Krishna was wrong.
+- JD5 PR #182 (tech3-zone-formatters 3a8685d): zoneAt applied to birthTime, kundli, almanac, rashifal etc. Unmerged; needs founder go in JD5. JD5 at 41% → retire after #182.
+- K8 context 42.8% at 18:58.
