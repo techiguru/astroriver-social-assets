@@ -33,3 +33,5 @@
 - Hindi title change CANCELLED: D-175 (founder 26 Sep) = Hindi titles lead with Latin keyword. Krishna was wrong.
 - JD5 PR #182 (tech3-zone-formatters 3a8685d): zoneAt applied to birthTime, kundli, almanac, rashifal etc. Unmerged; needs founder go in JD5. JD5 at 41% → retire after #182.
 - K8 context 42.8% at 18:58.
+- 19:03 KARWA CHAUTH v3 EN+HI LIVE: #180 merged → main cdbce7d (founder line in JD4). Verified 200 + og jpeg. #182 zone formatters live (05f619b). ALL THREE FESTIVAL PAGES DONE. JD4 (51%) + JD5 (52%) retired, renamed (old).
+- Next (founder to decide): K8 recommends sitemap fix first (shop /alchemies/*, /ask, /inscriptions missing; + IndexNow), then founder resubmits sitemap in GSC.
