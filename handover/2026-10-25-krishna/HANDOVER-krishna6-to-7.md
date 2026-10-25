@@ -7,9 +7,14 @@ Read first: HANDOVER.md top section "FOUNDER RULES REPEATED 25 OCT", then this f
 - He sometimes writes "go" in Krishna's chat: tell him kindly it must be typed in the worker's own chat (safety check ignores relays). He did this once (12:0x UTC).
 - He still wrote to KRISHNA 5 after the move; KRISHNA 5 has stopped. If he writes elsewhere, ask him once to use the current Krishna chat.
 
+## DONE 25 Oct ~12:35 UTC (founder typed "go" + "Merge" in Tech 6's chat)
+- Production: Diwali product #169 (₹11,700 / $180), dollars at 65 #174, Navagraha Sampoorna further name ₹5,100/$80 #178, Ask #176 (ai-question v1, rates), chat-inference v88 fallback fix #177. All merged in order; main = e27af19; live pages checked by Tech 6.
+- Open: signed-in production cart/quote check needs a real cart (production write) → Tech 6 will ask the founder how. ASK_ROUTE → /ask lives only on frozen tech3-mobile-home-v5: switch it there when the home work resumes (nothing on main to change).
+- Tech 4 wrongly thinks it should be stopped/consulted; it is stopped. Ignore its reports.
+
 ## Waiting on him (production "go" typed in the worker's chat)
 1. **Tech 5** session_01BG8HYBFHNDqxq4NBWxVkuZ: #155 Diwali cluster, head a7c6b49 (copy fixes "some silver", "some coriander"; re-stamped 25 Oct 14:30 IST). After merge: retarget #157 Sky Notes to main (due Thu 29 Oct), #173 festival roll live before 30 Oct, #168 with/after the mobile home, #170.
-2. **Tech 6** session_019uBmXiU2p5AKL24STsCZqD: one go runs the sheet docs/sessions/2026-10-25-tech6-production-run.md (branch fix/chat-fallback-model): Diwali product #169 → its USD file → usd_at_65 → #174 ₹65 restore → step 2c #178 Navagraha Sampoorna further name ₹5,100/$80 (page now shows running total, cart "Further names ×N", checkout "6 names (2 further)") → Tech 2's ai_public_rates → ask files → deploy ai-question → #176 Ask → #177 fallback model fix (deploy chat-inference, merge). If its key can't write, it stops before changing anything and tells him which key to paste. After #176 merges: tell the next Mobile Home chat to switch ASK_ROUTE to /ask (src/lib/home/routes.ts on tech3-mobile-home-v5).
+2. (DONE, see above) **Tech 6** session_019uBmXiU2p5AKL24STsCZqD: one go ran the sheet docs/sessions/2026-10-25-tech6-production-run.md (branch fix/chat-fallback-model): Diwali product #169 → its USD file → usd_at_65 → #174 ₹65 restore → step 2c #178 Navagraha Sampoorna further name ₹5,100/$80 (page now shows running total, cart "Further names ×N", checkout "6 names (2 further)") → Tech 2's ai_public_rates → ask files → deploy ai-question → #176 Ask → #177 fallback model fix (deploy chat-inference, merge). If its key can't write, it stops before changing anything and tells him which key to paste. After #176 merges: tell the next Mobile Home chat to switch ASK_ROUTE to /ask (src/lib/home/routes.ts on tech3-mobile-home-v5).
 3. **Image style**: sent him two Canva samples (handover/2026-10-25-krishna/image-style-samples/A-painted.png, B-photo.png). I recommended "both" (painted for deities/festival heroes, photos for puja steps/items). No answer yet.
 4. **Reference screenshots**: asked for 2–3 screens he loves (Dharmayana or any app) for a home mock-up.
 
@@ -18,7 +23,7 @@ Read first: HANDOVER.md top section "FOUNDER RULES REPEATED 25 OCT", then this f
 - Journal: Journal Design 1 session_01Tj8od6bPTu8fzVyVYEisjc HOLDING at tech3-journal-mag @ 682e39f. It sent an image-slot list (hero 16:9 1600×900 per piece; figures 4:3 1600×1200; puja card 16:9; share cards 1200×630; Dhanteras Figure B should be the Yama lamp). Rules: licence on file, no AI label (D-191), no text in images, respectful deities, no faces without release. Decisions given: keep JSON-LD "Astro River Institute" + byline "Astro River Journal"; reactions/comments/Listen flagged off; Ask card → ASK_ROUTE.
 
 ## Workers
-- Tech 3c session_01XJFRDwhTqhYHsckjymksFD: its 19:45 UTC #135 check reports to Krishna. My send_later trig_019HLvpmMmNfTuYvuFyM8z15 fires 19:50 UTC into KRISHNA 6 — **KRISHNA 7: create your own for 19:50 and disable mine (update_trigger enabled=false; delete is blocked by the classifier).** Then tell the founder if the panchang flipped at midnight; he types "go" for #135 in Tech 5's chat. Then retire Tech 3c.
+- Tech 3c session_01XJFRDwhTqhYHsckjymksFD: its 19:45 UTC #135 check reports to Krishna. KRISHNA 6's send_later trig_019HLvpmMmNfTuYvuFyM8z15 is DISABLED. **KRISHNA 7: create your own send_later for 19:50 UTC (#135 check via Tech 3c).** Then tell the founder if the panchang flipped at midnight; he types "go" for #135 in Tech 5's chat. Then retire Tech 3c.
 - Free Tools 4 session_01BbLq6UMsTH5NcA2ofyaVFH: idle (PRs #171, #172 privacy wording needs him, #175 My Chart needs staging redirect URL).
 - Stopped: Tech 4, Mobile Home 5, KRISHNA 5.
 
