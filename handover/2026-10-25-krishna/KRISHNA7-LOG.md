@@ -9,3 +9,4 @@
 - ~12:30 UTC: #155 Diwali MERGED + live (cda9739) on founder's go in Tech 5. Tech 5 (18%) told: #157 merge main/resolve/re-stamp/preview → founder go (due Thu 29 Oct); #173 Diwali row 2026 only → preview → go before 30 Oct.
 - Navagraha live check (Krishna, 390px): Sampoorna ₹53,100 (4 names) → ₹58,200 (5) → ₹63,300 (6); USD 7 names $1,055. Total updates only when a name is typed, not on "Add another name".
 - Tech 6 AskUserQuestion pending: "go on which?" Krishna recommended founder picks "Production quote check" only; /ask build → fresh chat.
+- 12:49 UTC: #157 (head 7c89c37, preview https://tech3-almanac-2026-11-02.astro-river.pages.dev/journal/weekly-almanac-2026-11-02) and #173 (head 3907e15) ready; both wait founder "go" in Tech 5. Diwali 2027 row needs a Content check before 11 Nov (else hub stays 2026, test fails from 12 Nov).
