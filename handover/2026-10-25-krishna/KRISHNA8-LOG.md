@@ -26,3 +26,4 @@
 - 18:2x Vancouver: tzdata 2026e = BC permanent UTC−7 from 1 Nov 2026 (verified zdump). JD5 fix src/lib/zoneAt.ts on #181 (head 16a8784) — also corrects the LIVE Diwali Vancouver rows when merged. TODO after #181: separate PR for other formatters (birthTime first, kundli, rashifal, panchangHi, almanac…).
 - JD4: Pichwai restored, PR #180 head 6883042; inside picture awaits founder pick A/B/C. JD5: PR #181; cover awaits founder 1/2/3.
 - K8 context 37.9% at 18:19 (missed 30% line; told founder at 38%). Weekly rate limit warning on the account.
+- 18:3x FOUNDER: Dhanteras cover = 2 Kubera+Lakshmi (MAHZCjBvBmE); Karwa inside = B haveli dusk (MAHZCoXNmF0). Files in brand/festival-pictures-2026-10-25/.
