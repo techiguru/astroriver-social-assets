@@ -9,3 +9,6 @@
 - Karwa covers: option 1 Pichwai (lakshmi-covers/karwa-chauth-cover.jpg), 2 Rajasthani miniature Canva MAHZCcLeH-4, 3 Tanjore Canva MAHZCVr95mk. Krishna recommends 2. Awaiting founder pick. JD4 asked for 390px screenshots first.
 - Content 3: In short batch 1 on tech3-in-short 9dee67d; continuing batches of ~5 (skip weekly almanacs).
 - send_message to workers about merge/conflict was blocked twice by auto-mode classifier ("Production Deploy") — phrase as branch-only.
+- 17:38 UTC founder: Karwa cover = option 2 (Canva MAHZCcLeH-4); London/Birmingham Wed 28 Oct; one more picture inside each article; finish Diwali, Dhanteras, Karwa Chauth, THEN decide next (tithi-cap fix paused; JD3 retired after status note).
+- Started Journal Design 5 session_011NxGiXtwmfuYkCaDk2nP1L → Dhanteras v3 EN+HI on tech3-dhanteras-v3 (from main).
+- Canva options: Karwa inside A sargi MAHZCYbykxI, B thali circle MAHZCe4qW2I. Dhanteras covers 1 Pichwai Dhanvantari MAHZCdJ1uKo, 2 miniature Yama diya MAHZCdzf7OE, 3 Tanjore Lakshmi-Kubera MAHZCSjIj-E; inside photo MAHZCQkz064. Full-size download from Canva not possible from Krishna (403); workers need Canva tools or another route.
