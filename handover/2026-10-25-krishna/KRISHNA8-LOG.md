@@ -23,3 +23,6 @@
 - Vancouver Dhanteras: Drik +1h (assumes BC permanent DST). JD5 told keep tzdata.
 - 18:1x FOUNDER FINAL: Karwa cover = PICHWAI (d4ab666) with old caption; JD4 told to restore. Courtyard inside photo rejected ("looks taken this afternoon on my rooftop; something missing"). Dhanteras cover rejected ("Kuber doesn't look like him; bright, clear, beautiful").
 - New options: Karwa inside A real home puja w/ katha MAHZClOkSIE, B dusk haveli circle MAHZCoXNmF0, C Pichwai-painted gathering under moon MAHZCgAv_ko (K8 pick C). Dhanteras covers: 1 Dhanvantari MAHZCh95gqo, 2 Kubera+Lakshmi MAHZCjBvBmE, 3 Kubera+Lakshmi+Dhanvantari MAHZCmSTos4 (K8 pick 3). Export route: holder Canva design + export-design (see DAHZCe0SLBA).
+- 18:2x Vancouver: tzdata 2026e = BC permanent UTC−7 from 1 Nov 2026 (verified zdump). JD5 fix src/lib/zoneAt.ts on #181 (head 16a8784) — also corrects the LIVE Diwali Vancouver rows when merged. TODO after #181: separate PR for other formatters (birthTime first, kundli, rashifal, panchangHi, almanac…).
+- JD4: Pichwai restored, PR #180 head 6883042; inside picture awaits founder pick A/B/C. JD5: PR #181; cover awaits founder 1/2/3.
+- K8 context 37.9% at 18:19 (missed 30% line; told founder at 38%). Weekly rate limit warning on the account.
