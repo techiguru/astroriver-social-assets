@@ -35,3 +35,4 @@
 - K8 context 42.8% at 18:58.
 - 19:03 KARWA CHAUTH v3 EN+HI LIVE: #180 merged → main cdbce7d (founder line in JD4). Verified 200 + og jpeg. #182 zone formatters live (05f619b). ALL THREE FESTIVAL PAGES DONE. JD4 (51%) + JD5 (52%) retired, renamed (old).
 - Next (founder to decide): K8 recommends sitemap fix first (shop /alchemies/*, /ask, /inscriptions missing; + IndexNow), then founder resubmits sitemap in GSC.
+- 19:10 Founder approved move to KRISHNA 9. Handover HANDOVER-krishna8-to-9.md written.
