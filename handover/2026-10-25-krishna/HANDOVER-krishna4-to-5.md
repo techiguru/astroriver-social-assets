@@ -16,3 +16,9 @@ Read first: HANDOVER.md, top section "FOUNDER RULES REPEATED 25 OCT" (his name; 
 - OpenRush: Search Console + GA4 connected for astroriver.com.
 - Answered: one clarification follow-up decided by AI is sensible (with guardrails). He didn't say who answers ₹99 questions.
 - Production "go"s still needed: #168 (+ tags) merge, Diwali puja product, #135 merge, previews above.
+
+## Added at move (KRISHNA 5 = session_01AwGdXNRGupWicxKPBZ4gbu)
+- All four workers + Tech 3c told to report to KRISHNA 5. Tech 3c's own 19:45 UTC check (trig_01GDesXmVE7EXUtPtRxY18bj) still says "report to Krishna 3" in its prompt (couldn't edit from here); Tech 3c was told by message to report to KRISHNA 5. Backup: trig_01Wmt2cfC4td3nwWHpxD1KoD fires into KRISHNA 5 at 19:50 UTC. KRISHNA 4's trigger disabled.
+- **"Ask one question" already exists (Tech 2):** trig_019TeN79kjh7ytCRjvNPH76W (1 Dec) checks the live RPC ai_public_rates: USD launch $2.99 until 30 Nov, then $4.99, struck price on home and lobby. That's the founder's "like in USD we do this already". Tech 4 told to find what's live and build on it; INR becomes ₹399 regular / ₹99 first question.
+- Other scheduled tasks: weekly SEO report Mondays 08:49 IST (fresh session); "After Diwali" reminder 9 Nov fires into an old session (session_015ujws8uf5Ewe8uSAo7jJk2); part C of SEO 1 makes festival hubs roll by themselves, so that reminder becomes a check that Diwali rolled to 2027.
+- Founder's free-tools notes of 23–24 Oct (Manglik clarity + level, kundli degrees toggle, interlinking, Varshphal, one-time details → all tools, My Chart dashboard + save pop-up like AstroSage, rashifal redesign, desktop+mobile design) → Free Tools 3. Krishna 4's view given to him: yes to dashboard and save prompt, but as a gentle sheet after the 2nd–3rd tool, never a wall; Manglik "percentage" only from a rule he approves, else a level meter with reasons.
