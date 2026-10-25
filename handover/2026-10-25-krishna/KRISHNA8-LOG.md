@@ -12,3 +12,4 @@
 - 17:38 UTC founder: Karwa cover = option 2 (Canva MAHZCcLeH-4); London/Birmingham Wed 28 Oct; one more picture inside each article; finish Diwali, Dhanteras, Karwa Chauth, THEN decide next (tithi-cap fix paused; JD3 retired after status note).
 - Started Journal Design 5 session_011NxGiXtwmfuYkCaDk2nP1L → Dhanteras v3 EN+HI on tech3-dhanteras-v3 (from main).
 - Canva options: Karwa inside A sargi MAHZCYbykxI, B thali circle MAHZCe4qW2I. Dhanteras covers 1 Pichwai Dhanvantari MAHZCdJ1uKo, 2 miniature Yama diya MAHZCdzf7OE, 3 Tanjore Lakshmi-Kubera MAHZCSjIj-E; inside photo MAHZCQkz064. Full-size download from Canva not possible from Krishna (403); workers need Canva tools or another route.
+- Karwa inside photo: founder liked B idea but wants daytime, bright, varied clothes. New options: 1 courtyard circle MAHZCQtnvTg, 2 terrace with katha reader MAHZCaq9SXE, 3 close-up hands MAHZCbrMV3A. Krishna recommends 1.
