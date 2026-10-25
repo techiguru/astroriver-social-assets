@@ -95,6 +95,33 @@ Source: four profile-area screenshots from the founder, described to me by Krish
 
 **Effect on recommendations:** strengthens #6 (daily-habit surface): add a streak with named levels, a reminders row, and family members in the account area. Add "family profiles" to the larger builds. Nothing else changes until the recording is reviewed.
 
+### In-app walk-through (founder's 10-minute screen recording, 25 Oct 2026, 09:05–09:15 IST; reviewed by Krishna from stills; no personal details recorded)
+
+**Daily "stories" on open (Instagram-style, tap through):** Vrat of the day (Purnima, "View details"), Devata of the day (Suraj: "Sunday is the best day for Surya puja"), Verse of the day (Gita 6.4 in IAST + English), Today's Panchang (date, tithi with end time, paksha, maah, samvat 2083 Siddharthi, sunrise/sunset/moonrise/moonset), Today's Muhurat ("Today is good for agricultural or gardening ventures"), Today's Kala (live clock: "Normal time, no special time is active" + "Next auspicious: Abhijit Muhurat"), Dainik Rasifal ("Don't know your rashi? Find your rashi"). A Mahalakshmi Stotram audio player keeps playing across screens ("4,216,406 mins prayed by the community").
+
+**Login is late.** The founder browsed freely; phone + 4-digit OTP was asked only when he tapped a paid/personal action. Then "Complete your profile": date/time/place of birth, nakshatra, rashi, gotra ("I don't know this" links), email. It then showed "Your nakshatra is Bharani, rashi Mesh".
+
+**Home.** City under the logo (Mohali). Updates row (Panchang, Muhurat, Kal…), carousel (Devata of the day, "Explore Swadhyaya"), Recent grid (Book a Pooja, Ayurveda consultation, Observances, Kundli Matching, Shubh Dina, Talk to a Jyotishi, Dainik Rasifal, Devata), section cards: Jyotisha & Rasifal; Prarthan & Pooja (Prarthan, Book a Pooja, Wallpapers NEW, Devata, Festivals, Observances, Book a Pandit); Health & Wellness (Ayurveda consultation, Dhyana, Dharmik counselling); Culture & Lifestyle (Swadhyaya); Panchang & Muhurat (Panchang, Shubh Dina FREE, Festivals); "Today's poojas" with "Recommended for you".
+
+**Devata pages (Sare Devata grid, ~18 deities incl. Sai Baba, Navagraha).** Big deity art, Set as wallpaper, Share, "Perform ePooja" (a virtual aarti: "Preparing the sanctum", then deity on a lit altar, "Share blessings"), names, a well-written story paragraph, "Pray to Suraj" audio list (Surya Arghya Shloka, Suryashtakam, Surya Vandana), Festivals and Pooja tabs.
+
+**Habit hooks.** After the ePooja: "Want a daily reminder for your Sadhana? A nudge each evening, only if you haven't practised" + streak (1 day). Wish cards: "Wish your loved ones" (Sharad Purnima image, add a personal message, share). Language prompt: "Dharmayana is now in Punjabi" (it picked up the city). Swadhyaya: Yajurveda in Hindi with a book reader (font size, dark mode, bookmark).
+
+**Prices seen (all "+ taxes and fees").**
+- Ask a Jyotishi (text or voice note question, answer as a voice note "in minutes"): ₹101. Popular-question chips ("When will I get a job?", "When will I get married?"). 280-character limit.
+- Talk to a Jyotishi (video): 15 min ₹251; 30 min ₹401.
+- Premium Kundli Matching (gunas, Manglik, ashtakoot, dashakoot; no consultation): ₹151.
+- Pooja: Namavali Stuti Pooja for money-related problems, for 1 person, ₹51 ("Pooja done within hours"); Poorn Vidhi Archan Pooja from ₹151; Budha Anugrah / Chandra Anugrah from ₹301 ("Dosh parihar pooja: Navagraha aahutis and archana"). Up to 5 family members can be named per pooja.
+- Shubh Dina (pick a purpose, it calculates good days): FREE.
+
+**What this means for us.**
+1. Their price ladder starts very low (₹51–₹101) to get a first payment; ours starts much higher. Consider one low-priced entry product (founder decision).
+2. Daily stories on open + audio + streak + evening nudge = the habit engine. Our Today strip (#162) is the seed; a "today" story set (vrat, devata, verse, panchang, muhurat, kala, rashifal) can be built from our own panchang data.
+3. Late login: let people use everything free first; ask for phone only at the first personal or paid step. Fits our My Chart plan (no device keeping) and the email 6-digit code idea.
+4. Family members on one order (up to 5) and gotra in the profile: we should support both for pujas.
+5. Purpose-based Shubh Din picker (vehicle, wedding, career, griha pravesh, health, education, hobby, property) maps to our /muhurat pages; present them as one "find a good day" picker.
+6. Their content is breadth (wallpapers, stotras, deity stories); our edge is accuracy (D-201 timings, Drik-checked), fixed prices and our pandits' pujas. Don't copy wallpapers; do copy the daily habit and the low first price.
+
 ## Sources
 - Google Play listing, in.dharmayana.android, read 25 Oct 2026; Dharmayana Mitra listing in.dharmayana.mitra.android, same date.
 - App Store India, apps.apple.com/in/app/dharmayana-hindu-app/id6474740467, read 25 Oct 2026.
