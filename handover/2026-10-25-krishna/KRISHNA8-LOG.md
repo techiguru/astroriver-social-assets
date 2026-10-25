@@ -14,3 +14,6 @@
 - Canva options: Karwa inside A sargi MAHZCYbykxI, B thali circle MAHZCe4qW2I. Dhanteras covers 1 Pichwai Dhanvantari MAHZCdJ1uKo, 2 miniature Yama diya MAHZCdzf7OE, 3 Tanjore Lakshmi-Kubera MAHZCSjIj-E; inside photo MAHZCQkz064. Full-size download from Canva not possible from Krishna (403); workers need Canva tools or another route.
 - Karwa inside photo: founder liked B idea but wants daytime, bright, varied clothes. New options: 1 courtyard circle MAHZCQtnvTg, 2 terrace with katha reader MAHZCaq9SXE, 3 close-up hands MAHZCbrMV3A. Krishna recommends 1.
 - 17:5x founder: Karwa inside = 1 courtyard MAHZCQtnvTg. Dhanteras: Krishna chose cover 1 Pichwai Dhanvantari MAHZCdJ1uKo + inside MAHZCQkz064 (founder delegated). Sent to JD4/JD5.
+- 17:50 Tech 5: #157 + #173 merged & live on founder's go. Tech 5 at 30%: keep only for #135 go, then retire. Told JD5 to fix Diwali hub seoTitle {year}; JD4 to merge main + use {year}; Content 3 to add Diwali 2027 row on new branch (due before 11 Nov).
+- K8 context 25.5% at 17:50.
+- WARNING: session lineage depth 7 of limit 8. KRISHNA 8's children are depth 8 (max). A KRISHNA 9 created by K8 may NOT be able to create worker chats. At move time: ask founder to start KRISHNA 9 himself (new chat) or check create_session from a depth-8 session first.
