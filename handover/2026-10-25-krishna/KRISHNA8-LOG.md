@@ -27,3 +27,5 @@
 - JD4: Pichwai restored, PR #180 head 6883042; inside picture awaits founder pick A/B/C. JD5: PR #181; cover awaits founder 1/2/3.
 - K8 context 37.9% at 18:19 (missed 30% line; told founder at 38%). Weekly rate limit warning on the account.
 - 18:3x FOUNDER: Dhanteras cover = 2 Kubera+Lakshmi (MAHZCjBvBmE); Karwa inside = B haveli dusk (MAHZCoXNmF0). Files in brand/festival-pictures-2026-10-25/.
+- 18:5x GSC: founder asked (again) which URLs to submit. Answered: resubmit sitemap + Request indexing ~10/day priority list. Sitemap (142 URLs) MISSES all /alchemies/* shop pages, /alchemies, /ask, /inscriptions → tech task after #180/#181 merge (+ IndexNow for Bing). SEO tags on Karwa/Dhanteras previews checked OK (title ≤60, desc, canonical, hreflang en/hi/x-default, og, Article+FAQ+Breadcrumb, 1 h1). Fix sent JD5: HI Dhanteras title → "धनतेरस {year} कब है? …".
+- JD4: Karwa card overlap fixed (d464f3c). #180/#181 conflict in 4 files; Karwa first, JD5 merges main after.
