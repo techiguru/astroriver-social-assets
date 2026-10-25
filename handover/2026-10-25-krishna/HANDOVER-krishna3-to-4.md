@@ -9,6 +9,10 @@ Read HANDOVER.md in this folder first (rules, 22–24 Oct state), then this. Ver
 - Dharmayana competitor study: handover/2026-10-25-krishna/competitor-dharmayana/REPORT.md (worker's research + my in-app walk-through from his recording; prices, flows). Video and frames deleted.
 - Home page critique and proposal: handover/2026-10-25-krishna/mobile-home-review/HOME-PROPOSAL.md + v4 screenshots. The founder's critique (verbatim gist): no greeting, "Jalandhar" misreads, "work it out yourself" dismissive, never "real astrologer", caveman copy, ₹49 must solve follow-ups not price. He has NOT yet reacted to the proposal: that is the first thing to pick up.
 
+## Founder rulings after the proposal (25 Oct, typed in KRISHNA 3's chat)
+- **₹49 question: ONE clarification follow-up only, never a series.** His reasoning: at 100 customers four follow-ups each would be 400 answers; "we aren't crazy". **An AI system decides whether a follow-up is allowed.** He asked "Is this sensible?" and wants KRISHNA 4 to answer: give a short honest view (e.g. who the answerer is, what counts as a clarification vs a new question, how the AI decides and what the customer is told when it declines, whether a declined follow-up offers a new ₹49 or the AI astrologers by the minute), then put it to him. It replaces my "three days or three follow-ups" in HOME-PROPOSAL.md; update the page copy line ("Ask once. Ask again. Follow-ups included.") to match his rule, no promise of more than one clarification.
+- **First task for KRISHNA 4:** read LAST-MESSAGE-TO-FOUNDER.md, greet him with a two-line recap, ask him there for his reactions to the proposal and the 7 remaining decisions, answer the ₹49 question above. Do not start work until he writes.
+
 ## Founder's open answers
 1. Diwali/Dhanteras H1 with the year; Sky Notes retitled "Weekly Horoscope, 2–8 November 2026 — Astro River"; breadcrumbs later. (Krishna recommended yes/yes/later.)
 2. Approve #155 and #157 previews → merge (re-stamp publish dates at merge). #157 due on the Journal Thu 29 Oct; if #155 not merged by Tue 27 Oct, Tech 3c rebuilds #157 on main without the Diwali links.
