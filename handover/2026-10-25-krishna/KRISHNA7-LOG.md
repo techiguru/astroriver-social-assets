@@ -36,3 +36,4 @@
 - 17:10 JD3 ready: one preview EN+HI v3 (tech3-article-v3 @05afb82): sticky EN|हिंदी pill, Hindi box, Hindi breadcrumb. Sent to founder; awaits 'go' (EN) + 'Hindi approved' (HI) in JD3 chat. Told JD3 to drop inLanguage on BreadcrumbList. Cookie notice is English on Hindi pages — site-wide item for a tech chat later.
 - 17:11 Content 3: Pitru Paksha drift fixed in source (eb00fea; rebuild = main byte for byte; Hindi reading time becomes 17 min). JD3 told to re-merge tech3-hi-diwali before final merge.
 - Share preview: og:image on preview points to astroriver.com (new files 404→HTML until merge) → WhatsApp shows old cached pic. Hindi og:image was old diya card → JD3 told to use the Pichwai Lakshmi cover. After go: share with ?v=2 to bust WhatsApp cache.
+- 17:15 Content 3: English sky piece 12:31 fix (9e2d4eb, Updated line added). 2027 New Delhi Diwali date agrees with Drik (Fri 29 Oct) but muhurat disagrees — full report pending.
