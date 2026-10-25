@@ -2,6 +2,20 @@
 
 Read first: HANDOVER.md top section "FOUNDER RULES REPEATED 25 OCT", then HANDOVER-krishna6-to-7.md, then KRISHNA7-LOG.md (full running log), then this.
 
+## LATEST FOUNDER INSTRUCTIONS (25 Oct, ~17:25 UTC) — he said "pass on all these instructions, including this one"
+- He approved the move from KRISHNA 7 to KRISHNA 8. When a Krishna moves: rename the old chat with "(old) " at the very FRONT of its title. KRISHNA 7 is renamed "(old) KRISHNA 7 — …".
+- Karwa Chauth: DO NOT SKIP. Redesign it in v3 now; he needs to share it (festival Wed 28 Oct N. America / Thu 29 Oct India). Given to Journal Design 3: branch tech3-karwa-v3 from tech3-article-v3; EN /journal/karwa-chauth (+katha if quick) + Hindi Karwa Chauth from PR #147 (head 8be55c5; needs "Hindi approved"); box = moonrise for any place. Cover: origin/design/article-v3 @ d4ab666 docs/design/article-v3/img/cover-karwa-chauth.jpg (alt spare). Copy also in handover/2026-10-25-krishna/lakshmi-covers/karwa-chauth-cover.jpg. Show him the preview fast.
+- Panchang rulings: "Drik usually tells the right things. We can believe it. If you believe Drik is wrong, let me know. Then we'll think." → Follow Drik (Govardhan 4 rows → earlier day, evening muhurat only; windows capped at tithi). JD3 does the engine fix after the Diwali merge; any case where we think Drik is wrong goes to the founder.
+- Archive papers do NOT get the article design; they keep/get an academic look, designed separately later.
+- Rollout plan stands (he didn't object): after Diwali + Karwa Chauth: Dhanteras + sky in v3 (EN+HI) before 6 Nov; then the remaining Journal articles next week (layout auto; Content 3 writes "In short" boxes; covers in batches — Krishna makes them in Canva; shared group cover until each is ready; first batch shown to him). Content 3 is holding for KRISHNA 8's word to start "In short".
+- Diwali EN+HI v3 preview ready (tech3-article-v3 @ f02d32b+): waiting for his "go" + "Hindi approved" typed in Journal Design 3's chat. He thinks of it as approved ("Diwali page is good… We can publish Diwali now") — remind him once to type it there.
+
+## KRISHNA 8 FIRST STEPS
+1. send_later 2026-10-25T19:50:00Z (#135 first-run check via Tech 3c, tell founder in 1–2 lines, then retire Tech 3c). Then delete KRISHNA 7's trig_013h55bWnxX4QRU4o6UeJ9bY (delete_trigger).
+2. send_message "report to KRISHNA 8 (your session id)" to: Journal Design 3 session_01MugvkcLAhbxTfEujNxsBnF, Content 3 session_01Ex8iNhAj7XLKNRXPkPLMzx, Crest Redraw 1 session_018CsxPkCt9Jv1RUhRNN6Cuc, Tech 5 session_01BG8HYBFHNDqxq4NBWxVkuZ, Tech 3c session_01XJFRDwhTqhYHsckjymksFD, Free Tools 4 session_01BbLq6UMsTH5NcA2ofyaVFH.
+3. First reply to founder: 2–3 short lines: you're KRISHNA 8; Karwa Chauth redesign under way (preview soon); Diwali needs his "go" + "Hindi approved" in Journal Design 3's chat.
+4. Check own context (get_session) every few turns; one line at 30/40/50/60%.
+
 ## NEW FOUNDER RULES (25 Oct, to KRISHNA 7)
 - Krishna moves to a new chat ONLY with his permission. Tell him in ONE line at 30%, 40%, 50%, 60% context and ask "change now or not yet?". (KRISHNA 7 missed 30/40/50 — don't repeat; check get_session context_usage every few turns.)
 - Worker chats may move after 30% only once their current task is complete.
