@@ -74,7 +74,26 @@ Limit: Play's bulk review endpoint refused my requests and aggregators had nothi
 | Trust and depth | Marketplace of astrologers | Single named Vedic astrologer, comparison sheet |
 
 ## Founder's in-app screenshots
-_Slot for Krishna: paste screenshots here._
+
+Source: four profile-area screenshots from the founder, described to me by Krishna on 25 Oct 2026. The screen recording (10 min 19 s, 236 MB) is **not yet reviewed**: it could not be fetched into this session (storage links need sign-in; the download tool returns file content into the chat, which is too large). Journey, onboarding, payment screens and prices are therefore **unknown**. No personal details are recorded here.
+
+**Profile screen**
+- Name and phone at top; cards for Orders and Favourites.
+- **Streak card, "Your sadhana has begun":** levels named after tree growth: Beej (1 day), Ankur (7), Vriksha (21), Vata Vriksha (40), Kalpataru (108). Shows current streak, longest streak, total days, and a share icon.
+- Rows: Coupons (badged New), Reminders (muhurat and events), Preferences ("choose your native tradition to personalise"), Family (manage family members' details), a "Share with your loved ones" card, Settings, Need Help, Log out.
+- **Favourites:** tabs Prarthan / Wallpapers / Devata and more; friendly empty state with a "Go to Prarthan" button.
+
+**Patterns worth copying**
+1. **Streak levels as a growth story** (seed to wishing tree, with 108 as the top level). Gives a reason to return daily and a shareable moment.
+2. **Family profiles.** Pujas, kundalis and matching are bought for parents, spouse and children; saving their details cuts form-filling on every order.
+3. **Tradition preference** (native tradition chosen once, content personalised after). Fits regional variation in festival dates and rituals.
+4. **Reminders for muhurat and events** inside the profile, not buried.
+5. **Coupons with a "New" badge** and a loved-ones share card: two growth hooks on the profile page.
+6. **Friendly empty states** that point to the next action.
+
+**Money points seen:** a Coupons row (offers exist; contents not seen). No prices or wallet seen yet.
+
+**Effect on recommendations:** strengthens #6 (daily-habit surface): add a streak with named levels, a reminders row, and family members in the account area. Add "family profiles" to the larger builds. Nothing else changes until the recording is reviewed.
 
 ## Sources
 - Google Play listing, in.dharmayana.android, read 25 Oct 2026; Dharmayana Mitra listing in.dharmayana.mitra.android, same date.
