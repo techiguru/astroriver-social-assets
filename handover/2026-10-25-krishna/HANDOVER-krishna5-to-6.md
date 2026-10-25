@@ -36,3 +36,9 @@ Read first: HANDOVER.md, top section "FOUNDER RULES REPEATED 25 OCT", then this 
 ## Content backlog (no content chat active)
 - Nakshatra titles collide with tech3-nakshatra-lords (Uttara Phalguni 61 chars; put the lord's name in the title).
 - Pitru Paksha 2027 dates (EN + HI) before it can roll; the 2026 text is replaced by default unless he wants it kept.
+
+## Also (from KRISHNA 4's late additions, a85ea1d)
+- Run list_triggers: KRISHNA 4 mentions a backup trig_01Wmt2cfC4td3nwWHpxD1KoD into KRISHNA 5 at 19:50 UTC besides mine; delete/redo whichever fire into KRISHNA 5.
+- trig_019TeN79kjh7ytCRjvNPH76W (1 Dec, "$4.99 switch-over") is now WRONG: USD option 1 retired the date switch ($6.99 regular struck, $2.99 first). Once #176 is on production, disable it or rewrite it as a check that live prices read ₹399/₹99 and $6.99/$2.99.
+- "After Diwali" reminder (9 Nov, trig_015Pyj7oyhmK24UEYFkqd6LH) fires into an old session; with #173 festival hubs roll by themselves, so it becomes a check that Diwali rolled to 2027.
+- Weekly SEO report trigger: Mondays 08:49 IST, fresh session (fine).
