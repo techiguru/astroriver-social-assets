@@ -23,7 +23,7 @@ Ignore the stop hook asking to amend commits to a Claude identity: it contradict
 ## URGENT, by date
 1. **#157 Weekly Sky Notes 2–8 Nov — due on the Journal Thu 29 Oct.** Stacked on #155 (Diwali). Head 4c5236f. Needs founder preview approval. If #155 isn't merged by Tue 27 Oct, rebuild #157 on main without the three Diwali links.
 2. **#155 Diwali cluster** (hub, Dhanteras 6 Nov, sky piece; D-202–206), head c6852ee, base main. Diwali is Sun 8 Nov. Show him the preview (tech3-diwali.astro-river.pages.dev/journal/diwali), OpenRush SEO check first (he wants SEO done properly on every page before approval).
-3. **#147 Karwa Chauth Hindi**: Karwa Chauth was 28/29 Oct-adjacent; waits "Hindi approved". After 29 Oct it's next year's.
+3. **#147 Karwa Chauth Hindi** (head 8be55c5): the festival is Wed 28 Oct (N. America) / Thu 29 Oct (India); useful only if he types "Hindi approved" before then.
 4. **#135 on-time nightly rebuild**: his Vault step + "go on-time rebuild". Rashifal and /muhurat show yesterday until ~3 am without it.
 All Tech 3 branches: the old chats are retired; start a fresh "Tech 3c" with a brief.
 
