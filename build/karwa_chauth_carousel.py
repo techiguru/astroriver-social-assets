@@ -8,8 +8,9 @@
 #   San Francisco 8:08, Vancouver 7:18 pm, London 5:34 pm. Rule: Nirnaya Sindhu, Chaturthi running at moonrise.
 # The picture is the journal's own cover (art-journal-karwa-moon.webp, the site's 1600 px image). It shows a full moon;
 # four days after the full moon the rising Moon is a waning gibbous about 83% lit, its bright limb toward the Sun below
-# the horizon, about 146 degrees counter-clockwise from up at Delhi moonrise (as in karva_chauth_graphic.py). The dark
-# part of the disc is shaded to that phase; nothing else in the picture changes.
+# the horizon, about 146 degrees counter-clockwise from up at Delhi moonrise (as in karva_chauth_graphic.py). The unlit
+# part of the disc is replaced by the plain night sky round it, and the painted glow is kept only round the lit part
+# (Krishna's review, 26 Oct: no dark disc, no edge); nothing else in the picture changes.
 # Usage: python3 karwa_chauth_carousel.py <outdir>
 import os, sys
 import numpy as np, cv2
@@ -33,21 +34,38 @@ def picture():
     px, py = (xx - cx) / r, (yy - cy) / r
     a = px * u[0] + py * u[1]; b = -px * u[1] + py * u[0]                         # along and across the limb axis
     edge = -(2 * LIT - 1) * np.sqrt(np.clip(1 - b * b, 0, 1))                     # the terminator, an ellipse
-    disc = np.clip((1.0 - np.hypot(px, py)) / 0.02 + 0.5, 0, 1)
-    lit = np.clip((a - edge) / 0.05 + 0.5, 0, 1) * disc                          # the lit part of the disc, soft-edged
+    d = np.hypot(px, py)
+    disc = np.clip((1.0 - d) / 0.015 + 0.5, 0, 1)
+    lit = np.clip((a - edge) / 0.10 + 0.5, 0, 1) * disc                          # the lit part of the disc, soft terminator
     f = im.astype(np.float32); col = np.zeros((im.shape[0], 3), np.float32)       # plain sky, row by row: the blue pixels
-    for y in range(im.shape[0]):                                                  # of the row outside the glow
-        row = f[y, 650:1400]; far = np.abs(np.arange(650, 1400) - cx) > 1.4 * r
-        ok = far & (row[:, 0] > row[:, 2] + 25)
+    xs = np.arange(650, 1400)                                                     # of the row outside the glow
+    for y in range(im.shape[0]):
+        row = f[y, 650:1400]; ok = (np.abs(xs - cx) > 2.3 * r) & (row[:, 0] > row[:, 2] + 25)
         col[y] = np.median(row[ok], 0) if ok.sum() > 8 else (col[y - 1] if y else row.mean(0))
     col = cv2.GaussianBlur(col[:, None, :], (1, 31), 0)[:, 0]
-    sky = np.broadcast_to(col[:, None, :], im.shape).astype(np.float32)   # no moon, no glow
-    light = np.maximum(im.astype(np.float32) - sky, 0)                            # the moon and its glow alone
-    k = (0, 0); sg = 0.18 * r
-    near = cv2.GaussianBlur(lit, k, sg) / np.maximum(cv2.GaussianBlur(disc, k, sg), 1e-3)
-    keep = np.where(disc > 0.5, lit + 0.05 * (1 - lit), np.clip(near, 0, 1))      # the glow follows the lit limb only
-    w = np.clip((1.3 - np.hypot(px, py)) / 0.2, 0, 1) * (yy > 80)                # only the sky round the moon changes
-    out = im * (1 - w[..., None]) + (sky + light * keep[..., None]) * w[..., None]
+    skyish = cv2.erode(((f[..., 0] > f[..., 2] + 15) & (yy > 80)).astype(np.uint8), np.ones((7, 7), np.uint8)) > 0   # night sky only
+    res = f - col[:, None, :]; G = np.zeros((241, 3), np.float32)                 # the glow's radial profile, 1.0 to 3.4 r
+    for k in range(241):
+        ring = skyish & (np.abs(d - (1.0 + k * 0.01)) < 0.006)
+        if ring.sum() > 20: G[k] = np.median(res[ring], 0)
+    G = np.maximum(cv2.GaussianBlur(G[:, None, :], (1, 21), 0)[:, 0] - G[-20:].mean(0), 0); G[-30:] *= np.linspace(1, 0, 30)[:, None]
+    t = np.clip((d - 1.0) / 0.01, 0, 240); i0 = np.floor(t).astype(int); i1 = np.minimum(i0 + 1, 240); fr = (t - i0)[..., None]
+    glow = G[i0] * (1 - fr) + G[i1] * fr                                           # glow at each pixel, for a full disc
+    sg = 0.35 * r
+    near = cv2.GaussianBlur(lit, (0, 0), sg) / np.maximum(cv2.GaussianBlur(disc, (0, 0), sg), 1e-3)
+    sky = f - glow                                                                # outside the disc: the sky without the glow
+    rng = np.random.default_rng(29); far = skyish & (d > 2.5) & (d < 3.5)
+    tex = rng.normal(0, (f[far] - col[np.where(far)[0]]).std(0) * 0.6, f.shape).astype(np.float32)
+    inner = col[:, None, :] + cv2.GaussianBlur(tex, (0, 0), 1.2)                  # inside the disc: plain sky, a little grain
+    q = ((1 - np.clip(near, 0, 1)) * np.clip((2.6 - d) / 0.8, 0, 1))[..., None]   # on the dark side the painted halo rings
+    sky = sky * (1 - q) + inner * q                                               # give way to plain sky
+    base = np.where((d < 1.0)[..., None], inner, sky)
+    base = cv2.GaussianBlur(base, (0, 0), 2.0) * (np.abs(d - 1) < 0.03)[..., None] + base * (np.abs(d - 1) >= 0.03)[..., None]
+    moonless = base + glow * np.clip(near, 0, 1)[..., None]                      # the glow kept round the lit part only
+    out = f * lit[..., None] + moonless * (1 - lit[..., None])
+    zone = (d < 3.3) & (skyish | (d < 1.05))
+    w = cv2.GaussianBlur(zone.astype(np.float32), (0, 0), 1.5)[..., None]
+    out = np.clip(f * (1 - w) + out * w, 0, 255)
     print(f'moon ({cx:.0f}, {cy:.0f}) r {r:.0f}: {LIT:.0%} lit, limb {LIMB} degrees')
     return out[..., ::-1]
 
