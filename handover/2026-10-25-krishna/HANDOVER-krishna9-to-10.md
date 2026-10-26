@@ -11,7 +11,7 @@ Read first, every time: HANDOVER.md top section "FOUNDER RULES REPEATED 25 OCT".
 4. Keep messages short; decide yourself; ask only what truly needs him. Ask him on taste before building anything visual, with 2–3 options for pictures.
 5. Production approvals must be typed by him in the worker's own chat; Krishna cannot relay them. Workers merge their own PR on GitHub after he types, e.g., "go. Merge PR #NNN yourself on GitHub". He never pushes from a PC.
 6. Worker models: Opus 5.5 at extra-high effort is the ceiling. Max or Fable only with his approval.
-7. He asked K9 for a reminder (sitemap resubmit in Search Console + Request indexing). K9 reminded him in chat. If he hasn't confirmed he did it, remind him ONCE more.
+7. He asked K9 for a reminder (sitemap resubmit in Search Console + Request indexing). He set trig_01VXkXM1PGBAUAftAQ3qihsW via Free Tools 4; it fires ONCE at 06:10 UTC 26 Oct into the OLD K9 chat. K10: create your own send_later for 06:10 UTC (or now, if past) and delete trig_01VXkXM1PGBAUAftAQ3qihsW. If he hasn't confirmed he did it, remind him ONCE.
 
 ## PENDING MESSAGE (sent by K9 26 Oct ~03:20 UTC; he replied "We start from there")
 1. 24 panchang SEO pages = 12 topics × EN + HI, auto-updating from our engine, Drik-checked. India monthly searches (OpenRush, 26 Oct):
