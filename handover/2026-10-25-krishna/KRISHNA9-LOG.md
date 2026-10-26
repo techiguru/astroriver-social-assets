@@ -18,3 +18,4 @@
 - 02:50 #187 @1e2294c: Govardhan pins + follow-up note; Content 3 OK'd Hindi line. Ready for founder go in Tech 5. FT4: #184 + #186 ready for go.
 - 03:01 #187 MERGED (94c7f59) on founder go; Tech 5 verified live. Tech 5 ~45%+, done: keep idle. TODO next Krishna (K9 can't schedule): check 12 Nov Diwali roll to 2027; check nightly cron computedAt after 00:05 IST; follow-up docs/sessions/2026-10-26-diwali-drik-follow-up.md. FT4: #184 + #186 still wait for founder go.
 - 03:06 FT4: #184 (900b91f) + #186 (dde9836) MERGED on founder go; sitemap 199 live (K9 verified), Alchemies indexable, IndexNow 202 for 199. Owed: DECISIONS/STATUS note (D-146 lifted for Alchemies; new cookie notice) — small docs PR. FT4 ~42%+.
+- 03:30 Founder: 'change now'. Handover HANDOVER-krishna9-to-10.md written; founder starts KRISHNA 10 himself (K9 can't create chats). K9 renamed (old).
