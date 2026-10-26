@@ -1,0 +1,454 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Astro River home — almanac + app</title>
+<link rel="stylesheet" href="theme.css">
+<script src="shared.js"></script>
+<script>
+  const P = new URLSearchParams(location.search);
+  document.documentElement.dataset.theme = P.get('theme') || 'light';
+  if (P.get('full')) document.documentElement.classList.add('full');
+</script>
+<style>
+[data-view=phone] .desk{display:none}[data-view=desktop] .phone{display:none}
+/* ================= PHONE ================= */
+.full .phone{position:relative}.full .tabbar{position:absolute}
+.phone{width:390px;padding-bottom:120px;background:var(--bg)}
+.top{display:flex;align-items:center;justify-content:space-between;padding:2px 18px 10px}
+.brand{display:flex;align-items:center;gap:9px;font:600 14px/1 "Cinzel";letter-spacing:.14em;color:var(--head)}
+.brand img{width:30px;height:30px;border-radius:8px}
+.acts{display:flex;gap:8px;align-items:center}
+.ic{width:34px;height:34px;border-radius:50%;background:var(--card);box-shadow:var(--shadow);display:grid;place-items:center}
+.ic svg{width:17px;height:17px;fill:var(--accent)}[data-theme=dark] .ic svg{fill:var(--gold)}
+.lang{display:inline-flex;background:var(--bg2);border-radius:999px;padding:3px;font:700 11.5px/1 "Inter"}
+.lang span{padding:6px 8px;border-radius:999px;color:var(--muted)}.lang .on{background:var(--card);color:var(--accent);box-shadow:var(--shadow)}
+.lang .h{font:600 13px/1 "Mukta";padding:4px 8px}
+.sec{padding:0 20px;margin-top:40px}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px}
+/* almanac */
+.alm{margin:0 14px;padding:18px 18px 20px;background:var(--card);border-radius:26px;box-shadow:var(--shadow)}
+.greet{text-align:center;font:italic 500 23px/1.2 "Cormorant";color:var(--accent)}
+.greet .dev{font-style:normal;font-size:19px;color:var(--gold-ink);margin-right:6px}
+.date{display:flex;align-items:center;justify-content:center;gap:14px;margin:6px 0 4px}
+.date .n{font:500 104px/.9 "Playfair";color:var(--accent);letter-spacing:-.04em}
+.date .w{font:600 24px/1.05 "Cormorant";color:var(--head)}
+.date .w .dev{display:block;font-size:29px;color:var(--accent);margin:3px 0 5px}
+.date .w small{font:600 11px/1 "Inter";letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.city{text-align:center;font:600 13px/1 "Inter";color:var(--muted);margin:6px 0 14px}.city b{color:var(--accent);border-bottom:1px solid var(--gold)}
+.tithi{text-align:center;margin-top:14px}
+.tithi h1{font:500 50px/1 "Cormorant";color:var(--head);margin-top:8px}
+.tithi h1 .dev{font-size:32px;color:var(--accent);margin-left:8px}
+.tithi p{font:500 15.5px/1.5 "Inter";margin-top:6px}
+.arch{margin:16px auto 0;width:250px;height:250px;border-radius:125px 125px 8px 8px;overflow:hidden;box-shadow:0 0 0 4px var(--card),0 0 0 5.5px var(--gold)}
+.arch img{object-position:50% 25%}
+.capt{text-align:center;font:italic 500 17px/1.35 "Cormorant";color:var(--muted);margin-top:10px}
+.times{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.times>div{border-radius:14px;padding:10px 12px;background:var(--bg2)}
+.times .k{font:700 10px/1 "Inter";letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.times .v{font:600 18px/1.15 "Cormorant";color:var(--head);margin-top:5px;white-space:nowrap}
+.times .s{font:500 11.5px/1.3 "Inter";color:var(--muted)}
+.times .g{background:var(--good-bg)}.times .g .k,.times .g .v{color:var(--good)}
+.times .b{background:var(--bad-bg)}.times .b .k{color:var(--bad)}
+.fest{margin-top:10px;display:flex;align-items:center;gap:12px;background:var(--t-saffron);border-radius:14px;padding:8px 12px 8px 8px}
+.fest img{width:44px;height:44px;border-radius:10px}
+.fest b{font:600 17px/1.1 "Cormorant";color:var(--accent);display:block}.fest span{font:500 12px/1.3 "Inter";color:var(--muted)}
+/* stories */
+.stories{display:flex;gap:14px;overflow:hidden;padding:0 20px}
+.story{width:70px;flex:none;text-align:center;font:600 11px/1.25 "Inter";color:var(--ink)}
+.story .ring{width:70px;height:70px;border-radius:50%;padding:2.5px;background:conic-gradient(from 200deg,#f2b73f,#e8892b,#e2574c,#c94f8a,#f2b73f)}
+.story .ring.seen{background:var(--line)}
+.story .ring img{width:100%;height:100%;border-radius:50%;border:2.5px solid var(--bg)}
+.story span{display:block;margin-top:6px}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 13px 5px 5px;font:600 13.5px/1 "Inter";color:var(--ink)}
+.chip img{width:30px;height:30px;border-radius:50%}
+/* big feature card */
+.feat .pic{height:200px;position:relative}
+.feat .pic .tag{position:absolute;left:14px;top:14px}
+.feat .body{padding:16px 18px 18px}
+.feat h3{font:600 26px/1.1 "Cormorant";color:var(--head)}
+.feat p{font:500 14px/1.5 "Inter";color:var(--muted);margin:6px 0 14px}
+.row{display:flex;gap:10px;align-items:center}
+/* mantra */
+.band{padding:26px 20px 28px;margin-top:40px}
+.band.saffron{background:var(--t-saffron)}.band.lotus{background:var(--t-lotus)}.band.leaf{background:var(--t-leaf)}.band.sky{background:var(--t-sky)}.band.gold{background:var(--t-gold)}
+.mantra{display:flex;gap:14px;align-items:center}
+.mantra .pic{width:110px;height:132px;border-radius:16px;overflow:hidden;flex:none}
+.mantra .dev{font-size:25px;color:var(--accent);line-height:1.2}
+.mantra .en{font:italic 600 19px/1.2 "Cormorant";color:var(--head);margin-top:2px}
+.mantra .s{font:500 12.5px/1.4 "Inter";color:var(--muted);margin-top:4px}
+.player{margin-top:14px;display:flex;align-items:center;gap:12px;background:var(--card);border-radius:999px;padding:6px 14px 6px 6px;box-shadow:var(--shadow)}
+.play{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
+[data-theme=dark] .play{background:var(--gold)}
+.play svg{width:18px;height:18px;fill:var(--bg);margin-left:3px}
+.wave{flex:1;display:flex;align-items:center;gap:3px;height:28px}
+.wave i{flex:1;border-radius:2px;background:var(--gold);opacity:.45}
+.wave i.on{opacity:1;background:var(--accent)}[data-theme=dark] .wave i.on{background:var(--gold)}
+.count{font:800 12px/1 "Inter";color:var(--accent);background:var(--t-gold);border-radius:999px;padding:7px 9px}
+/* rashi */
+.signs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.signs span{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 2px 9px;text-align:center;font:600 12px/1.2 "Inter";color:var(--ink)}
+.signs span i{display:block;font:normal 400 15px/1.1 "Mukta";color:var(--accent);margin-top:3px}
+.signs span.moon{background:var(--accent);color:var(--bg);border-color:var(--accent)}.signs span.moon i{color:var(--bg)}
+[data-theme=dark] .signs span.moon{background:var(--gold);color:#1a1440}[data-theme=dark] .signs span.moon i{color:#1a1440}
+/* carousels */
+.hs{display:flex;gap:12px;overflow:hidden;padding:0 20px}
+.fc{width:220px;flex:none}
+.fc .pic{height:140px;position:relative}
+.fc .pic .tag{position:absolute;left:10px;top:10px;background:var(--card);color:var(--accent)}
+.fc .body{padding:12px 14px 14px}
+.fc b{font:600 20px/1.1 "Cormorant";color:var(--head);display:block}.fc span{font:500 12.5px/1.4 "Inter";color:var(--muted)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:0 20px 16px}
+.week>div{text-align:center;border-radius:12px;padding:8px 2px;background:var(--card);border:1px solid var(--line)}
+.week>div.on{background:var(--accent);border-color:var(--accent)}[data-theme=dark] .week>div.on{background:var(--gold);border-color:var(--gold)}
+.week .d{font:700 9.5px/1 "Inter";letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.week .n{font:500 22px/1.1 "Playfair";color:var(--head);margin:3px 0}
+.week .t{font:600 8.5px/1.15 "Inter";color:var(--muted)}
+.week .on .d,.week .on .n,.week .on .t{color:var(--bg)}[data-theme=dark] .week .on .d,[data-theme=dark] .week .on .n,[data-theme=dark] .week .on .t{color:#1a1440}
+.week .x{color:var(--accent)!important;font-weight:800}
+/* verse */
+.verse{padding:22px 20px;text-align:center;position:relative}
+.verse .dev{font-size:21px;line-height:1.55;color:var(--accent)}
+.verse .tr{font:italic 500 19px/1.4 "Cormorant";color:var(--head);margin-top:12px}
+.verse .src{font:700 11px/1 "Inter";letter-spacing:.14em;color:var(--gold-ink);margin-top:12px;text-transform:uppercase}
+.lib{display:flex;gap:10px;overflow:hidden;margin-top:14px}
+.lib span{flex:none;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 12px 8px 8px;font:600 13px/1.2 "Inter"}
+.lib span i{width:30px;height:38px;border-radius:5px;background:linear-gradient(160deg,#9b2a3a,#6e1f2f);box-shadow:inset -3px 0 0 rgba(255,255,255,.18)}
+.lib span i.g{background:linear-gradient(160deg,#e3a43a,#b8862f)}.lib span i.b{background:linear-gradient(160deg,#3d4fa8,#1f1a4f)}.lib span i.l{background:linear-gradient(160deg,#4d9a68,#2f6f48)}
+/* tools */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tool .pic{height:104px}
+.tool .body{padding:10px 12px 12px}
+.tool b{font:700 14.5px/1.2 "Inter";color:var(--ink);display:block}.tool span{font:500 12px/1.35 "Inter";color:var(--muted)}
+/* learn */
+.lc{width:250px;flex:none}
+.lc .pic{height:130px}
+.lc .body{padding:12px 14px 14px}
+.lc .k{font:700 10px/1 "Inter";letter-spacing:.14em;color:var(--saffron);text-transform:uppercase}
+.lc b{font:600 19px/1.15 "Cormorant";color:var(--head);display:block;margin-top:6px}
+/* shop */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}
+.cats img{width:76px;height:76px;border-radius:50%;margin:0 auto 8px;box-shadow:0 0 0 3px var(--card),0 0 0 4px var(--line)}
+.cats span{font:600 12.5px/1.2 "Inter"}
+/* sell */
+.ask{display:flex;gap:14px;padding:16px;align-items:center}
+.ask .pic{width:84px;height:84px;border-radius:16px;overflow:hidden;flex:none}
+.ask b{font:700 17px/1.2 "Inter";display:block}
+.price s{color:var(--muted);font:600 13px "Inter"}.price .p{font:800 20px "Inter";color:var(--accent)}.price em{font:600 12px "Inter";color:var(--muted);font-style:normal}
+.ask small{display:block;font:500 12.5px/1.4 "Inter";color:var(--muted);margin-top:3px}
+.ai{display:flex;gap:10px;margin-top:12px}
+.ai>div{flex:1;display:flex;gap:10px;align-items:center;background:var(--card);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
+.ai img{width:44px;height:44px;border-radius:50%}
+.ai b{font:700 14px/1.2 "Inter";white-space:nowrap}.ai .s{display:block;font:500 11.5px/1.3 "Inter";color:var(--muted)}
+.aitag{display:inline-block;font:800 9px/1 "Inter";color:#fff;background:#3d4fa8;border-radius:4px;padding:2px 4px;margin-left:4px;vertical-align:2px}
+.papers div{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.papers .l{font:500 26px/1 "Playfair";color:var(--gold-ink);width:26px}
+.papers b{font:600 19px/1.2 "Cormorant";color:var(--head)}
+.how{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.how div{background:var(--card);border-radius:16px;padding:14px;border:1px solid var(--line)}
+.how b{font:600 18px/1.15 "Cormorant";color:var(--head);display:block}.how span{font:500 12px/1.4 "Inter";color:var(--muted)}
+.foot{margin-top:40px;padding:26px 20px 30px;background:var(--bg2);text-align:center}
+.foot .brand{justify-content:center}
+.foot p{font:500 12.5px/1.6 "Inter";color:var(--muted);margin-top:10px}
+/* ================= DESKTOP ================= */
+.desk{width:1440px;background:var(--bg)}
+.dm{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:20px 64px 14px}
+.dm .l{font:600 14px/1.3 "Inter";color:var(--accent)}.dm .l small{display:block;color:var(--muted);font-weight:500}
+.dm .c{text-align:center}
+.dm .c .brand{justify-content:center;font-size:22px}.dm .c .brand img{width:38px;height:38px;border-radius:10px}
+.dm nav{margin-top:12px;display:flex;gap:26px;justify-content:center;font:600 13.5px/1 "Inter";color:var(--ink)}
+.dm nav a.on{color:var(--accent);border-bottom:1.5px solid var(--gold);padding-bottom:3px}
+.dm .r{display:flex;justify-content:flex-end;gap:10px;align-items:center}
+.dm .si{font:700 13px/1 "Inter";color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:9px 16px}
+.dhero{display:grid;grid-template-columns:400px 330px 1fr;gap:40px;padding:26px 64px 0}
+.dhero .greet{text-align:left;font-size:27px}
+.dhero .date{justify-content:flex-start;margin:4px 0 0}.dhero .date .n{font-size:132px}
+.dhero .city{text-align:left;margin:10px 0 0}
+.dhero .tithi{text-align:left;margin-top:18px}.dhero .tithi h1{font-size:60px}
+.dhero .times{margin-top:16px}
+.dhero .arch{width:330px;height:470px;border-radius:165px 165px 10px 10px;margin:6px 0 0;box-shadow:0 0 0 5px var(--bg),0 0 0 6.5px var(--gold)}
+.dside .chips{margin-top:12px}
+.dside .feat{margin-top:18px;display:grid;grid-template-columns:200px 1fr}
+.dside .feat .pic{height:auto}
+.dside .player{margin-top:16px}
+.drow{padding:46px 64px 0}
+.dgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+</style></head>
+<body>
+<!-- ======================= PHONE ======================= -->
+<div class="phone">
+  <script>document.write(statusbar('currentColor'))</script>
+  <div class="top">
+    <div class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</div>
+    <div class="acts">
+      <div class="lang"><span class="on">EN</span><span class="h">हिं</span></div>
+      <div class="ic" title="Light / dark"><svg viewBox="0 0 24 24"><path d="M14.5 2.5a9.5 9.5 0 1 0 7 15.9A8 8 0 0 1 14.5 2.5z"/></svg></div>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a6 6 0 0 0-6 6v4.2L4.3 15.6A1 1 0 0 0 5.2 17h13.6a1 1 0 0 0 .9-1.4L18 12.2V8a6 6 0 0 0-6-6zM9.5 19a2.5 2.5 0 0 0 5 0z"/></svg></div>
+    </div>
+  </div>
+
+  <!-- 1 · the almanac -->
+  <div class="alm">
+    <div class="greet"><span class="dev">शुभ प्रभात</span>Good morning.</div>
+    <div class="date"><div class="n">26</div><div class="w">Monday<span class="dev">सोमवार</span><small>October 2026</small></div></div>
+    <div class="city">in <b>New Delhi</b> · change</div>
+    <div class="hair"></div>
+    <div class="tithi"><div class="over">Today's tithi</div><h1>Purnima<span class="dev">पूर्णिमा</span></h1>
+      <p>The full moon, until 9:41 am.<br>Then Krishna Pratipada begins.</p></div>
+    <div class="arch"><img class="cover" src="img/shiva-portrait.jpg" alt=""></div>
+    <div class="capt">Somavara, the Moon's day, is kept for Shiva.</div>
+    <div class="times">
+      <div><div class="k">Nakshatra</div><div class="v">Ashwini</div><div class="s">till 5:41 pm, then Bharani</div></div>
+      <div><div class="k">Sun</div><div class="v">6:29 · 5:41</div><div class="s">sunrise · sunset</div></div>
+      <div class="g"><div class="k">Good now</div><div class="v">Shubh</div><div class="s">till 10:41 am</div></div>
+      <div class="b"><div class="k">Rahu Kaal</div><div class="v">7:53 – 9:17</div><div class="s">over for today</div></div>
+    </div>
+    <div class="fest"><img class="cover" src="img/karwa.jpg"><div><b>Karwa Chauth in 3 days</b><span>Thu 29 Oct · Diwali in 13 days</span></div></div>
+  </div>
+
+  <!-- 2 · stories -->
+  <div style="margin-top:28px" class="stories">
+    <div class="story"><div class="ring"><img class="cover" src="img/shiva-portrait.jpg" style="object-position:50% 30%"></div><span>Shiva's day</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/mantra.jpg"></div><span>Mantra</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/karwa.jpg" style="object-position:62% 30%"></div><span>Karwa Chauth</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/dhanteras.jpg"></div><span>Dhanteras</span></div>
+    <div class="story"><div class="ring seen"><img class="cover" src="img/lakshmi-lotus.jpg"></div><span>Diwali</span></div>
+  </div>
+
+  <!-- 3 · what would you like to do -->
+  <div class="sec" style="margin-top:34px">
+    <div class="h2" style="font-size:27px">What would you like to do today?</div>
+    <div class="chips" style="margin-top:14px">
+      <span class="chip"><img class="cover" src="img/puja-thali.jpg">Today's ePooja</span>
+      <span class="chip"><img class="cover" src="img/mantra.jpg">Chant a mantra</span>
+      <span class="chip"><img class="cover" src="img/learn.jpg">Make my kundli</span>
+      <span class="chip"><img class="cover" src="img/lakshmi-lotus.jpg">Diwali puja</span>
+      <span class="chip"><img class="cover" src="img/texts.jpg">Read the Gita</span>
+      <span class="chip"><img class="cover" src="img/gems.jpg">Shop</span>
+    </div>
+  </div>
+
+  <!-- 4 · ePooja -->
+  <div class="sec">
+    <div class="shead"><div><div class="over">Free · about 2 minutes</div><div class="h2" style="margin-top:6px">Today's ePooja</div></div></div>
+    <div class="card feat">
+      <div class="pic"><img class="cover" src="img/puja-thali.jpg"><span class="tag soon">OPENING SOON</span></div>
+      <div class="body"><h3>Somvar Shiv puja</h3>
+        <p>A short guided puja for Monday: the diya, the sankalpa for today's tithi and nakshatra, Shiva's mantra and the aarti.</p>
+        <div class="row"><span class="btn solid">Begin</span><span class="btn line">Remind me daily</span></div></div>
+    </div>
+  </div>
+
+  <!-- 5 · mantra -->
+  <div class="band saffron">
+    <div class="over">Mantra of the day</div>
+    <div class="mantra" style="margin-top:12px">
+      <div class="pic"><img class="cover" src="img/mantra.jpg"></div>
+      <div><div class="dev">ॐ नमः शिवाय</div><div class="en">Om Namah Shivaya</div><div class="s">Shiva's five-syllable mantra, for Monday. Chant along, 11 or 108 times.</div></div>
+    </div>
+    <div class="player"><span class="play"><svg viewBox="0 0 24 24"><path d="M6 3.5v17a1 1 0 0 0 1.5.9l13.5-8.5a1 1 0 0 0 0-1.8L7.5 2.6A1 1 0 0 0 6 3.5z"/></svg></span>
+      <div class="wave"><script>document.write(Array.from({length:28},(_,i)=>`<i class="${i<9?'on':''}" style="height:${30+Math.round(60*Math.abs(Math.sin(i*1.7)))}%"></i>`).join(''))</script></div>
+      <span class="count">× 108</span></div>
+    <div style="margin-top:12px" class="more">All mantras and aartis →</div>
+  </div>
+
+  <!-- 6 · rashifal -->
+  <div class="sec">
+    <div class="shead"><div><div class="over">Your rashifal</div><div class="h2" style="margin-top:6px">The Moon is in Mesha</div><div class="sub">Pick your sign once; it is here every morning.</div></div></div>
+    <div class="signs">
+      <span class="moon">Mesha<i>मेष</i></span><span>Vrishabha<i>वृषभ</i></span><span>Mithuna<i>मिथुन</i></span><span>Karka<i>कर्क</i></span>
+      <span>Simha<i>सिंह</i></span><span>Kanya<i>कन्या</i></span><span>Tula<i>तुला</i></span><span>Vrischika<i>वृश्चिक</i></span>
+      <span>Dhanu<i>धनु</i></span><span>Makara<i>मकर</i></span><span>Kumbha<i>कुम्भ</i></span><span>Meena<i>मीन</i></span>
+    </div>
+  </div>
+
+  <!-- 7 · this week + festivals -->
+  <div class="band lotus">
+    <div class="over">This week</div>
+    <div class="h2" style="margin-top:6px">Jupiter enters Simha on Saturday</div>
+    <div class="sub" style="margin-bottom:16px">Mercury, Venus and Saturn are retrograde all week.</div>
+    <div class="week" style="margin:0 0 18px">
+      <div class="on"><div class="d">Mon</div><div class="n">26</div><div class="t">Purnima</div></div>
+      <div><div class="d">Tue</div><div class="n">27</div><div class="t">Pratipada</div></div>
+      <div><div class="d">Wed</div><div class="n">28</div><div class="t">Tritiya</div></div>
+      <div><div class="d">Thu</div><div class="n">29</div><div class="t x">Karwa Chauth</div></div>
+      <div><div class="d">Fri</div><div class="n">30</div><div class="t">Panchami</div></div>
+      <div><div class="d">Sat</div><div class="n">31</div><div class="t x">Jupiter → Simha</div></div>
+      <div><div class="d">Sun</div><div class="n">1</div><div class="t">Saptami</div></div>
+    </div>
+    <div class="hs" style="padding:0;margin-right:-20px">
+      <div class="card fc"><div class="pic"><img class="cover" src="img/karwa-courtyard.jpg"><span class="tag">IN 3 DAYS</span></div><div class="body"><b>Karwa Chauth</b><span>Thu 29 Oct · the vrat, the katha and moonrise in your city</span></div></div>
+      <div class="card fc"><div class="pic"><img class="cover" src="img/dhanteras.jpg"><span class="tag">IN 11 DAYS</span></div><div class="body"><b>Dhanteras</b><span>Fri 6 Nov · puja muhurat and the Yama lamp</span></div></div>
+      <div class="card fc"><div class="pic"><img class="cover" src="img/lakshmi-lotus.jpg"><span class="tag">IN 13 DAYS</span></div><div class="body"><b>Diwali</b><span>Sun 8 Nov · Lakshmi Puja 5:54 – 7:50 pm</span></div></div>
+    </div>
+  </div>
+
+  <!-- 8 · verse + texts -->
+  <div class="sec">
+    <div class="shead"><div><div class="over">Today's verse</div></div><span class="more">Share</span></div>
+    <div class="card verse">
+      <div class="dev">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥</div>
+      <div class="tr">Your right is to the work alone, never to its fruits. Let the fruit not be your reason, and do not cling to doing nothing.</div>
+      <div class="src">Bhagavad Gita 2.47</div>
+    </div>
+    <div class="lib">
+      <span><i></i>Bhagavad Gita</span><span><i class="g"></i>Hanuman Chalisa</span><span><i class="b"></i>Shiv Chalisa</span><span><i class="l"></i>Aartis</span>
+    </div>
+  </div>
+
+  <!-- 9 · free tools -->
+  <div class="sec">
+    <div class="shead"><div><div class="over">Start here, free</div><div class="h2" style="margin-top:6px">Free tools</div></div><span class="more">All tools →</span></div>
+    <div class="tools">
+      <div class="card tool"><div class="pic"><img class="cover" src="img/learn.jpg"></div><div class="body"><b>Your kundli</b><span>Your birth chart, free</span></div></div>
+      <div class="card tool"><div class="pic"><img class="cover" src="img/karwa-courtyard.jpg" style="object-position:50% 30%"></div><div class="body"><b>Kundli matching</b><span>Two charts, side by side</span></div></div>
+      <div class="card tool"><div class="pic"><img class="cover" src="img/brass.jpg"></div><div class="body"><b>A good day</b><span>Muhurat for what you plan</span></div></div>
+      <div class="card tool"><div class="pic"><img class="cover" src="img/gems.jpg"></div><div class="body"><b>Manglik · Sade Sati</b><span>Two quick checks</span></div></div>
+    </div>
+  </div>
+
+  <!-- 10 · learn + journal -->
+  <div class="band sky">
+    <div class="shead"><div><div class="over">Learn</div><div class="h2" style="margin-top:6px">Read, learn, understand</div></div><span class="more">Journal →</span></div>
+    <div class="hs" style="padding:0;margin-right:-20px">
+      <div class="card lc"><div class="pic"><img class="cover" src="img/learn.jpg"></div><div class="body"><div class="k">Course · 27 short lessons</div><b>The nakshatras, one by one</b></div></div>
+      <div class="card lc"><div class="pic"><img class="cover" src="img/shiva-wide.jpg" style="object-position:30% 50%"></div><div class="body"><div class="k">Journal · Transit</div><b>Saturn retrograde 2026: the long game in the house of work</b></div></div>
+      <div class="card lc"><div class="pic"><img class="cover" src="img/texts.jpg"></div><div class="body"><div class="k">Learn</div><b>Reading your own kundli</b></div></div>
+    </div>
+  </div>
+
+  <!-- 11 · pujas for you -->
+  <div class="sec">
+    <div class="shead"><div><div class="over">Performed for you</div><div class="h2" style="margin-top:6px">Pujas</div></div><span class="more">All pujas →</span></div>
+    <div class="card feat">
+      <div class="pic" style="height:190px"><img class="cover" src="img/diwali-lakshmi.jpg"></div>
+      <div class="body"><h3>Diwali Lakshmi Puja</h3>
+        <p>Performed on Sun 8 Nov in the Lakshmi Puja window, with up to four family names in the sankalpa. Bookings close Sat 7 Nov, 6 pm.</p>
+        <span class="btn solid">Book the puja</span></div>
+    </div>
+  </div>
+
+  <!-- 12 · shop -->
+  <div class="band gold">
+    <div class="shead"><div><div class="over">Alchemies</div><div class="h2" style="margin-top:6px">The shop</div></div><span class="more">Visit →</span></div>
+    <div class="cats">
+      <div><img class="cover" src="img/gems.jpg"><span>Gemstones</span></div>
+      <div><img class="cover" src="img/rudraksha.jpg"><span>Rudraksha</span></div>
+      <div><img class="cover" src="img/yantra.jpg"><span>Yantras</span></div>
+      <div><img class="cover" src="img/puja-set.jpg"><span>Puja items</span></div>
+    </div>
+  </div>
+
+  <!-- 13 · ask -->
+  <div class="sec">
+    <div class="shead"><div><div class="over">Ask</div><div class="h2" style="margin-top:6px">A question about your chart</div></div></div>
+    <div class="card ask"><div class="pic"><img class="cover" src="img/learn.jpg"></div>
+      <div><b>Ask a question</b><div class="price"><s>₹399</s> <span class="p">₹99</span> <em>your first question</em></div><small>One question, answered from your chart. One follow-up to clarify, included.</small></div></div>
+    <div class="ai">
+      <div><img class="cover" src="img/shiva-wide.jpg" style="object-position:20% 55%"><div><b>Vedansh<span class="aitag">AI</span></b><span class="s">by the minute, any hour</span></div></div>
+      <div><img class="cover" src="img/lakshmi-lotus.jpg" style="object-position:50% 20%"><div><b>Tara<span class="aitag">AI</span></b><span class="s">by the minute, any hour</span></div></div>
+    </div>
+    <div class="card ask" style="margin-top:12px"><div class="pic"><img class="cover" src="img/texts.jpg"></div>
+      <div><b>A private consultation</b><small>With our senior Vedic astrologer, for the questions that need time.</small></div></div>
+  </div>
+
+  <!-- 14 · inscriptions + archive -->
+  <div class="sec">
+    <div class="card feat"><div class="pic" style="height:180px"><img class="cover" src="img/book.jpg"></div>
+      <div class="body"><div class="over">Inscriptions</div><h3 style="margin-top:6px">Your year, written for you</h3><p style="margin-bottom:0">A long reading of your chart, written and sent to you to keep.</p></div></div>
+  </div>
+  <div class="sec">
+    <div class="shead"><div><div class="over">From the archive</div><div class="h2" style="margin-top:6px">The founder papers</div></div><span class="more">Library →</span></div>
+    <div class="papers">
+      <div><span class="l">A</span><b>First Principles of Vedic Statistical Astrology</b></div>
+      <div><span class="l">B</span><b>Dasha Systems Revisited: Vimshottari and Yogini</b></div>
+      <div><span class="l">C</span><b>On the Nature of Nakshatras</b></div>
+    </div>
+  </div>
+
+  <!-- 15 · how we work -->
+  <div class="sec">
+    <div class="over">How we work</div>
+    <div class="how" style="margin-top:12px">
+      <div><b>Since 2008</b><span>An institute of Vedic astrology</span></div>
+      <div><b>One method</b><span>Parashari and KP, with our Ashtakavarga weighting</span></div>
+      <div><b>Our own panchang</b><span>Lahiri ayanamsa, sunrise to sunrise, for your city</span></div>
+      <div><b>Prices first</b><span>You see the price before you pay. Private, always.</span></div>
+    </div>
+  </div>
+  <div class="foot"><div class="brand"><img src="img/seal.png">ASTRO RIVER</div>
+    <p>The app for Android and iPhone is coming soon.<br>Panchang · Pujas · Ask · Free tools · Journal · Shop</p></div>
+  <script>document.write(tabbar(false))</script>
+</div>
+
+<!-- ======================= DESKTOP ======================= -->
+<div class="desk">
+  <div class="dm">
+    <div class="l">New Delhi<small>change city</small></div>
+    <div class="c"><div class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</div>
+      <nav><a class="on">Today</a><a>Panchang</a><a>ePooja</a><a>Mantras</a><a>Pujas</a><a>Ask</a><a>Free tools</a><a>Learn</a><a>Shop</a></nav></div>
+    <div class="r"><div class="lang"><span class="on">EN</span><span class="h">हिंदी</span></div>
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M14.5 2.5a9.5 9.5 0 1 0 7 15.9A8 8 0 0 1 14.5 2.5z"/></svg></div><span class="si">Sign in</span></div>
+  </div>
+  <div class="rule" style="margin:0 64px"></div>
+  <div class="dhero">
+    <div>
+      <div class="greet"><span class="dev">शुभ प्रभात</span>Good morning.</div>
+      <div class="date"><div class="n">26</div><div class="w" style="font-size:28px">Monday<span class="dev" style="font-size:36px">सोमवार</span><small>October 2026</small></div></div>
+      <div class="hair" style="margin-top:14px"></div>
+      <div class="tithi"><div class="over">Today's tithi</div><h1>Purnima<span class="dev">पूर्णिमा</span></h1><p>The full moon, until 9:41 am; then Krishna Pratipada.</p></div>
+      <div class="times">
+        <div><div class="k">Nakshatra</div><div class="v">Ashwini</div><div class="s">till 5:41 pm, then Bharani</div></div>
+        <div><div class="k">Sun</div><div class="v">6:29 · 5:41</div><div class="s">sunrise · sunset</div></div>
+        <div class="g"><div class="k">Good now</div><div class="v">Shubh</div><div class="s">till 10:41 am</div></div>
+        <div class="b"><div class="k">Rahu Kaal</div><div class="v">7:53 – 9:17</div><div class="s">over for today</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="arch"><img class="cover" src="img/shiva-portrait.jpg" alt=""></div>
+      <div class="capt">Somavara, the Moon's day, is kept for Shiva.</div>
+    </div>
+    <div class="dside">
+      <div class="h2" style="font-size:30px">What would you like to do today?</div>
+      <div class="chips">
+        <span class="chip"><img class="cover" src="img/puja-thali.jpg">Today's ePooja</span>
+        <span class="chip"><img class="cover" src="img/mantra.jpg">Chant a mantra</span>
+        <span class="chip"><img class="cover" src="img/learn.jpg">Make my kundli</span>
+        <span class="chip"><img class="cover" src="img/lakshmi-lotus.jpg">Diwali puja</span>
+        <span class="chip"><img class="cover" src="img/texts.jpg">Read the Gita</span>
+        <span class="chip"><img class="cover" src="img/gems.jpg">Shop</span>
+      </div>
+      <div class="card feat"><div class="pic"><img class="cover" src="img/puja-thali.jpg"></div>
+        <div class="body"><span class="tag soon">OPENING SOON</span><h3 style="margin-top:8px">Today's ePooja · Somvar Shiv puja</h3><p>A short guided puja, about 2 minutes, with the sankalpa for today.</p><span class="btn solid">Begin</span></div></div>
+      <div class="player" style="background:var(--t-saffron);box-shadow:none"><span class="play"><svg viewBox="0 0 24 24"><path d="M6 3.5v17a1 1 0 0 0 1.5.9l13.5-8.5a1 1 0 0 0 0-1.8L7.5 2.6A1 1 0 0 0 6 3.5z"/></svg></span>
+        <div><div class="dev" style="font-size:18px;color:var(--accent)">ॐ नमः शिवाय</div><div style="font:500 12px Inter;color:var(--muted)">Mantra of the day · Om Namah Shivaya</div></div>
+        <div class="wave" style="max-width:140px"><script>document.write(Array.from({length:18},(_,i)=>`<i class="${i<6?'on':''}" style="height:${30+Math.round(60*Math.abs(Math.sin(i*1.7)))}%"></i>`).join(''))</script></div><span class="count">× 108</span></div>
+      <div class="fest" style="margin-top:14px"><img class="cover" src="img/karwa.jpg"><div><b>Karwa Chauth in 3 days · Diwali in 13 days</b><span>Lakshmi Puja in New Delhi, Sun 8 Nov, 5:54 – 7:50 pm</span></div></div>
+    </div>
+  </div>
+  <!-- below the fold (desktop full page) -->
+  <div class="drow"><div class="shead"><div><div class="over">This week and coming</div><div class="h2" style="margin-top:6px">Jupiter enters Simha on Saturday</div></div><span class="more">Full panchang →</span></div>
+    <div class="dgrid4">
+      <div class="card fc" style="width:auto"><div class="pic"><img class="cover" src="img/karwa-courtyard.jpg"><span class="tag">IN 3 DAYS</span></div><div class="body"><b>Karwa Chauth</b><span>Thu 29 Oct</span></div></div>
+      <div class="card fc" style="width:auto"><div class="pic"><img class="cover" src="img/dhanteras.jpg"><span class="tag">IN 11 DAYS</span></div><div class="body"><b>Dhanteras</b><span>Fri 6 Nov</span></div></div>
+      <div class="card fc" style="width:auto"><div class="pic"><img class="cover" src="img/lakshmi-lotus.jpg"><span class="tag">IN 13 DAYS</span></div><div class="body"><b>Diwali</b><span>Lakshmi Puja 5:54 – 7:50 pm</span></div></div>
+      <div class="card verse" style="display:flex;flex-direction:column;justify-content:center"><div class="over" style="margin-bottom:10px">Today's verse</div><div class="dev" style="font-size:17px">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।</div><div class="tr" style="font-size:17px">Your right is to the work alone, never to its fruits.</div><div class="src">Gita 2.47</div></div>
+    </div></div>
+  <div class="drow"><div class="shead"><div><div class="over">Start here, free</div><div class="h2" style="margin-top:6px">Free tools</div></div><span class="more">All tools →</span></div>
+    <div class="dgrid4">
+      <div class="card tool"><div class="pic" style="height:150px"><img class="cover" src="img/learn.jpg"></div><div class="body"><b>Your kundli</b><span>Your birth chart, free</span></div></div>
+      <div class="card tool"><div class="pic" style="height:150px"><img class="cover" src="img/karwa-courtyard.jpg" style="object-position:50% 30%"></div><div class="body"><b>Kundli matching</b><span>Two charts, side by side</span></div></div>
+      <div class="card tool"><div class="pic" style="height:150px"><img class="cover" src="img/brass.jpg"></div><div class="body"><b>A good day</b><span>Muhurat for what you plan</span></div></div>
+      <div class="card tool"><div class="pic" style="height:150px"><img class="cover" src="img/gems.jpg"></div><div class="body"><b>Manglik · Sade Sati</b><span>Two quick checks</span></div></div>
+    </div></div>
+  <div class="drow" style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px">
+    <div class="card feat" style="display:grid;grid-template-columns:1fr 1fr"><div class="pic" style="height:auto"><img class="cover" src="img/diwali-lakshmi.jpg"></div>
+      <div class="body"><div class="over">Performed for you</div><h3 style="margin-top:6px">Diwali Lakshmi Puja</h3><p>Performed on Sun 8 Nov in the Lakshmi Puja window, with up to four family names in the sankalpa. Bookings close Sat 7 Nov, 6 pm.</p><span class="btn solid">Book the puja</span></div></div>
+    <div><div class="card ask"><div class="pic"><img class="cover" src="img/learn.jpg"></div><div><b>Ask a question</b><div class="price"><s>₹399</s> <span class="p">₹99</span> <em>your first question</em></div><small>One question, answered from your chart. One follow-up to clarify, included.</small></div></div>
+      <div class="ai"><div><img class="cover" src="img/shiva-wide.jpg" style="object-position:20% 55%"><div><b>Vedansh<span class="aitag">AI</span></b><span class="s">by the minute, any hour</span></div></div><div><img class="cover" src="img/lakshmi-lotus.jpg" style="object-position:50% 20%"><div><b>Tara<span class="aitag">AI</span></b><span class="s">by the minute, any hour</span></div></div></div></div>
+  </div>
+  <div class="drow"><div class="band gold" style="margin:0;border-radius:24px;display:grid;grid-template-columns:300px 1fr;align-items:center;gap:30px">
+    <div><div class="over">Alchemies</div><div class="h2" style="margin-top:6px">The shop</div><div class="sub">Gemstones, rudraksha, yantras and puja items.</div></div>
+    <div class="cats"><div><img class="cover" src="img/gems.jpg" style="width:110px;height:110px"><span>Gemstones</span></div><div><img class="cover" src="img/rudraksha.jpg" style="width:110px;height:110px"><span>Rudraksha</span></div><div><img class="cover" src="img/yantra.jpg" style="width:110px;height:110px"><span>Yantras</span></div><div><img class="cover" src="img/puja-set.jpg" style="width:110px;height:110px"><span>Puja items</span></div></div></div></div>
+  <div class="foot" style="margin-top:50px"><div class="brand"><img src="img/seal.png">ASTRO RIVER</div><p>Since 2008 · Our own panchang, Lahiri ayanamsa · Prices before you pay · The app is coming soon</p></div>
+</div>
+</body></html>
