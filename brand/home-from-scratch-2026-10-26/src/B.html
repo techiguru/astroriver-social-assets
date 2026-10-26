@@ -1,0 +1,171 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>B · The Almanac</title>
+<link rel="stylesheet" href="base.css">
+<script src="shared.js"></script>
+<style>
+[data-view=phone] .desk{display:none}[data-view=desktop] .phone{display:none}
+body{background:#f5ecd9}
+.paper{background:radial-gradient(ellipse at 30% 0%,#fbf5e8 0%,#f5ecd9 55%,#efe3c8 100%)}
+.rule{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);opacity:.8}
+.hair{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.7}
+.sc{font:600 11.5px/1 "Inter";letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.dev{font-family:"Tiro"}
+/* ---------- phone ---------- */
+.phone{width:390px;padding:0 0 110px}
+.mast{padding:6px 20px 12px;display:flex;align-items:center;justify-content:space-between}
+.mast .city{font:600 13px/1.2 "Inter";color:var(--maroon)}.mast .city small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+.mast .brand{display:flex;flex-direction:column;align-items:center;gap:5px;font:600 13px/1 "Cinzel";letter-spacing:.14em;color:var(--indigo)}
+.mast .brand img{width:30px;height:30px;border-radius:8px}
+.lang2{display:inline-flex;border:1px solid var(--gold);border-radius:999px;overflow:hidden;font:600 12px/1 "Inter"}
+.lang2 span{padding:7px 9px;color:var(--maroon)}.lang2 .on{background:var(--maroon);color:#fff}.lang2 .h{font:600 14px/1 "Mukta";padding:5px 9px}
+.greet2{text-align:center;padding:16px 20px 4px;font:italic 500 24px/1.2 "Cormorant";color:var(--maroon)}
+.greet2 .dev{font-style:normal;font-size:20px;color:var(--gold);margin-right:6px}
+.dateblk{display:flex;align-items:center;justify-content:center;gap:16px;padding:6px 20px 14px}
+.dateblk .n{font:500 118px/.9 "Playfair";color:var(--maroon);letter-spacing:-.04em}
+.dateblk .w{font:600 26px/1.05 "Cormorant";color:var(--indigo)}
+.dateblk .w .dev{display:block;font-size:31px;color:var(--maroon);margin:4px 0 6px}
+.dateblk .w small{font:600 11.5px/1 "Inter";letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.tithi{text-align:center;padding:16px 22px 10px}
+.tithi h1{font:500 56px/1 "Cormorant";color:var(--indigo);margin-top:8px}
+.tithi h1 .dev{font-size:36px;color:var(--maroon);margin-left:8px}
+.tithi p{font:500 17px/1.5 "Inter";color:var(--ink);margin-top:8px}
+.arch{margin:12px 26px 0;height:330px;border-radius:170px 170px 6px 6px;overflow:hidden;position:relative;
+  box-shadow:0 0 0 5px #f5ecd9,0 0 0 6.5px var(--gold),0 14px 30px rgba(70,30,20,.2)}
+.arch img{object-position:50% 25%}
+.capt{text-align:center;font:italic 500 19px/1.4 "Cormorant";color:var(--muted);padding:14px 30px 0}
+.tbl{margin:18px 20px 0}
+.tr{display:flex;align-items:baseline;gap:8px;padding:12px 0;border-bottom:1px solid rgba(184,134,47,.35)}
+.tr .k{font:600 15px/1.2 "Inter";color:var(--ink);white-space:nowrap}.tr .k .dev{font-size:15px;color:var(--muted);margin-left:6px;font-weight:400}
+.tr .dots{flex:1;border-bottom:1.5px dotted rgba(110,31,47,.3);transform:translateY(-4px)}
+.tr .v{font:600 21px/1.15 "Cormorant";color:var(--maroon);text-align:right;white-space:nowrap}
+.tr .v small{display:block;font:500 13px/1.3 "Inter";color:var(--muted)}
+.tr.good .v{color:var(--green)}.tr.avoid .v{color:var(--rose)}
+.note{margin:22px 20px 0;padding:16px 18px;border:1px solid var(--gold);border-radius:4px;position:relative;background:rgba(255,255,255,.4)}
+.note .sc{position:absolute;top:-7px;left:14px;background:#f6eedd;padding:0 8px}
+.note p{font:500 20px/1.35 "Cormorant";color:var(--indigo)}.note p b{color:var(--maroon)}
+.ep{margin:24px 20px 0}
+.ep h2{font:500 34px/1.05 "Cormorant";color:var(--indigo);margin:8px 0 6px}
+.ep p{font:500 16.5px/1.5 "Inter";color:var(--ink)}
+.plate{margin-top:14px;height:210px;border:1px solid var(--gold);padding:6px;background:#fff8ea}
+.plate img{height:100%}
+.btn2{display:inline-block;margin-top:14px;padding:13px 20px;border-radius:4px;background:var(--maroon);color:#fff;font:700 15px/1 "Inter"}
+.soon{display:table;margin-top:8px;font:700 10.5px/1 "Inter";letter-spacing:.14em;color:#fff;background:var(--gold);padding:5px 8px;border-radius:3px}
+/* ---------- desktop ---------- */
+.desk{width:1440px;height:900px;overflow:hidden;padding:0 64px}
+.dm{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:24px 0 16px}
+.dm .l{font:600 14px/1.3 "Inter";color:var(--maroon)}.dm .l small{display:block;color:var(--muted);font-weight:500}
+.dm .c{text-align:center}
+.dm .c .b{display:flex;align-items:center;gap:12px;justify-content:center;font:600 24px/1 "Cinzel";letter-spacing:.16em;color:var(--indigo)}
+.dm .c .b img{width:40px;height:40px;border-radius:10px}
+.dm .c nav{margin-top:12px;display:flex;gap:28px;justify-content:center;font:600 13px/1 "Inter";letter-spacing:.06em;color:var(--ink)}
+.dm .c nav a.on{color:var(--maroon);border-bottom:1.5px solid var(--gold);padding-bottom:3px}
+.dm .r{display:flex;justify-content:flex-end;gap:14px;align-items:center}
+.dm .r .si{font:600 13px/1 "Inter";color:var(--maroon);border:1px solid var(--maroon);border-radius:4px;padding:9px 14px}
+.cols{display:grid;grid-template-columns:420px 1fr 400px;gap:44px;padding-top:26px}
+.c1 .greet2{text-align:left;padding:0;font-size:28px}
+.c1 .dateblk{justify-content:flex-start;padding:10px 0 18px}
+.c1 .dateblk .n{font-size:150px}
+.c1 .tithi{text-align:left;padding:18px 0 0}
+.c1 .tithi h1{font-size:68px}
+.c1 .tithi p{font-size:18px}
+.c2 .arch{margin:0;height:640px;border-radius:230px 230px 6px 6px}
+.c2 .capt{padding-top:14px;font-size:20px}
+.c3 .tbl{margin:0}
+.c3 .tr{padding:10px 0}
+.c3 h3{font:500 30px/1 "Cormorant";color:var(--indigo);margin:10px 0 6px}
+.up{margin-top:22px}
+.up .it{display:flex;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(184,134,47,.3)}
+.up .it .d{width:54px;text-align:center;font:500 30px/1 "Playfair";color:var(--maroon)}.up .it .d small{display:block;font:600 10px/1.4 "Inter";letter-spacing:.14em;color:var(--muted)}
+.up .it b{font:600 21px/1.1 "Cormorant";color:var(--indigo);display:block}.up .it span{font:500 13px/1.35 "Inter";color:var(--muted)}
+</style></head>
+<body class="paper">
+<!-- ================= PHONE ================= -->
+<div class="phone paper">
+  <script>document.write(statusbar('#2a2233'))</script>
+  <div class="mast">
+    <div class="city">New Delhi<small>change city</small></div>
+    <div class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</div>
+    <div class="lang2"><span class="on">EN</span><span class="h">हिंदी</span></div>
+  </div>
+  <div class="rule" style="margin:0 20px"></div>
+  <div class="greet2"><span class="dev">शुभ प्रभात</span> Good morning.</div>
+  <div class="dateblk">
+    <div class="n">26</div>
+    <div class="w">Monday<span class="dev">सोमवार</span><small>October 2026</small></div>
+  </div>
+  <div class="hair" style="margin:0 40px"></div>
+  <div class="tithi">
+    <div class="sc">Today's tithi</div>
+    <h1>Purnima<span class="dev">पूर्णिमा</span></h1>
+    <p>The full moon, until 9:41 am.<br>Then Krishna Pratipada begins.</p>
+  </div>
+  <div class="arch"><img class="cover" src="img/shiva-portrait.jpg" alt=""></div>
+  <div class="capt">Somavara, the Moon's day, is kept for Shiva.</div>
+  <div class="tbl">
+    <div class="tr"><span class="k">Nakshatra<span class="dev">नक्षत्र</span></span><span class="dots"></span><span class="v">Ashwini till 5:41 pm<small>then Bharani</small></span></div>
+    <div class="tr"><span class="k">Sunrise<span class="dev">सूर्योदय</span></span><span class="dots"></span><span class="v">6:29 am</span></div>
+    <div class="tr"><span class="k">Sunset<span class="dev">सूर्यास्त</span></span><span class="dots"></span><span class="v">5:41 pm</span></div>
+    <div class="tr good"><span class="k">Good now<span class="dev">शुभ</span></span><span class="dots"></span><span class="v">Shubh 9:17 – 10:41 am</span></div>
+    <div class="tr avoid"><span class="k">Rahu Kaal<span class="dev">राहु काल</span></span><span class="dots"></span><span class="v">7:53 – 9:17 am</span></div>
+    <div class="tr"><span class="k">Abhijit<span class="dev">अभिजित</span></span><span class="dots"></span><span class="v">11:43 am – 12:27 pm</span></div>
+  </div>
+  <div class="note"><span class="sc">Coming</span><p><b>Karwa Chauth</b> is in 3 days, Thursday 29 October. <b>Diwali</b> in 13 days: Lakshmi Puja in New Delhi, 5:54 – 7:50 pm.</p></div>
+  <div class="ep">
+    <div class="sc">Today's ePooja · about 2 minutes<span class="soon">OPENING SOON</span></div>
+    <h2>Somvar Shiv puja, with your sankalpa</h2>
+    <p>Write your name and gotra once. An AI pandit voice recites your sankalpa at once, from today's panchang.</p>
+    <div class="plate"><img class="cover" src="img/puja-thali.jpg" alt=""></div>
+  </div>
+  <script>document.write(tabbar(false))</script>
+</div>
+
+<!-- ================= DESKTOP ================= -->
+<div class="desk paper">
+  <div class="dm">
+    <div class="l">New Delhi<small>change city</small></div>
+    <div class="c"><div class="b"><img src="img/seal.png" alt="">ASTRO RIVER</div>
+      <nav><a class="on">Today</a><a>Panchang</a><a>Pujas</a><a>Ask</a><a>Free tools</a><a>Journal</a></nav></div>
+    <div class="r"><div class="lang2"><span class="on">EN</span><span class="h">हिंदी</span></div><span class="si">Sign in</span></div>
+  </div>
+  <div class="rule"></div>
+  <div class="cols">
+    <div class="c1">
+      <div class="greet2"><span class="dev">शुभ प्रभात</span> Good morning.</div>
+      <div class="dateblk"><div class="n">26</div><div class="w" style="font-size:30px">Monday<span class="dev" style="font-size:38px">सोमवार</span><small>October 2026</small></div></div>
+      <div class="hair"></div>
+      <div class="tithi"><div class="sc">Today's tithi</div><h1>Purnima<span class="dev">पूर्णिमा</span></h1>
+        <p>The full moon, until 9:41 am; then Krishna Pratipada.</p></div>
+      <div class="tbl" style="margin:18px 0 0">
+        <div class="tr"><span class="k">Nakshatra<span class="dev">नक्षत्र</span></span><span class="dots"></span><span class="v">Ashwini till 5:41 pm<small>then Bharani</small></span></div>
+        <div class="tr"><span class="k">Moon<span class="dev">चन्द्र</span></span><span class="dots"></span><span class="v">in Mesha</span></div>
+      </div>
+      <div style="margin-top:22px"><div class="sc">This week's sky</div>
+        <p style="font:italic 500 22px/1.35 Cormorant;color:var(--indigo);margin-top:8px">Jupiter enters Simha on Saturday afternoon; Mercury, Venus and Saturn are retrograde all week.</p>
+        <p style="font:600 13px/1 Inter;color:var(--maroon);margin-top:10px">Read the week →</p></div>
+    </div>
+    <div class="c2">
+      <div class="arch"><img class="cover" src="img/shiva-portrait.jpg" alt=""></div>
+      <div class="capt">Somavara, the Moon's day, is kept for Shiva.</div>
+    </div>
+    <div class="c3">
+      <div class="sc">The hours today · New Delhi</div>
+      <div class="tbl" style="margin-top:8px">
+        <div class="tr"><span class="k">Sunrise · sunset</span><span class="dots"></span><span class="v">6:29 am · 5:41 pm</span></div>
+        <div class="tr good"><span class="k">Good now<span class="dev">शुभ</span></span><span class="dots"></span><span class="v">Shubh till 10:41 am</span></div>
+        <div class="tr"><span class="k">Abhijit</span><span class="dots"></span><span class="v">11:43 am – 12:27 pm</span></div>
+        <div class="tr avoid"><span class="k">Rahu Kaal<span class="dev">राहु काल</span></span><span class="dots"></span><span class="v">7:53 – 9:17 am</span></div>
+        <div class="tr avoid"><span class="k">Yamaganda</span><span class="dots"></span><span class="v">10:41 am – 12:05 pm</span></div>
+      </div>
+      <div class="up">
+        <div class="sc">Coming</div>
+        <div class="it"><div class="d">29<small>OCT</small></div><div><b>Karwa Chauth</b><span>Thursday · in 3 days</span></div></div>
+        <div class="it"><div class="d">6<small>NOV</small></div><div><b>Dhanteras</b><span>Friday · in 11 days</span></div></div>
+        <div class="it"><div class="d">8<small>NOV</small></div><div><b>Diwali</b><span>Lakshmi Puja in New Delhi 5:54 – 7:50 pm</span></div></div>
+      </div>
+      <div style="margin-top:20px"><div class="sc">Today's ePooja · about 2 minutes<span class="soon">OPENING SOON</span></div>
+        <h3>Somvar Shiv puja, with your sankalpa</h3>
+        <span class="btn2" style="margin-top:6px">Keep my place</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

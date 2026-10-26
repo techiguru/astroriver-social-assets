@@ -1,0 +1,204 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>A · Temple morning</title>
+<link rel="stylesheet" href="base.css">
+<script src="shared.js"></script>
+<style>
+[data-view=phone] .desk{display:none}[data-view=desktop] .phone{display:none}
+/* ---------- phone ---------- */
+.phone{width:390px;padding-bottom:110px;background:var(--cream)}
+.hero{position:relative;height:600px;color:#fff;overflow:hidden}
+.hero>img{position:absolute;inset:0;object-position:50% 18%}
+.hero:after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(15,10,40,.55) 0%,rgba(15,10,40,0) 20%,rgba(15,10,40,0) 36%,rgba(38,10,22,.86) 70%,rgba(38,10,22,.97) 100%)}
+.hero>*{position:relative;z-index:2}
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 18px 0}
+.brand{display:flex;align-items:center;gap:8px;font:600 15px/1 "Cinzel";letter-spacing:.08em}
+.brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 0 0 1px rgba(227,194,122,.5)}
+.greet{position:absolute;left:22px;right:22px;bottom:96px}
+.greet .over{font:600 12px/1 "Inter";letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l)}
+.greet .over b{font-family:"Mukta";font-weight:600;letter-spacing:0;text-transform:none;font-size:14px;margin-left:6px}
+.greet h1{font:500 50px/1 "Cormorant";margin:10px 0 8px;letter-spacing:-.01em}
+.greet .dl{font:500 15px/1.4 "Inter";color:#f4e8d2}
+.greet .dl u{text-decoration:none;border-bottom:1px solid var(--gold-l);color:#fff;font-weight:600}
+.greet .cap{margin-top:12px;font:italic 500 19px/1.3 "Cormorant";color:var(--gold-l)}
+.today{position:relative;z-index:5;margin:-78px 14px 0;background:#fffaf0;border-radius:22px;padding:18px 18px 16px;
+  box-shadow:0 18px 40px rgba(60,20,30,.18),0 2px 0 rgba(184,134,47,.25) inset}
+.today .row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid #efe3cc}
+.today .k{font:600 11px/1 "Inter";letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.today .v{font:600 20px/1.1 "Cormorant";color:var(--maroon);text-align:right}
+.today .v small{display:block;font:500 12px/1.3 "Inter";color:var(--muted);margin-top:2px}
+.good{display:flex;gap:10px;margin-top:12px}
+.good div{flex:1;border-radius:14px;padding:10px 12px}
+.good .g{background:#e6f1e8}.good .a{background:#f7e6e4}
+.good .t{font:700 10.5px/1 "Inter";letter-spacing:.1em;text-transform:uppercase}
+.good .g .t{color:var(--green)}.good .a .t{color:var(--rose)}
+.good .n{font:600 17px/1.2 "Cormorant";white-space:nowrap;margin-top:5px;color:var(--ink)}
+.good .s{font:500 11.5px/1.3 "Inter";color:var(--muted)}
+.fest{margin-top:12px;display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,var(--maroon),#8e2a3c);color:#fff;border-radius:14px;padding:8px 12px 8px 8px}
+.fest img{width:46px;height:46px;border-radius:10px}
+.fest b{font:600 18px/1.1 "Cormorant";display:block}.fest span{font:500 12px/1.3 "Inter";color:#f3d9b6}
+.sec{padding:26px 16px 0}
+.sec h2{font:500 28px/1.1 "Cormorant";color:var(--maroon)}
+.sec .sub{font:500 13.5px/1.45 "Inter";color:var(--muted);margin-top:4px}
+.stories{display:flex;gap:14px;overflow:hidden;padding:18px 16px 0}
+.story{width:72px;flex:none;text-align:center;font:600 11px/1.25 "Inter";color:var(--ink)}
+.story .ring{width:72px;height:72px;border-radius:50%;padding:3px;background:conic-gradient(var(--gold),#e8b85a,var(--maroon),var(--gold))}
+.story .ring img{width:100%;height:100%;border-radius:50%;border:2.5px solid var(--cream)}
+.story span{display:block;margin-top:6px}
+.epooja{margin:14px 16px 0;border-radius:22px;overflow:hidden;position:relative;height:300px;color:#fff}
+.epooja img{position:absolute;inset:0}
+.epooja:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,8,15,0) 30%,rgba(30,8,15,.88))}
+.epooja .in{position:absolute;z-index:2;left:18px;right:18px;bottom:16px}
+.tag{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 10px;font:600 11px/1 "Inter";letter-spacing:.06em}
+.epooja h3{font:600 27px/1.1 "Cormorant";margin:10px 0 6px}
+.epooja p{font:500 13px/1.45 "Inter";color:#f1e2cf}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 18px;font:700 14px/1 "Inter"}
+.btn.gold{background:linear-gradient(180deg,#f0d38f,#d6a94e);color:#3b1a10}
+.btn.maroon{background:var(--maroon);color:#fff}
+.btn.ghost{border:1.5px solid var(--maroon);color:var(--maroon)}
+.rashi{margin:14px 16px 0;border-radius:22px;overflow:hidden;background:var(--indigo);color:#fff}
+.rashi .pic{height:150px;position:relative}
+.rashi .pic:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,26,79,0) 40%,var(--indigo))}
+.rashi .in{padding:0 16px 16px;margin-top:-28px;position:relative;z-index:2}
+.rashi h3{font:600 26px/1.1 "Cormorant"}
+.rashi p{font:500 13px/1.45 "Inter";color:#cfcbe8;margin:4px 0 12px}
+.signs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.signs span{background:rgba(255,255,255,.08);border:1px solid rgba(227,194,122,.28);border-radius:12px;padding:8px 2px;text-align:center;font:600 12px/1.2 "Inter"}
+.signs span i{display:block;font:normal 400 14px/1.1 "Mukta";color:var(--gold-l);margin-top:2px}
+.signs span.moon{background:var(--gold-l);color:var(--indigo-d)}.signs span.moon i{color:var(--maroon)}
+/* ---------- desktop ---------- */
+.desk{width:1440px;height:900px;position:relative;overflow:hidden;background:#1a0f24}
+.desk .bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.desk:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(25,8,24,.92) 0%,rgba(25,8,24,.72) 30%,rgba(25,8,24,.05) 58%),linear-gradient(180deg,rgba(15,10,40,.5),rgba(15,10,40,0) 18%)}
+.desk>*{position:relative;z-index:2}
+.dnav{display:flex;align-items:center;justify-content:space-between;padding:26px 56px;color:#fff}
+.dnav .brand{font-size:18px}.dnav .brand img{width:36px;height:36px}
+.dnav nav{display:flex;gap:30px;font:600 14px/1 "Inter";color:#f1e6d4}
+.dnav nav a.on{color:var(--gold-l)}
+.dnav .r{display:flex;gap:14px;align-items:center}
+.dgreet{position:absolute;left:56px;top:150px;width:560px;color:#fff}
+.dgreet .over{font:600 13px/1 "Inter";letter-spacing:.16em;text-transform:uppercase;color:var(--gold-l)}
+.dgreet .over b{font-family:"Mukta";letter-spacing:0;text-transform:none;font-size:16px;margin-left:8px}
+.dgreet h1{font:500 92px/.95 "Cormorant";margin:14px 0 14px}
+.dgreet .dl{font:500 18px/1.5 "Inter";color:#f4e8d2}.dgreet .dl u{text-decoration:none;border-bottom:1px solid var(--gold-l);color:#fff}
+.dgreet .cap{font:italic 500 26px/1.3 "Cormorant";color:var(--gold-l);margin-top:14px}
+.dtoday{position:absolute;left:56px;bottom:44px;width:960px;background:#fffaf0;border-radius:24px;padding:22px 26px;display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;gap:0;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.dtoday .c{padding:0 18px;border-left:1px solid #efe3cc}.dtoday .c:first-child{border:0;padding-left:0}
+.dtoday .k{font:600 11px/1 "Inter";letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dtoday .v{font:600 24px/1.1 "Cormorant";white-space:nowrap;color:var(--maroon);margin-top:8px}
+.dtoday .s{font:500 12.5px/1.4 "Inter";color:var(--muted);margin-top:4px}
+.dtoday .g{color:var(--green)}.dtoday .a{color:var(--rose)}
+.dfest{grid-column:1/-1;margin-top:18px;display:flex;gap:12px}
+.dfest div{flex:1;display:flex;align-items:center;gap:12px;background:#f6ead3;border-radius:14px;padding:8px}
+.dfest img{width:52px;height:52px;border-radius:10px}
+.dfest b{font:600 19px/1.1 "Cormorant";color:var(--maroon);display:block}.dfest span{font:500 12px/1.3 "Inter";color:var(--muted)}
+.dside{position:absolute;right:56px;bottom:44px;width:340px;background:rgba(20,10,30,.62);backdrop-filter:blur(10px);border:1px solid rgba(227,194,122,.3);border-radius:24px;overflow:hidden;color:#fff}
+.dside img{height:96px}
+.dside .in{padding:16px 18px 18px}
+.dside h3{font:600 26px/1.1 "Cormorant";margin:8px 0 6px}.dside p{font:500 13px/1.45 "Inter";color:#e9dcc8;margin-bottom:12px}
+.dstories{position:absolute;left:56px;top:470px;display:flex;gap:18px}
+.dstories .story{color:#fff;width:76px}.dstories .story .ring{width:76px;height:76px}.dstories .story .ring img{border-color:#2a1426}
+</style></head>
+<body>
+<!-- ================= PHONE ================= -->
+<div class="phone">
+  <section class="hero">
+    <img class="cover" src="img/shiva-portrait.jpg" alt="">
+    <script>document.write(statusbar('#fff'))</script>
+    <div class="top">
+      <div class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</div>
+      <div class="lang"><span class="on">EN</span><span class="h">हिंदी</span></div>
+    </div>
+    <div class="greet">
+      <div class="over">Monday · Somavara<b>सोमवार</b></div>
+      <h1>Good morning.</h1>
+      <div class="dl">26 October 2026 · in <u>New Delhi</u> · change</div>
+      <div class="cap">Monday is Shiva's day. Purnima ends at 9:41 am.</div>
+    </div>
+  </section>
+
+  <div class="today">
+    <div class="row"><span class="k">Tithi</span><span class="v">Purnima till 9:41 am<small>then Krishna Pratipada</small></span></div>
+    <div class="row"><span class="k">Nakshatra</span><span class="v">Ashwini till 5:41 pm<small>then Bharani</small></span></div>
+    <div class="row" style="border:0"><span class="k">Sun</span><span class="v">6:29 am · 5:41 pm<small>sunrise · sunset in New Delhi</small></span></div>
+    <div class="good">
+      <div class="g"><div class="t">Good now</div><div class="n">Shubh, till 10:41</div><div class="s">then Rog till 12:05 pm</div></div>
+      <div class="a"><div class="t">Rahu Kaal</div><div class="n">7:53 – 9:17 am</div><div class="s">over for today</div></div>
+    </div>
+    <div class="fest"><img class="cover" src="img/karwa.jpg" alt=""><div><b>Karwa Chauth in 3 days</b><span>Thu 29 Oct · Diwali in 13 days, Sun 8 Nov</span></div></div>
+  </div>
+
+  <div class="stories">
+    <div class="story"><div class="ring"><img class="cover" src="img/shiva-portrait.jpg" style="object-position:50% 30%"></div><span>Shiva's day</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/moon-ghat.jpg" style="object-position:72% 20%"></div><span>Purnima</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/karwa.jpg" style="object-position:62% 30%"></div><span>Karwa Chauth</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/dhanteras.jpg"></div><span>Dhanteras</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/diwali-lakshmi.jpg"></div><span>Diwali</span></div>
+  </div>
+
+  <div class="sec"><h2>Today's ePooja</h2><div class="sub">Shiva's puja for Monday, about 2 minutes, free.</div></div>
+  <div class="epooja">
+    <img class="cover" src="img/puja-thali.jpg" alt="">
+    <div class="in">
+      <span class="tag">OPENING SOON</span>
+      <h3>Somvar Shiv puja, with your sankalpa</h3>
+      <p>Fill in your name and gotra once. An AI pandit voice recites your sankalpa straight away, with today's tithi, nakshatra and city.</p>
+    </div>
+  </div>
+
+  <div class="sec"><h2>Your rashifal</h2><div class="sub">Pick your sign once; it waits for you here every morning.</div></div>
+  <div class="rashi">
+    <div class="pic"><img class="cover" src="img/moon-ghat.jpg" style="object-position:50% 30%"></div>
+    <div class="in">
+      <h3>The Moon is in Mesha today</h3>
+      <p>Chandrashtama for Kanya. Tap your Moon sign.</p>
+      <div class="signs">
+        <span class="moon">Mesha<i>मेष</i></span><span>Vrishabha<i>वृषभ</i></span><span>Mithuna<i>मिथुन</i></span><span>Karka<i>कर्क</i></span>
+        <span>Simha<i>सिंह</i></span><span>Kanya<i>कन्या</i></span><span>Tula<i>तुला</i></span><span>Vrischika<i>वृश्चिक</i></span>
+        <span>Dhanu<i>धनु</i></span><span>Makara<i>मकर</i></span><span>Kumbha<i>कुम्भ</i></span><span>Meena<i>मीन</i></span>
+      </div>
+    </div>
+  </div>
+  <script>document.write(tabbar(false))</script>
+</div>
+
+<!-- ================= DESKTOP ================= -->
+<div class="desk">
+  <img class="bg" src="img/shiva-wide.jpg" alt="">
+  <div class="dnav">
+    <div class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</div>
+    <nav><a class="on">Today</a><a>Panchang</a><a>Pujas</a><a>Ask</a><a>Free tools</a><a>Journal</a></nav>
+    <div class="r"><div class="lang"><span class="on">EN</span><span class="h">हिंदी</span></div><span class="pill" style="background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35)">Sign in</span></div>
+  </div>
+  <div class="dstories">
+    <div class="story"><div class="ring"><img class="cover" src="img/moon-ghat.jpg" style="object-position:72% 20%"></div><span>Purnima</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/karwa.jpg" style="object-position:62% 30%"></div><span>Karwa Chauth</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/dhanteras.jpg"></div><span>Dhanteras</span></div>
+    <div class="story"><div class="ring"><img class="cover" src="img/diwali-lakshmi.jpg"></div><span>Diwali</span></div>
+  </div>
+  <div class="dgreet">
+    <div class="over">Monday · Somavara<b>सोमवार</b></div>
+    <h1>Good morning.</h1>
+    <div class="dl">26 October 2026 · in <u>New Delhi</u> · change</div>
+    <div class="cap">Monday is Shiva's day. Purnima ends at 9:41 am;<br>Bharani rises at 5:41 pm.</div>
+  </div>
+  <div class="dtoday">
+    <div class="c"><div class="k">Tithi</div><div class="v">Purnima till 9:41 am</div><div class="s">then Krishna Pratipada</div></div>
+    <div class="c"><div class="k">Nakshatra</div><div class="v">Ashwini till 5:41 pm</div><div class="s">then Bharani</div></div>
+    <div class="c"><div class="k g">Good now</div><div class="v">Shubh</div><div class="s">till 10:41 am · Abhijit 11:43 am – 12:27 pm</div></div>
+    <div class="c"><div class="k a">Rahu Kaal</div><div class="v">7:53 – 9:17 am</div><div class="s">over · sunrise 6:29, sunset 5:41</div></div>
+    <div class="dfest">
+      <div><img class="cover" src="img/karwa.jpg"><span><b>Karwa Chauth in 3 days</b>Thursday 29 October</span></div>
+      <div><img class="cover" src="img/dhanteras.jpg"><span><b>Dhanteras in 11 days</b>Friday 6 November</span></div>
+      <div><img class="cover" src="img/diwali-lakshmi.jpg"><span><b>Diwali in 13 days</b>Lakshmi Puja 5:54 – 7:50 pm</span></div>
+    </div>
+  </div>
+  <div class="dside">
+    <img class="cover" src="img/puja-thali.jpg" style="object-position:50% 60%">
+    <div class="in"><span class="tag" style="color:#fff">TODAY'S ePOOJA · ABOUT 2 MIN</span> <span class="tag" style="color:#fff;background:rgba(184,134,47,.5)">OPENING SOON</span>
+      <h3>Somvar Shiv puja, with your sankalpa</h3>
+      <p>Your name and gotra once; an AI pandit voice recites the sankalpa from today's panchang.</p>
+      <span class="btn gold">Keep my place</span></div>
+  </div>
+</div>
+</body></html>
