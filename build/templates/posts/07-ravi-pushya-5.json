@@ -1,0 +1,28 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "lakshmi-lotus.jpg",
+  "pos": "50% 30%",
+  "over": "Diwali week",
+  "h": "<span style=\"font-family:Tiro,serif;font-weight:400\">दिवाली सप्ताह</span>",
+  "rows": [
+   [
+    "<span style=\"font-family:Tiro,serif;font-weight:400;white-space:nowrap\">रविवार, 1 नवंबर</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">रवि पुष्य (अहोई अष्टमी भी)</span>"
+   ],
+   [
+    "<span style=\"font-family:Tiro,serif;font-weight:400;white-space:nowrap\">शुक्रवार, 6 नवंबर</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">धनतेरस</span>"
+   ],
+   [
+    "<span style=\"font-family:Tiro,serif;font-weight:400;white-space:nowrap\">रविवार, 8 नवंबर</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">दीपावली</span>"
+   ]
+  ],
+  "deadline": "<span style=\"font-family:Tiro,serif;font-weight:400\">अपने शहर का समय जानना है? Comment में लिखें: पुष्य</span>"
+ }
+}

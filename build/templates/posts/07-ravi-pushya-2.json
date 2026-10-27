@@ -1,0 +1,14 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "brass.jpg",
+  "pos": "50% 55%",
+  "over": "Ravi Pushya",
+  "h": "<span style=\"font-family:Tiro,serif;font-weight:400\">रविवार, 1 नवंबर</span>",
+  "body": "<span style=\"font-family:Tiro,serif;font-weight:400\">रविवार + चंद्रमा पुष्य नक्षत्र में = रवि पुष्य योग, साथ में सर्वार्थ सिद्धि योग</span><br><span style=\"color:var(--muted);font-size:26px;font-style:italic\">Sunday + Moon in Pushya = Ravi Pushya, with Sarvartha Siddhi Yoga</span>"
+ }
+}

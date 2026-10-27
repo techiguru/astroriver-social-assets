@@ -1,0 +1,13 @@
+{
+ "template": "carousel-cover",
+ "formats": [
+  "feed"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "dhanteras.jpg",
+  "pos": "50% 45%",
+  "over": "Dhanteras isn’t the only gold day",
+  "h": "<span style=\"font-family:Tiro,serif;font-weight:400\">धनतेरस से पहले, सोना खरीदने का एक और शुभ दिन</span>"
+ }
+}

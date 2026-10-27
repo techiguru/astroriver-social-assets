@@ -1,0 +1,24 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "dhanteras.jpg",
+  "pos": "50% 60%",
+  "over": "Ravi Pushya",
+  "h": "<span style=\"font-family:Tiro,serif;font-weight:400\">किस काम के लिए शुभ</span>",
+  "rows": [
+   [
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">सोना-चाँदी</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">नया खाता या व्यापार</span>"
+   ],
+   [
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">घर या वाहन</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400\">पढ़ाई या नई आदत</span>"
+   ]
+  ],
+  "deadline": "<span style=\"font-family:Tiro,serif;font-weight:400\">विवाह के लिए नहीं</span>"
+ }
+}
