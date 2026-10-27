@@ -1,0 +1,105 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Today's ePooja — Somvar Shiv puja</title>
+<link rel="stylesheet" href="theme.css">
+<script src="shared.js"></script>
+<script>
+  const P = new URLSearchParams(location.search);
+  document.documentElement.dataset.theme = P.get('theme') || 'light';
+  if (P.get('night')) document.documentElement.dataset.night = P.get('night');
+  if (P.get('full')) document.documentElement.classList.add('full');
+</script>
+<style>
+[data-view=phone] .desk{display:none}[data-view=desktop] .phone{display:none}
+.full .phone{position:relative}.full .bar{position:absolute}
+.phone{width:390px;padding-bottom:130px;background:var(--bg)}
+.hero{position:relative;height:560px;color:#fff;overflow:hidden}
+.hero>img{position:absolute;inset:0;object-position:50% 20%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,14,8,.55) 0%,rgba(30,14,8,0) 18%,rgba(30,14,8,0) 30%,rgba(38,10,22,.88) 60%,rgba(38,10,22,.97) 100%)}
+.hero>*{position:relative;z-index:2}
+.nav{display:flex;justify-content:space-between;padding:4px 16px}
+.nav span{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);display:grid;place-items:center}
+.nav svg{width:18px;height:18px;fill:#fff}
+.ht{position:absolute;left:22px;right:22px;bottom:84px}
+.ht .ov{font:700 11px/1 "Inter";letter-spacing:.18em;color:#f3d38a}
+.ht h1{font:500 44px/1 "Cormorant";margin:10px 0 8px}
+.ht p{font:500 14.5px/1.45 "Inter";color:#f1e2cf}
+.ht .tags{display:flex;gap:8px;margin-top:12px}
+.ht .tags span{border-radius:999px;padding:6px 10px;font:700 11px/1 "Inter";background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}
+.sk{position:relative;z-index:5;margin:-62px 14px 0;padding:18px;background:var(--card);border-radius:22px;box-shadow:var(--shadow)}
+.sk .over{margin-bottom:8px}
+.sk p{font:500 19px/1.45 "Cormorant";color:var(--head)}
+.sk p b{color:var(--accent);font-weight:600}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.fields div{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;font:500 13px/1.2 "Inter";color:var(--muted)}
+.fields small{display:block;font:700 9.5px/1 "Inter";letter-spacing:.12em;color:var(--gold-ink);margin-bottom:5px}
+.note{font:500 12px/1.4 "Inter";color:var(--muted);margin-top:10px}
+.steps{margin:30px 20px 0}
+.steps h2{font:500 30px/1 "Cormorant";color:var(--head);margin-bottom:14px}
+.st{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.st .n{width:34px;height:34px;border-radius:50%;background:var(--t-saffron);color:var(--accent);display:grid;place-items:center;font:600 19px/1 "Playfair";flex:none}
+.st.on .n{background:var(--accent);color:var(--bg)}[data-theme=dark] .st.on .n{background:var(--gold);color:var(--on-gold)}
+.st img{width:54px;height:54px;border-radius:12px;flex:none}
+.st b{font:600 19px/1.15 "Cormorant";color:var(--head);display:block}
+.st span{font:500 12.5px/1.35 "Inter";color:var(--muted)}
+.st .dev{font-size:15px;color:var(--accent)}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px 30px;background:var(--tab);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;gap:12px;align-items:center;z-index:50}
+.bar .btn{flex:1;padding:16px}
+.bar .t{font:500 11.5px/1.35 "Inter";color:var(--muted);width:120px}
+/* desktop */
+.desk{width:1440px;height:900px;display:grid;grid-template-columns:1fr 600px;overflow:hidden}
+.dpic{position:relative;color:#fff}
+.dpic>img{position:absolute;inset:0;object-position:50% 25%}
+.dpic:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,14,8,.5),rgba(30,14,8,0) 25%,rgba(30,14,8,0) 55%,rgba(38,10,22,.9))}
+.dpic>*{position:relative;z-index:2}.dpic>.ht{position:absolute}
+.dpic .ht{left:56px;right:56px;bottom:56px}.dpic .ht h1{font-size:72px}
+.dpic .top{display:flex;align-items:center;gap:10px;padding:26px 56px;font:600 16px/1 "Cinzel";letter-spacing:.14em}
+.dpic .top img{width:34px;height:34px;border-radius:9px}
+.dpanel{background:var(--bg);padding:40px 44px;overflow:hidden}
+.dpanel .sk{margin:0;box-shadow:var(--shadow)}
+.dpanel .steps{margin:26px 0 0}
+.dpanel .st{padding:9px 0}
+</style></head>
+<body>
+<div class="phone">
+  <section class="hero"><img class="cover" src="img/shiva-portrait.jpg" alt="">
+    <script>document.write(statusbar('#fff'))</script>
+    <div class="nav"><span><svg viewBox="0 0 24 24"><path d="M15.5 4 7.5 12l8 8 1.6-1.6L10.7 12l6.4-6.4z"/></svg></span><span><svg viewBox="0 0 24 24"><path d="M18 16a3 3 0 0 0-2.3 1.1l-6.9-3.6a3 3 0 0 0 0-3l6.9-3.6A3 3 0 1 0 15 5a3 3 0 0 0 .1.8L8.2 9.4a3 3 0 1 0 0 5.2l6.9 3.6A3 3 0 1 0 18 16z"/></svg></span></div>
+    <div class="ht"><div class="ov">TODAY'S ePOOJA · SOMAVARA · सोमवार</div><h1>Shiv puja for Monday</h1>
+      <p>A short guided puja you can do at home, in front of any picture of Shiva or a Shivling.</p>
+      <div class="tags"><span>About 2 minutes</span><span>Free</span><span>Opening soon</span></div></div>
+  </section>
+  <div class="sk"><div class="over">Today's sankalpa · from our panchang</div>
+    <p>Today, <b>Monday 26 October 2026</b>, in <b>Vikram Samvat 2083</b>, in the month of <b>Ashvina</b>, on <b>Purnima</b> of the bright fortnight, under <b>Ashwini</b> nakshatra, here in <b>New Delhi</b>, I offer this puja to Shiva for the wellbeing of my family.</p>
+    <div class="fields"><div><small>YOUR NAME</small>Optional</div><div><small>GOTRA</small>Optional</div></div>
+    <div class="note">Add your name and gotra and they are spoken in the sankalpa. Kept on this phone only.</div></div>
+  <div class="steps"><h2>The puja, step by step</h2>
+    <div class="st on"><span class="n">1</span><img class="cover" src="img/puja-thali.jpg"><div><b>Light the diya</b><span>A ghee or oil lamp, and a little incense</span></div></div>
+    <div class="st"><span class="n">2</span><img class="cover" src="img/texts.jpg"><div><b>The sankalpa</b><span>Today's date, place and your intention, spoken once</span></div></div>
+    <div class="st"><span class="n">3</span><img class="cover" src="img/shiva-portrait.jpg" style="object-position:50% 25%"><div><b>Dhyana</b><span>A moment to picture Shiva on Kailash</span></div></div>
+    <div class="st"><span class="n">4</span><img class="cover" src="img/mantra.jpg"><div><b>ॐ नमः शिवाय</b><span>Om Namah Shivaya, 11 times, with a mala if you have one</span></div></div>
+    <div class="st"><span class="n">5</span><img class="cover" src="img/puja-set.jpg"><div><b>Aarti</b><span>Om Jai Shiv Omkara, with the words on screen</span></div></div>
+    <div class="st" style="border:0"><span class="n">6</span><img class="cover" src="img/puja-thali.jpg" style="object-position:20% 60%"><div><b>Kshama prarthana</b><span>A closing prayer, and the day begins</span></div></div>
+  </div>
+  <div class="bar"><span class="btn solid">Begin the puja</span><span class="t">Read along, or listen when the recitation opens</span></div>
+</div>
+
+<div class="desk">
+  <div class="dpic"><img class="cover" src="img/shiva-wide.jpg" alt="" style="object-position:70% 40%">
+    <div class="top"><img src="img/seal.png">ASTRO RIVER</div>
+    <div class="ht"><div class="ov">TODAY'S ePOOJA · SOMAVARA · सोमवार</div><h1>Shiv puja for Monday</h1>
+      <p style="max-width:560px">A short guided puja you can do at home, in front of any picture of Shiva or a Shivling.</p>
+      <div class="tags"><span>About 2 minutes</span><span>Free</span><span>Opening soon</span></div></div></div>
+  <div class="dpanel">
+    <div class="sk"><div class="over">Today's sankalpa · from our panchang</div>
+      <p>Today, <b>Monday 26 October 2026</b>, in <b>Vikram Samvat 2083</b>, in the month of <b>Ashvina</b>, on <b>Purnima</b> of the bright fortnight, under <b>Ashwini</b> nakshatra, here in <b>New Delhi</b>, I offer this puja to Shiva for the wellbeing of my family.</p>
+      <div class="fields"><div><small>YOUR NAME</small>Optional</div><div><small>GOTRA</small>Optional</div></div></div>
+    <div class="steps"><h2>The puja, step by step</h2>
+      <div class="st on"><span class="n">1</span><img class="cover" src="img/puja-thali.jpg"><div><b>Light the diya</b><span>A ghee or oil lamp, and a little incense</span></div></div>
+      <div class="st"><span class="n">2</span><img class="cover" src="img/texts.jpg"><div><b>The sankalpa</b><span>Today's date, place and your intention</span></div></div>
+      <div class="st"><span class="n">3</span><img class="cover" src="img/mantra.jpg"><div><b>ॐ नमः शिवाय</b><span>Om Namah Shivaya, 11 times</span></div></div>
+      <div class="st"><span class="n">4</span><img class="cover" src="img/puja-set.jpg"><div><b>Aarti</b><span>Om Jai Shiv Omkara</span></div></div>
+    </div>
+    <div style="margin-top:20px;display:flex;gap:12px;align-items:center"><span class="btn solid" style="padding:16px 30px">Begin the puja</span><span style="font:500 12.5px/1.4 Inter;color:var(--muted)">Read along, or listen when the recitation opens</span></div>
+  </div>
+</div>
+</body></html>
