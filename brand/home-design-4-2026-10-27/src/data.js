@@ -46,7 +46,7 @@ const TIMES = {
     pic: 'img/diya-dusk.jpg', picPos: '50% 60%', capt: 'Light the lamp at sunset, for Hanuman.',
     tiles: [
       { k: 'Sunset', v: '5:40 pm', s: 'Godhuli till 6:06 pm', href: '/panchang' },
-      { c: 'g', k: 'Sandhya window', v: '5:40 – 6:57', s: 'the evening sandhya, now', href: '/panchang' },
+      { c: 'g', k: 'Sandhya window', v: '5:40 – 6:57', s: 'now', href: '/panchang' },
       { k: 'Moonrise', v: '6:23 pm', s: 'Moon in Mesha', href: '/panchang' },
       { c: 'g', k: 'Next good window', v: '7:17 – 8:53', s: 'Labh choghadiya', href: '/muhurat' },
     ],
@@ -106,3 +106,28 @@ const REMEDY = {
 };
 const RM = TOD === 'evening' || TOD === 'night' ? REMEDY.evening : REMEDY.day;
 if (TOD === 'night') RM.done = 2;
+
+// ---- Round 4.2 ----
+// One campaign at a time, from one config: title, link, end time (a real close: the product's booking close or a
+// coupon's valid-until). The top line and the pop-up read only this. No campaign → neither shows.
+// ?camp=0 hides it in the mockup; ?popup=1 shows the pop-up as it looks after ~20 s or 50% scroll.
+const CAMPAIGN = Q.get('camp') === '0' ? null : {
+  title: 'Diwali Lakshmi Puja', href: '/alchemies/diwali-lakshmi-puja-2026',
+  ends: '2026-11-07T18:00:00+05:30', endLabel: 'Sat 7 Nov, 6 pm',          // Alchemies: bookings close
+  pic: 'img/diwali-lakshmi.jpg', line: 'Performed for you on Sun 8 Nov, in the Lakshmi Puja window, in your name and gotra.',
+  button: 'Book the puja',
+};
+// The mockup's "now" for each time of day, IST (Tue 27 Oct 2026).
+const NOW = { morning: '09:32', afternoon: '13:10', evening: '18:05', night: '22:40' }[TOD];
+function leftUntil(iso) {
+  const ms = new Date(iso) - new Date(`2026-10-27T${NOW}:00+05:30`); if (ms <= 0) return null;
+  const d = Math.floor(ms / 864e5), h = Math.floor(ms % 864e5 / 36e5), m = Math.floor(ms % 36e5 / 6e4);
+  return d >= 2 ? `${d} days` : d ? `1 day ${h} h` : h ? `${h} h ${m} min` : `${m} min`;   // coarser when far off; always to the real end
+}
+
+// Streak: a day counts when at least one act is ticked. One missed day in any 7 does not break it.
+// Our own lamp ladder, traditional counts. ?streak=<days>  ?reached=1 (the day a lamp is reached)
+const LADDER = [[1, 'The first lamp'], [7, 'A week kept'], [21, 'Three weeks'], [40, 'A mandala, forty days'], [108, 'A mala, a hundred and eight days']];
+const STREAK = Q.has('streak') ? +Q.get('streak') : (ME ? 12 : 0);
+const REACHED = Q.get('reached') === '1';
+if (REACHED && RM.done === 0) RM.done = 1;   // a lamp is reached only on a day with a tick

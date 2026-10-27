@@ -7,7 +7,7 @@ const { LARGE } = require('./audit-lib');
 const OUT = path.resolve(process.argv[2]); fs.mkdirSync(OUT, { recursive: true });
 const ROUTES = ['/', '/search', '/hi/panchang', '/panchang', '/planetary-positions', '/nakshatra/', '/rashifal/', '/sade-sati', '/manglik-dosha',
   '/muhurat', '/remedies', '/kundli', '/kundli-matching', '/journal', '/alchemies', '/consultation', '/inscriptions', '/archives', '/contact',
-  '/ask', '/lobby', '/profile', '/tools', '/login', '#remedy', 'https://whatsapp.com/channel/0029Vb92NvV2v1J203DyVy39', 'https://instagram.com/astroriverofficial'];
+  '/ask', '/lobby', '/alchemies/diwali-lakshmi-puja-2026', '/profile', '/tools', '/login', '#remedy', 'https://whatsapp.com/channel/0029Vb92NvV2v1J203DyVy39', 'https://instagram.com/astroriverofficial'];
 const CHECK = (ROUTES) => {
   const out = []; const scrollers = '.hs,.week,.lib,.planets';
   const vis = el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
@@ -21,6 +21,7 @@ const CHECK = (ROUTES) => {
     return rgb(getComputedStyle(document.body).backgroundColor); };
   for (const el of document.querySelectorAll('body *')) {
     if (!vis(el) || hidden(el)) continue;
+    if (document.querySelector('.sheet') && !el.closest('.sheet')) continue;
     const own = [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim());
     if (!own) continue;
     if (!el.closest(scrollers)) {
@@ -35,10 +36,10 @@ const CHECK = (ROUTES) => {
     const size = parseFloat(cs.fontSize), bold = +cs.fontWeight >= 700; const need = (size >= 24 || (bold && size >= 18.66)) ? 3 : 4.5;
     if (ratio < need) out.push(['contrast', el.className || el.tagName, `${ratio.toFixed(2)} ${cs.color} on rgb(${bg.slice(0,3)}) "${el.textContent.trim().slice(0, 24)}"`]);
   }
-  for (const el of document.querySelectorAll('a,.chip,.btn,.ic,.lang,.signs span,.tick,.tabbar a,.play,.gr,.more,.si')) {
+  for (const el of document.querySelectorAll('a,.chip,.btn,.ic,.lang,.signs span,.tick,.tabbar a,.play,.gr,.more,.si,.topline .x,.sheet .x')) {
     if (!vis(el) || hidden(el) || el.closest('.ghost,.sitefoot,.dm nav')) continue;
     const r = el.getBoundingClientRect(); // hit areas drawn by :after (see the CSS): .ic and .lang 8px, .tick 16px, .lang a 18px tall; text links 30px
-    const hit = el.matches('.tick') ? 16 : el.matches('.lang a') ? 18 : el.matches('.ic,.lang') ? 8 : el.matches('.more,.ig,.bridge') ? 30 : 0;
+    const hit = el.matches('.topline .x') ? 8 : el.matches('.tick') ? 16 : el.matches('.lang a') ? 18 : el.matches('.ic,.lang') ? 8 : el.matches('.more,.ig,.bridge,.topline .go') ? 30 : 0;
     if (el.closest('.planets') && el.matches('.gr')) continue;          // the whole strip is one 58px link
     if (r.height + hit < 44 || r.width + hit < 44) out.push(['tap<44', el.className || el.tagName, `${Math.round(r.width)}x${Math.round(r.height)} ${el.textContent.trim().slice(0, 24)}`]);
   }
@@ -55,11 +56,13 @@ const CHECK = (ROUTES) => {
     for (const w of [390, 360]) runs.push([t, m, L, 'phone', w]);
     runs.push([t, m, L, 'desktop', 1440]);
   }
-  for (const [t, m, L, v, w] of runs) {
+  for (const v of ['phone', 'desktop']) for (const t of ['morning', 'evening']) runs.push([t, 1, '', v, v === 'phone' ? 390 : 1440, '&popup=1']);
+  for (const s of ['&streak=21&reached=1', '&streak=0&again=1']) runs.push(['morning', 1, '', 'phone', 360, s]);
+  for (const [t, m, L, v, w, extra = ''] of runs) {
     const p = await b.newPage({ viewport: { width: w, height: v === 'phone' ? 844 : 900 }, deviceScaleFactor: 1 });
-    await p.goto('file://' + path.resolve(__dirname, 'home.html') + `?v=${v}&tod=${t}&me=${m}&full=1`);
+    await p.goto('file://' + path.resolve(__dirname, 'home.html') + `?v=${v}&tod=${t}&me=${m}&full=1${extra}`);
     await p.evaluate(() => document.fonts.ready); if (L) await p.evaluate(LARGE); await p.waitForTimeout(250);
-    const name = `${v}${w}-${t}-${m ? 'details' : 'nodetails'}${L ? '-large' : ''}`;
+    const name = `${v}${w}-${t}-${m ? 'details' : 'nodetails'}${L ? '-large' : ''}${extra.replace(/[&=]/g, '-')}`;
     report[name] = await p.evaluate(CHECK, ROUTES);
     const sw = await p.evaluate(() => document.documentElement.scrollWidth); if (sw > w) report[name].push(['page wider than screen', String(sw), '']);
     if (w !== 1440 || !L) await p.screenshot({ path: path.join(OUT, name + '.jpg'), type: 'jpeg', quality: 60, fullPage: true });

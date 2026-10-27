@@ -8,7 +8,6 @@
 <script>
   document.documentElement.dataset.theme = THEME;
   document.documentElement.dataset.tod = TOD;
-  if (Q.get('seal') === 'warm') addEventListener('DOMContentLoaded', () => document.querySelectorAll('img[src="img/seal.png"]').forEach(i => i.src = 'img/seal-warm-maroon.png'));
   if (Q.get('full')) document.documentElement.classList.add('full');
 </script>
 <style>
@@ -119,6 +118,46 @@
 .hub img{width:44px;height:44px;border-radius:12px;flex:none}
 .desk .hub{grid-template-columns:repeat(6,minmax(0,1fr))}
 .capnote{position:absolute;left:12px;bottom:10px;font:italic 500 15px/1.2 "Cormorant";color:var(--on-photo);background:var(--scrim-top);padding:5px 9px;border-radius:8px}
+/* ---- 4.2: top line, pop-up, streak ---- */
+.topline{display:flex;align-items:center;gap:8px;min-height:36px;padding:0 4px 0 16px;background:var(--tint-saffron);border-bottom:1px solid var(--line);font:500 12.5px/1.3 "Inter";color:var(--text)}
+.topline .t{flex:1;min-width:0}.topline b{font-weight:700;color:var(--heading)}
+.topline .go{font-weight:700;color:var(--accent);white-space:nowrap;padding:12px 4px;margin:-12px 0}
+.topline .x{flex:none;width:36px;height:36px;display:grid;place-items:center;position:relative;color:var(--text-muted)}
+.topline .x:after{content:"";position:absolute;inset:-4px}
+.topline .x svg,.sheet .x svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.4;fill:none}
+.desk .topline{padding:0 52px 0 64px;justify-content:center;font-size:13.5px}.desk .topline .t{flex:none}
+.scrim{position:fixed;inset:0;background:var(--scrim-top);z-index:60}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;background:var(--surface);border-radius:24px 24px 0 0;padding:10px 18px 30px;box-shadow:var(--shadow)}
+.sheet .grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 12px}
+.sheet .x{position:absolute;right:10px;top:10px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--text-muted)}
+.sheet .pic{height:150px;border-radius:16px;overflow:hidden;margin-top:6px}
+.sheet h3{font:600 26px/1.1 "Cormorant";color:var(--heading);margin-top:14px}
+.sheet p{font:500 14px/1.5 "Inter";color:var(--text-muted);margin-top:6px}
+.sheet .dl{display:flex;align-items:center;gap:8px;margin:12px 0 14px;font:700 13.5px/1.3 "Inter";color:var(--accent)}
+.sheet .dl:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none}
+.sheet .btn{width:100%}
+.desk .scrim{display:none}
+.desk .sheet{left:auto;right:28px;bottom:28px;width:360px;border-radius:20px;padding:14px 16px 18px;border:1px solid var(--line)}
+.desk .sheet .grab{display:none}.desk .sheet .pic{height:120px;margin-top:12px}.desk .sheet .x{top:0;right:0}
+.streak{margin-top:14px;padding:14px 14px 12px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.streak .sl{font:600 15px/1.35 "Inter";color:var(--text)}.streak .sl b{font-weight:800;color:var(--heading)}
+.streak .sn{font:500 12.5px/1.45 "Inter";color:var(--text-muted);margin-top:4px}
+.ladder{display:flex;justify-content:space-between;position:relative;margin:14px 2px 2px;padding-top:2px}
+.ladder:before{content:"";position:absolute;left:14px;right:14px;top:15px;height:3px;border-radius:2px;background:var(--line)}
+.ladder .fill{position:absolute;left:14px;top:15px;height:3px;border-radius:2px;background:var(--gold)}
+.ladder .st{position:relative;width:56px;text-align:center;font:700 11px/1.2 "Inter";color:var(--text-muted)}
+.ladder .st:first-of-type{text-align:left;width:auto}.ladder .st:last-of-type{text-align:right;width:auto}
+.ladder .lamp{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin:0 auto 4px;background:var(--surface);border:1.5px solid var(--line)}
+.ladder .st:first-of-type .lamp{margin-left:0}.ladder .st:last-of-type .lamp{margin-right:0}
+.ladder .lamp svg{width:14px;height:14px;fill:var(--line)}
+.ladder .on .lamp{border-color:var(--gold);background:var(--tint-gold)}.ladder .on .lamp svg{fill:var(--gold)}.ladder .on{color:var(--gold-text)}
+.reached{display:flex;gap:12px;align-items:center;margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--tint-gold);border:1px solid var(--gold)}
+.reached .lamp{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--surface);flex:none}
+.reached .lamp svg{width:18px;height:18px;fill:var(--flame)}
+.reached b{display:block;font:600 19px/1.15 "Cormorant";color:var(--heading)}.reached span{font:500 12.5px/1.4 "Inter";color:var(--text-muted)}
+/* 4.2 · room for the top line: the tiles stay on the first screen at 390 */
+.phone .top{padding:0 18px 4px}
+.alm .date .n{font-size:64px}.alm{padding-top:10px}
 /* hit areas */
 .dm .c .brand{padding:3px 0}
 .top .brand{padding:7px 0}
@@ -163,10 +202,37 @@ const CHECK = '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
 const wave = n => Array.from({length:n},(_,i)=>`<i class="${i<n/3?'on':''}" style="height:${30+Math.round(60*Math.abs(Math.sin(i*1.7)))}%"></i>`).join('');
 const soon = '<span class="tag soon">OPENING SOON</span>';
 
+/* 4.2 · top line: one campaign, a real end time, dismissible for the day */
+const XICON = '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>';
+const LAMP = '<svg viewBox="0 0 24 24"><path d="M12 2c1.7 2.3 2.4 4 2.4 5.2a2.4 2.4 0 0 1-4.8 0C9.6 6 10.3 4.3 12 2z"/><path d="M2.5 12.5h19c-.6 4-4.6 7-9.5 7s-8.9-3-9.5-7z"/></svg>';
+const left = CAMPAIGN && leftUntil(CAMPAIGN.ends);
+const topline = () => CAMPAIGN && left ? `<div class="topline" role="region" aria-label="Offer"><div class="t"><b>${CAMPAIGN.title}</b> · closes in ${left}</div><a class="go" href="${CAMPAIGN.href}">Book →</a><span class="x" role="button" aria-label="Hide for today">${XICON}</span></div>` : '';
+/* 4.2 · pop-up: same campaign; after ~20 s or 50% scroll, never on arrival, at most once a day */
+const sheet = () => CAMPAIGN && left && Q.get('popup') === '1' ? `<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${CAMPAIGN.title}"><div class="grab"></div><span class="x" role="button" aria-label="Close">${XICON}</span>
+    <div class="over">Performed for you</div><div class="pic"><img class="cover" src="${CAMPAIGN.pic}" alt=""></div>
+    <h3>${CAMPAIGN.title}</h3><p>${CAMPAIGN.line}</p><div class="dl">Bookings close ${CAMPAIGN.endLabel}</div>
+    <a class="btn solid" href="${CAMPAIGN.href}">${CAMPAIGN.button}</a></div>` : '';
+/* 4.2 · streak: days with at least one act ticked; forgiving; never guilt */
+const streak = () => {
+  const next = LADDER.find(([n]) => n > STREAK) || LADDER[LADDER.length - 1];
+  const idx = LADDER.filter(([n]) => n <= STREAK).length;             // lamps lit
+  const k = LADDER.length - 1; let pos = 0;                            // fill position, equal spacing between lamps
+  if (STREAK >= 1) { const i = Math.min(idx, k); const [a] = LADDER[i - 1], [b] = LADDER[Math.min(i, k)]; pos = (i - 1 + (b > a ? Math.min(1, (STREAK - a) / (b - a)) : 0)) / k; }
+  const lvl = LADDER.find(([n]) => n === STREAK);
+  const line = STREAK === 0 ? (Q.get('again') === '1' ? `<b>Start again today.</b> Tick any one act and the day counts.` : `<b>Light the first lamp today.</b> Tick any one act and the day counts.`)
+    : `<b>${STREAK} day${STREAK > 1 ? 's' : ''} kept</b> · next: ${next[0]} days`;
+  return `<div class="streak">
+    <div class="sl">${line}</div>
+    ${REACHED && lvl ? `<div class="reached"><span class="lamp">${LAMP}</span><div><b>${lvl[1]}</b><span>${STREAK} days of small acts. The next lamp is at ${next[0]} days.</span></div></div>` : ''}
+    <div class="ladder"><i class="fill" style="width:calc((100% - 28px) * ${pos.toFixed(3)})"></i>${LADDER.map(([n]) => `<div class="st${STREAK >= n ? ' on' : ''}"><div class="lamp">${LAMP}</div>${n}</div>`).join('')}</div>
+    <div class="sn">One missed day in a week does not break it. Kept on this phone; on your account when you sign in.</div>
+  </div>`;
+};
+
 /* 0 · header (phone) */
 const header = () => `
   <div class="top">
-    <a href="/" class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</a>
+    <a href="/" class="brand"><img src="img/seal-warm-maroon.png" alt="">ASTRO RIVER</a>
     <div class="acts">
       <a class="ic search" href="/search" title="Find anything">${SEARCH}</a>
       <div class="lang"><span class="on">EN</span><a href="/hi/panchang" class="h">हिं</a></div>
@@ -239,6 +305,7 @@ const remedy = () => `
       <div class="pic"><img class="cover" src="${TOD==='evening'||TOD==='night'?'img/puja-thali.jpg':'img/mantra.jpg'}" alt=""></div>
       <div><h3>${RM.h}</h3><div class="prog">${RM.done} of 3 done ${TOD==='evening'||TOD==='night'?'this evening':'today'} · your ticks are kept until tomorrow's sunrise</div></div>
     </div>
+    ${streak()}
     <div class="acts2">${RM.acts.map((a,i) => `<div class="act${i<RM.done?' done':''}"><span class="tick${i<RM.done?' on':''}" role="checkbox" aria-checked="${i<RM.done}">${i<RM.done?CHECK:''}</span><div style="flex:1;min-width:0"><b>${a.b.replace(/([ऀ-ॿ][ऀ-ॿ\s]*[ऀ-ॿ])/,'<span class="dev">$1</span>')}</b><span class="s">${a.s}</span>
         ${a.player?`<div class="player">${PLAY}<div class="wave">${wave(22)}</div><span class="count">× ${TOD==='evening'||TOD==='night'?'1':'108'}</span></div>`:''}</div></div>`).join('')}</div>
     ${ME ? `<a href="/remedies" class="bridge"><span><em>The Moon in your chart: in ${C.moon}, in your ${ord(C.moonHouse)} house.</em> The Chandra remedy →</span></a>`
@@ -423,7 +490,7 @@ const how = () => `
 const help = () => `<div class="help"><span>A question about an order or a booking?</span><a href="/contact" class="btn line">Chat with us</a></div>`;
 const footer = () => `
   <div class="sitefoot">
-    <div class="brand"><img src="img/seal.png" alt="">ASTRO RIVER INSTITUTE</div>
+    <div class="brand"><img src="img/seal-warm-maroon.png" alt="">ASTRO RIVER INSTITUTE</div>
     <div class="tagl">Est. 2008 — Institutional Vedic Astrology &amp; Spiritual Research</div>
     <div class="cols">
       <div><h4>EXPLORE</h4><a>Our Legacy</a><a>Advisory</a><a>Private Consultation</a><a>Alchemies of Power</a><a>Inscriptions</a><a>River Journal</a><a>Founder Archives</a><a>What's New</a></div>
@@ -436,14 +503,14 @@ const footer = () => `
 
 /* ---------- phone: the sections in order ---------- */
 const ink = 'currentColor';
-document.getElementById('phone').innerHTML = statusbar(ink, T.clock) + header() + almanac() + sky() + planets() + chips() + remedy() + epooja()
-  + rashi() + week() + tomorrow() + verse() + texts() + tools() + learn() + pujas() + shop() + ask() + inscr() + papers() + how() + help() + footer() + tabbar(false);
+document.getElementById('phone').innerHTML = statusbar(ink, T.clock) + topline() + header() + almanac() + sky() + planets() + chips() + remedy() + epooja()
+  + rashi() + week() + tomorrow() + verse() + texts() + tools() + learn() + pujas() + shop() + ask() + inscr() + papers() + how() + help() + footer() + tabbar(false) + sheet();
 
 /* ---------- desktop: the same sections, two to a row where they pair ---------- */
-document.getElementById('desk').innerHTML = `
+document.getElementById('desk').innerHTML = topline() + `
   <div class="dm">
     <div class="l">${DAY.city}<small>change city</small></div>
-    <div class="c"><a href="/" class="brand"><img src="img/seal.png" alt="">ASTRO RIVER</a>
+    <div class="c"><a href="/" class="brand"><img src="img/seal-warm-maroon.png" alt="">ASTRO RIVER</a>
       <nav><a href="/" class="on">Today</a><a href="/panchang">Panchang</a><a href="/kundli">Kundli</a><a>ePooja<em>SOON</em></a><a href="/alchemies/category/pujas">Pujas</a><a href="/ask">Ask</a><a href="/tools">Free tools</a><a href="/journal">Journal</a><a href="/alchemies">Shop</a></nav></div>
     <div class="r"><a class="ic search" href="/search">${SEARCH}</a><div class="lang"><span class="on">EN</span><a href="/hi/panchang" class="h">हिंदी</a></div>
       <span class="ic">${MOONICON}</span><a href="/login" class="si">Sign in</a></div>
@@ -465,6 +532,6 @@ document.getElementById('desk').innerHTML = `
     <div class="dpair"><div>${inscr()}<div style="height:28px"></div>${papers()}</div>${how()}</div>
     ${help()}
   </div>
-  ${footer()}`;
+  ${footer()}` + sheet();
 </script>
 </body></html>
