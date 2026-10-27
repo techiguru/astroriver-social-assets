@@ -1,0 +1,8 @@
+# Rebuild inputs, copied per the README "Build handover"; not committed (as in round 3)
+src/fonts/
+src/img/*
+!src/img/hanuman.jpg
+!src/img/diya-dusk.jpg
+!src/img/havan-kund.jpg
+!src/img/navagraha-temple.jpg
+!src/img/seal-warm-maroon.png
