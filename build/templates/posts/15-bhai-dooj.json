@@ -1,0 +1,15 @@
+{
+ "template": "festival",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "bhai-dooj-tilak.jpg",
+  "pos": "50% 40%",
+  "over": "Bhai Dooj · Wednesday 11 November",
+  "h": "Bhai Dooj is today",
+  "body": "Kept in the afternoon. A sister applies the tilak; a brother promises his care."
+ }
+}

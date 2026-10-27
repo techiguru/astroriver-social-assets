@@ -1,0 +1,15 @@
+{
+ "template": "festival",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "choti-diwali-oil-bath.jpg",
+  "pos": "50% 50%",
+  "over": "Choti Diwali · Saturday 7 November",
+  "h": "Choti Diwali is today",
+  "body": "An oil bath before dawn, then lamps in the evening."
+ }
+}

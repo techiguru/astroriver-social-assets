@@ -1,0 +1,15 @@
+{
+ "template": "festival",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "dhanteras-puja-thali.jpg",
+  "pos": "50% 50%",
+  "over": "Dhanteras · Friday 6 November",
+  "h": "Dhanteras is today",
+  "body": "Puja and buying window in New Delhi: 6:02 to 7:58&nbsp;pm. Light the Yama lamp after sunset."
+ }
+}

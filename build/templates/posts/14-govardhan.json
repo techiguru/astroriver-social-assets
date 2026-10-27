@@ -1,0 +1,15 @@
+{
+ "template": "festival",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "govardhan-krishna.jpg",
+  "pos": "50% 40%",
+  "over": "Govardhan Puja · Tuesday 10 November",
+  "h": "Govardhan Puja is today",
+  "body": "It usually falls the day after Diwali. This year it is on&nbsp;Tuesday."
+ }
+}

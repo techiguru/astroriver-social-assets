@@ -1,0 +1,15 @@
+{
+ "template": "festival",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "diwali-eve-diyas.jpg",
+  "pos": "50% 50%",
+  "over": "Diwali · Sunday 8 November",
+  "h": "Diwali is on Sunday",
+  "body": "Lakshmi Puja muhurat in New Delhi: 5:54 to 7:50&nbsp;pm."
+ }
+}
