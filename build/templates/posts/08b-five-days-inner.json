@@ -1,0 +1,41 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "dhanteras.jpg",
+  "pos": "50% 45%",
+  "artHeight": {
+   "feed": 430,
+   "story": 640
+  },
+  "over": "The five days",
+  "h": "Dhanteras to Bhai Dooj",
+  "rows": [
+   [
+    "Fri 6 Nov",
+    "Dhanteras"
+   ],
+   [
+    "Sat 7 Nov",
+    "Choti Diwali"
+   ],
+   [
+    "Sun 8 Nov",
+    "Diwali, Lakshmi Puja"
+   ],
+   [
+    "Tue 10 Nov",
+    "Govardhan Puja"
+   ],
+   [
+    "Wed 11 Nov",
+    "Bhai Dooj"
+   ]
+  ],
+  "body": "Govardhan Puja is on Tuesday this year, a day later than the usual day after Diwali."
+ }
+}
