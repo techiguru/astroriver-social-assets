@@ -1,4 +1,6 @@
-# Home, round 3 (27 Oct 2026): a pass over everything, with Night A
+# Home, round 3.1 (27 Oct 2026): a pass over everything, with Night A
+
+Round 3.1 follows the chief of staff's review of round 3. Those changes are listed under "Round 3.1" below. A build chat should start at "Build handover", at the end.
 
 The founder picked **Night A (lamp-black)**, so Night B is dropped. Light stays the default. This round is a pass over every section of the home and ePooja pages before the build.
 
@@ -89,15 +91,22 @@ The screens still show the panchang for **Monday 26 October 2026, New Delhi** (a
 
 Nothing was removed. The layout, the order of sections and all other wording are unchanged.
 
+## Round 3.1 (after review)
+17. The ePooja feature is not live, so it no longer has live-looking buttons. On the home card (phone and desktop), "Begin" and "Remind me daily" are replaced by one quiet "Opening soon" line. On the ePooja page (phone bar and desktop), "Begin the puja" is replaced the same way. The note "Read along, or listen when the recitation opens" stays.
+18. Ask price: "₹399 ₹99 your first question" → "~~₹399~~ ₹99 + GST, your first question" (phone and desktop). This matches the live source, `src/lib/askQuestion.ts` in astroriver/astro-river, as reported by the chief of staff. The full price is ₹399 + GST.
+19. The bell is hidden on home until notifications exist.
+20. Founder paper D, "Jaimini Sutras and Modern Practice", is added. It is live at /archives/jaimini-sutras.
+21. Logo tile: the navy and maroon pair stays as an option. The founder is choosing.
+
 ## Where every tap goes (live astroriver.com routes, checked 27 Oct 2026)
 "Sign-in" means the page is live but asks the visitor to sign in first. "SOON" means there is no page yet, and the design marks it.
 
 | On the page | Opens |
 |---|---|
 | Logo | / |
-| EN / हिं | Hindi home: **no page, flagged**. Hindi exists for /hi/panchang, /hi/journal/…, /hi/weekly-horoscope, /hi/planetary-positions |
+| EN / हिं | हिं opens /hi/panchang for now, until there is a Hindi home |
 | Moon icon | switches light and night on the page |
-| Bell | notifications: **no page, flagged** |
+| Bell | hidden until notifications exist |
 | New Delhi · change | city picker on the page (same cities as /panchang) |
 | Tithi, Sun, Rahu Kaal boxes | /panchang |
 | Nakshatra Ashwini | /nakshatra/ashwini |
@@ -105,14 +114,14 @@ Nothing was removed. The layout, the order of sections and all other wording are
 | Karwa Chauth strip | /journal/karwa-chauth |
 | Stories: Shiva's day · Mantra · Karwa Chauth · Dhanteras · Diwali | ePooja (SOON) · mantra player on the page · /journal/karwa-chauth · /journal/diwali/dhanteras · /journal/diwali. The story viewer itself is new to build |
 | Chips: Today's ePooja · Chant a mantra · Make my kundli · Diwali puja · Read the Gita · Shop | ePooja (SOON) · mantra player on the page · /kundli · /alchemies/diwali-lakshmi-puja-2026 · Gita (SOON) · /alchemies |
-| ePooja card: Begin · Remind me daily | ePooja page, this design (SOON) · reminders (SOON, inside the opening-soon card) |
+| ePooja card | the card opens the ePooja page (SOON); no buttons, an "Opening soon" line |
 | Mantra: play, × 108 | on the page (audio still undecided) |
 | All mantras and aartis | SOON |
 | Rashifal signs | /rashifal/mesh, /vrishabh, /mithun, /kark, /singh, /kanya, /tula, /vrishchik, /dhanu, /makar, /kumbh, /meen |
 | This week: day cells | /panchang/&lt;date&gt; |
 | "Jupiter enters Simha" | /journal/jupiter-in-leo-2026 |
 | Festival cards | /journal/karwa-chauth · /journal/diwali/dhanteras · /journal/diwali |
-| Verse: Share | the phone's share sheet |
+| Verse: Share | the native share sheet (the Web Share API) with the verse and a link; on desktop without it, copy link |
 | Texts row: Bhagavad Gita, Hanuman Chalisa, Shiv Chalisa, Aartis | SOON |
 | Free tools: kundli · matching · a good day · Manglik · Sade Sati | /kundli · /kundli-matching · /muhurat · /manglik-dosha (the "Sade Sati" half opens /sade-sati) |
 | All tools | /tools (sign-in) |
@@ -122,18 +131,61 @@ Nothing was removed. The layout, the order of sections and all other wording are
 | All pujas | /alchemies/category/pujas |
 | Shop: Visit · four circles | /alchemies · /alchemies/category/gemstones, /rudrakshas, /yantras, /pujas |
 | Ask a question | /ask (sign-in) |
-| Vedansh AI, Tara AI | /lobby (sign-in) |
+| AI astrologer cards (Vedansh, Tara in the mockup) | /lobby (sign-in). **Names come from live data**, the same source as /lobby; do not hard-code them |
 | A private consultation | /consultation |
 | Inscriptions card | /inscriptions |
-| Founder papers A, B, C · Library | /archives/first-principles, /archives/dasha-systems, /archives/nature-of-nakshatras · /archives |
+| Founder papers A, B, C, D · Library | /archives/first-principles, /archives/dasha-systems, /archives/nature-of-nakshatras, /archives/jaimini-sutras · /archives |
 | Footer links | /panchang · /alchemies/category/pujas · /ask · /tools · /journal · /alchemies |
 | Tab bar: Today · Ask · Pujas · Tools · Me | / · /ask · /alchemies/category/pujas · /tools · /profile (Ask, Tools and Me need sign-in) |
 | Desktop menu | Today / · Panchang /panchang · ePooja SOON · Mantras SOON · Pujas /alchemies/category/pujas · Ask /ask · Free tools /tools · Learn SOON · Shop /alchemies · Sign in /login |
-| ePooja page: back · share · name and gotra · Begin the puja | the home page · share sheet · on the page (kept on the phone) · the steps on the page |
+| ePooja page: back · share · name and gotra | the home page · share sheet · on the page (kept on the phone); no "Begin" button while it is opening soon |
 
 ## Open points
-- **₹399 / ₹99:** these come from the price rule in `../home-combined-2026-10-26/HANDOVER.md`, carried over from the founder. Live /ask is behind sign-in and its price comes from the database, so I could not see it on a public page. Someone signed in should confirm it before launch.
-- **Vedansh and Tara:** the AI astrologer list (/lobby) is behind sign-in and comes from the database. Confirm both names are live.
-- **Founder's name:** the founder's rule for this page is that his name appears nowhere on it. The papers are listed by title only, so "Dr. Armaan Sharma" is not used. The live archive also has paper D, "Jaimini Sutras and Modern Practice". It can be added if wanted; I did not add it.
-- **Desktop:** the desktop page shows fewer sections than the phone (no mantra band, rashifal, Learn, Inscriptions, papers or "How we work"). The build should reuse the phone sections.
-- **Not live yet, and marked SOON:** ePooja, the mantra and aarti library, the texts library, the course, the kundli guide, reminders, notifications, the Hindi home and the app.
+- **Ask price:** ₹399 / ₹99 + GST, per `src/lib/askQuestion.ts` as reported by the chief of staff. I could not see it on a public page, because /ask is behind sign-in.
+- **AI astrologer names:** from live data (see the tap list).
+- **Founder's name:** the founder's rule for this page is that his name appears nowhere on it. The papers are listed by title only.
+- **Desktop:** the desktop page shows fewer sections than the phone. The build should reuse the phone sections, in the phone order.
+- **Not live yet, and marked SOON:** ePooja, the mantra and aarti library, the texts library, the course, the kundli guide, reminders, notifications (the bell is hidden), the Hindi home (हिं opens /hi/panchang) and the app.
+- **Still undecided:** mantra audio, and the personal sankalpa (it is general, from the panchang, for now).
+- **Logo tile:** navy or maroon, the founder's pick.
+
+## Build handover
+Start from this folder.
+- `src/home.html`, `src/epooja.html` and `src/theme.css` are the reference.
+- `tokens.json` (the table above) is the only source of colour.
+- Fonts: Cormorant Garamond (headings), Playfair Display (numerals), Inter (UI), Tiro Devanagari Hindi and Mukta (Devanagari), Cinzel (wordmark). All are SIL OFL; see the HANDOVER in `../home-combined-2026-10-26/`.
+- Themes: light by default. Night by the moon toggle, or automatically from sunset to sunrise for the visitor's city. Remember the visitor's choice.
+- Sizes: the layout is fluid from 320 px up; check it at 360, 390 and 1440. Every tap target is at least 44 px. Body text scales with the system text size; the top bar and tab bar keep their size.
+
+**Home, sections in order (phone; desktop uses the same sections)**
+
+| # | Section | Data |
+|---|---|---|
+| 1 | Top bar: logo, EN/हिं, theme toggle | static |
+| 2 | Almanac: greeting, date (English and Hindi weekday), city, tithi with its end time and the next tithi, painting and caption, nakshatra with its end time, sunrise and sunset, "Good now" (current choghadiya), Rahu Kaal, next festival strip | **live**: the panchang engine behind /panchang (Lahiri, sunrise to sunrise, the visitor's city). Painting and caption: static, one per weekday. Greeting by time of day |
+| 3 | Stories row | festival dates **live** (panchang and journal); story content static, curated per festival or day |
+| 4 | "What would you like to do today?" chips | static |
+| 5 | Today's ePooja card | static, one puja per weekday; opening soon |
+| 6 | Mantra of the day, with player and × 11 / × 108 counter | static, one per weekday (audio to be decided) |
+| 7 | Rashifal: "The Moon is in …", 12 signs | Moon sign **live** (panchang). The chosen sign is saved per visitor. Each sign links to /rashifal/&lt;sign&gt; |
+| 8 | This week: headline, retrograde line, 7-day strip, festival cards | **live**: panchang for 7 days, planetary positions (the engine behind /planetary-positions) for ingress and retrograde, festivals from the journal. The headline is the week's main transit |
+| 9 | Today's verse, Share | static rotation of verses |
+| 10 | The texts row | static; opening soon |
+| 11 | Free tools (4 cards) | static links |
+| 12 | Learn (3 cards), Journal link | the course and kundli-guide cards static (soon); the Journal card is the latest or featured article, **live** from the journal |
+| 13 | Pujas: the featured puja, booking close time | **live** from Alchemies (the current featured puja and its booking deadline) |
+| 14 | The shop: 4 categories | **live** category list from Alchemies |
+| 15 | Ask: question card with price, AI astrologer cards, private consultation | price **live** (askQuestion); astrologer names and pictures **live** (the /lobby source); consultation card static |
+| 16 | Inscriptions card | static (links to the live /inscriptions) |
+| 17 | Founder papers A–D, Library | **live** from the archives list (titles only, no author name) |
+| 18 | How we work | static |
+| 19 | Footer: wordmark, app line, links | static |
+| 20 | Tab bar: Today, Ask, Pujas, Tools, Me | static |
+
+**ePooja page (opening soon)**
+- **Hero:** static, per weekday.
+- **Sankalpa:** generated from the **live** panchang (date, Vikram Samvat, month, paksha, tithi, nakshatra, city). It has optional name and gotra fields, kept on the visitor's phone only.
+- **Steps:** static, per weekday.
+- **Bottom bar:** an "Opening soon" line, no button.
+
+**Taps:** see "Where every tap goes" above. Every tap either opens a live route or is marked SOON.
