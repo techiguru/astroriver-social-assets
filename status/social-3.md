@@ -32,3 +32,15 @@ Execute times expected (UTC): 6 Nov 02:30 and 14:00; 7, 8, 10, 11 Nov 02:30; 12 
 
 ## Comment checks (send_later, IST): 29 Oct 10:00 trig_01F23z2KfkBsLgYgn24n5dt8 · 17:00 trig_01JMDjhHnokW3RDCWemkWieo · 18:30 trig_01NBXQugpEBCHH28LHc45YWy · 30 Oct 22:00 trig_0128uPz5rwJhKdTXqLYkmxNE · 31 Oct 10:00 trig_01GsgCNmebupJRp7pFxbYsRP · 21:00 trig_01SdGf1RXEebFLFGygdZshFR · 1 Nov 10:00 trig_0197Noe43RJRm2sjqDeoC1LF · 21:00 trig_018JUSL4aiVN1DUojoFnLC2Q · 2 Nov 10:00 trig_015mbKaibWPWvf8epv47WWRw
 (Reading comments also costs ContentStudio API credits: none left until 1 Nov, so the 29-31 Oct checks cannot run unless credits are added.)
+
+## K14 decision (27 Oct): buy no credits, WAIT for the 1 Nov reset. No ContentStudio calls until then. K14 wakes me 1 Nov 06:15 IST for the ~7 calls: create Sat 14 (3), one batched fetch-back of all Plan C (1), check the 2 Nov post, Lakshmi 31 Oct re-word is dropped (K14: "our pandits perform" matches the page). 29-31 Oct comment checks paused.
+
+## November credit budget (250 credits per month; every API call counts 1: create_post, update_post, upload_media, fetch_posts, fetch_comments, add_comment, fetch_social_accounts)
+| Use | Rule | Budget |
+|---|---|---|
+| New items | 3 create_post per item (IG, FB group, Pinterest+GBP); an update_post costs 1 per post, so get the image and text right before creating | 90 (about 30 posts' worth) |
+| Media | 1 upload_media per image; a carousel costs 5. Upload each picture once and reuse its URL across the 3 posts | 40 |
+| Fetch-back | ONE fetch_posts per day at most, batched: verify every post created that day in that single call (never one fetch per post) | 30 |
+| Comment checks | counted in: one fetch_comments per post per check, only on posts published since the last check; max 3 checks a day, and none when nothing published | 60 |
+| Reserve (fixes, updates) | do not touch unless K14 agrees | 30 |
+Rules: log every call in this file the day it is made; at 150 used stop and tell K14; at 220 only fixes. Check the remaining credits on the first call of the day (the error message names the count). Do not run test calls.
