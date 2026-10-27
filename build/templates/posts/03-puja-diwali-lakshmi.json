@@ -1,6 +1,16 @@
-{ "template": "puja", "formats": ["feed", "story"],
-  "content": { "theme": "light", "art": "diwali-lakshmi.jpg", "pos": "50% 30%",
-    "over": "Performed for you · Diwali, Sunday 8 November",
-    "h": "Diwali Lakshmi Puja",
-    "body": "In the Lakshmi Puja window, in your name and gotra. Photos of your puja are sent to you after the ceremony.",
-    "deadline": "Bookings close Saturday 7 November, 6 pm" } }
+{
+ "template": "puja",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "light",
+  "art": "diwali-lakshmi.jpg",
+  "pos": "50% 30%",
+  "over": "Diwali · Sunday 8 November",
+  "h": "Diwali Lakshmi Puja",
+  "body": "In the Lakshmi Puja window, in your name and gotra. Photos of your puja are sent to you after the&nbsp;ceremony.",
+  "deadline": "Bookings close Saturday 7 November, 6 pm"
+ }
+}

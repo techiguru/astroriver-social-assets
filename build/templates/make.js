@@ -34,6 +34,12 @@ const files = process.argv.length > 2 ? process.argv.slice(2).map(f => path.reso
           const px = parseFloat(getComputedStyle(e).fontSize), min = e.classList.contains('over') ? 30 : 40;
           if (px < min) out.push(`text under ${min} px (${px}): "${e.textContent.trim().slice(0, 30)}"`);
         }
+        // a single word alone on the last line of a headline, body or deadline
+        for (const e of document.querySelectorAll('h1, .body, .deadline')) {
+          const ws = []; const w = document.createTreeWalker(e, NodeFilter.SHOW_TEXT);
+          for (let n; (n = w.nextNode());) for (const m of n.textContent.matchAll(/[^\s\u00a0]+/g)) { const r = document.createRange(); r.setStart(n, m.index); r.setEnd(n, m.index + m[0].length); const b = r.getClientRects(); if (b.length) ws.push({ w: m[0], y: Math.round(b[b.length - 1].top / 12) }); }
+          if (ws.length > 2 && ws[ws.length - 1].y !== ws[ws.length - 2].y) out.push(`one word alone on the last line: "${ws[ws.length - 1].w}"`);
+        }
         if (fmt === 'story') for (const e of document.querySelectorAll('.txt *, .sig')) { const r = e.getBoundingClientRect(); if (!r.width && !r.height) continue; if (r.top < 250 || r.bottom > h - 250 + 1) out.push('outside the story safe zone: ' + (e.className || e.tagName) + ' top ' + Math.round(r.top) + ' bottom ' + Math.round(r.bottom)); }
         return out;
       }, { fmt, h });
