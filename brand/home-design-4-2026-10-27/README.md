@@ -1,6 +1,13 @@
-# Home, round 4.2 (27 Oct 2026): your sky, the planets, the remedy, four times of day
+# Home, round 4.3 (27 Oct 2026): your sky, the planets, the remedy, four times of day
 
 Round 4 starts from round 3.1 (`../home-design-3-2026-10-27/`). It adds the astrology and the institute to the almanac without redesigning what was there. All the round 3 tokens and fixes are kept. Light is the default, and Night A (lamp-black) is the night mode. A build chat should start at "Build handover", at the end.
+
+**Round 4.3:** the streak is now visible from the header.
+- A lamp badge sits beside the moon toggle: a lit lamp and the day count ("12"). At 0 days it shows the unlit lamp with no number.
+- It has a 44 px hit area, and a tap scrolls to the remedy card.
+- The ladder in the card is unchanged. Its explanation line ("One missed day in a week…") shows only until day 7.
+- To fit the badge, the phone wordmark is set slightly smaller: 13 px, or 12 px below 370 px.
+- Renders: the phone first screens, `desktop1440-header-light.png` and `desktop1440-header-night.png`, and `view/`.
 
 **Round 4.2** (the founder's notes on 4.1):
 1. **Logo:** the warm maroon tile is decided. It is used in the header, the footer and on desktop, and the navy option is gone from the overview.
@@ -112,6 +119,7 @@ Every check below is in `src/audit.js` and `src/tokencheck.js`. The audit has 54
 | Pop-up: button | the campaign's link |
 | Pop-up: ×, or a tap outside (phone scrim; desktop: anywhere off the card) | closes it; not shown again that day |
 | Streak ladder | not a link |
+| Header lamp badge (4.3) | scrolls to the remedy card |
 
 ## Tap list
 Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means the page is live behind sign-in.

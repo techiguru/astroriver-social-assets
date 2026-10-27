@@ -158,6 +158,16 @@
 /* 4.2 · room for the top line: the tiles stay on the first screen at 390 */
 .phone .top{padding:0 18px 4px}
 .alm .date .n{font-size:64px}.alm{padding-top:10px}
+/* 4.3 · lamp badge */
+.lampb{display:inline-flex;align-items:center;gap:4px;height:36px;min-width:36px;justify-content:center;padding:0 10px 0 9px;border-radius:999px;background:var(--surface);box-shadow:var(--shadow);position:relative}
+.lampb:after{content:"";position:absolute;inset:-4px}
+.lampb svg{width:17px;height:17px;fill:var(--text-muted)}
+.lampb.lit svg{fill:var(--flame)}
+.lampb b{font:800 13px/1 "Inter";color:var(--heading)}
+.lampb:not(.lit){padding:0}
+.phone .acts{gap:6px}
+.phone .top .brand{font-size:13px;letter-spacing:.1em}
+@media (max-width:369px){.phone .top .brand{font-size:12px;letter-spacing:.04em;gap:6px}.phone .top{padding:0 14px 4px 16px}}
 /* hit areas */
 .dm .c .brand{padding:3px 0}
 .top .brand{padding:7px 0}
@@ -225,9 +235,12 @@ const streak = () => {
     <div class="sl">${line}</div>
     ${REACHED && lvl ? `<div class="reached"><span class="lamp">${LAMP}</span><div><b>${lvl[1]}</b><span>${STREAK} days of small acts. The next lamp is at ${next[0]} days.</span></div></div>` : ''}
     <div class="ladder"><i class="fill" style="width:calc((100% - 28px) * ${pos.toFixed(3)})"></i>${LADDER.map(([n]) => `<div class="st${STREAK >= n ? ' on' : ''}"><div class="lamp">${LAMP}</div>${n}</div>`).join('')}</div>
-    <div class="sn">One missed day in a week does not break it. Kept on this phone; on your account when you sign in.</div>
+    ${STREAK < 7 ? '<div class="sn">One missed day in a week does not break it. Kept on this phone; on your account when you sign in.</div>' : ''}
   </div>`;
 };
+
+/* 4.3 · the streak in the header: lamp + day count; at 0 the unlit lamp, no number. Tap → the remedy card */
+const lampBadge = () => `<a href="#remedy" class="lampb${STREAK ? ' lit' : ''}" aria-label="${STREAK ? STREAK + ' days kept' : 'Light the first lamp'}">${LAMP}${STREAK ? `<b>${STREAK}</b>` : ''}</a>`;
 
 /* 0 · header (phone) */
 const header = () => `
@@ -236,7 +249,7 @@ const header = () => `
     <div class="acts">
       <a class="ic search" href="/search" title="Find anything">${SEARCH}</a>
       <div class="lang"><span class="on">EN</span><a href="/hi/panchang" class="h">हिं</a></div>
-      <span class="ic" title="Light / night">${MOONICON}</span>
+      ${lampBadge()}<span class="ic" title="Light / night">${MOONICON}</span>
     </div>
   </div>`;
 
@@ -513,7 +526,7 @@ document.getElementById('desk').innerHTML = topline() + `
     <div class="c"><a href="/" class="brand"><img src="img/seal-warm-maroon.png" alt="">ASTRO RIVER</a>
       <nav><a href="/" class="on">Today</a><a href="/panchang">Panchang</a><a href="/kundli">Kundli</a><a>ePooja<em>SOON</em></a><a href="/alchemies/category/pujas">Pujas</a><a href="/ask">Ask</a><a href="/tools">Free tools</a><a href="/journal">Journal</a><a href="/alchemies">Shop</a></nav></div>
     <div class="r"><a class="ic search" href="/search">${SEARCH}</a><div class="lang"><span class="on">EN</span><a href="/hi/panchang" class="h">हिंदी</a></div>
-      <span class="ic">${MOONICON}</span><a href="/login" class="si">Sign in</a></div>
+      ${lampBadge()}<span class="ic">${MOONICON}</span><a href="/login" class="si">Sign in</a></div>
   </div>
   <div class="rule" style="margin:0 64px"></div>
   <div class="dhero2">

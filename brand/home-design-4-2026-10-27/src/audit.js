@@ -36,10 +36,10 @@ const CHECK = (ROUTES) => {
     const size = parseFloat(cs.fontSize), bold = +cs.fontWeight >= 700; const need = (size >= 24 || (bold && size >= 18.66)) ? 3 : 4.5;
     if (ratio < need) out.push(['contrast', el.className || el.tagName, `${ratio.toFixed(2)} ${cs.color} on rgb(${bg.slice(0,3)}) "${el.textContent.trim().slice(0, 24)}"`]);
   }
-  for (const el of document.querySelectorAll('a,.chip,.btn,.ic,.lang,.signs span,.tick,.tabbar a,.play,.gr,.more,.si,.topline .x,.sheet .x')) {
+  for (const el of document.querySelectorAll('a,.chip,.btn,.ic,.lang,.signs span,.tick,.tabbar a,.play,.gr,.more,.si,.topline .x,.sheet .x,.lampb')) {
     if (!vis(el) || hidden(el) || el.closest('.ghost,.sitefoot,.dm nav')) continue;
     const r = el.getBoundingClientRect(); // hit areas drawn by :after (see the CSS): .ic and .lang 8px, .tick 16px, .lang a 18px tall; text links 30px
-    const hit = el.matches('.topline .x') ? 8 : el.matches('.tick') ? 16 : el.matches('.lang a') ? 18 : el.matches('.ic,.lang') ? 8 : el.matches('.more,.ig,.bridge,.topline .go') ? 30 : 0;
+    const hit = el.matches('.topline .x') ? 8 : el.matches('.tick') ? 16 : el.matches('.lang a') ? 18 : el.matches('.ic,.lang,.lampb') ? 8 : el.matches('.more,.ig,.bridge,.topline .go') ? 30 : 0;
     if (el.closest('.planets') && el.matches('.gr')) continue;          // the whole strip is one 58px link
     if (r.height + hit < 44 || r.width + hit < 44) out.push(['tap<44', el.className || el.tagName, `${Math.round(r.width)}x${Math.round(r.height)} ${el.textContent.trim().slice(0, 24)}`]);
   }
