@@ -1,6 +1,10 @@
-# Home, round 4.3 (27 Oct 2026): your sky, the planets, the remedy, four times of day
+# Home, round 4.4 (27 Oct 2026): your sky, the planets, the remedy, four times of day
 
 Round 4 starts from round 3.1 (`../home-design-3-2026-10-27/`). It adds the astrology and the institute to the almanac without redesigning what was there. All the round 3 tokens and fixes are kept. Light is the default, and Night A (lamp-black) is the night mode. A build chat should start at "Build handover", at the end.
+
+**Round 4.4: stories** (the founder said yes). The full spec is in "Stories" below.
+- An Instagram-style row of six circles sits directly under the header, and under the top line when that shows.
+- The tithi and the four panchang tiles still fit on the 390 first screen. To make room, the greeting block, the date numeral and the arch are tighter (the arch is 100 × 122). The festival strip now starts at the fold.
 
 **Round 4.3:** the streak is now visible from the header.
 - A lamp badge sits beside the moon toggle: a lit lamp and the day count ("12"). At 0 days it shows the unlit lamp with no number.
@@ -50,12 +54,13 @@ Indian dark-pattern rules name false urgency and nagging. On this page:
 ## Files
 - `overview.png`: one sheet with everything, including the warm maroon logo (decided in 4.2).
 - 4.2 pieces: `topline-*`, `popup-*` and `streak-*` (new visitor, day 12 light and night, a lamp reached, start again).
+- 4.4: `stories-row-*` (phone 390, light and Night A, all new and some seen), `stories/` (every slide at 390 light, plus two in Night A), `stories-desktop1440-viewer-light.png`, `stories-desktop1440-row-night.png`.
 - `view/`: the phone 390 morning page with details at 3× (1170 px wide), in 11 screen-sized parts.
 - `phone390-first-<time>-<no|with>-details.png`: the first screen for morning, afternoon, evening and night, each without and with birth details (8 files).
 - `phone390-full-*.jpg`: the whole phone page in three states: morning light without details, morning light with details, and evening Night A with details.
 - `desktop1440-full-*.jpg`: desktop in morning light and evening Night A. Desktop carries the same sections as the phone. `desktop1440-first-morning-light.png` is the desktop first screen.
 - `phone360-first-morning-large-text.png` and `phone360-full-morning-large-text.jpg`: phone 360 at large text (130%).
-- `audit/report.json`: the audit, 54 runs and 0 issues. Two sample full pages at 360 large text sit beside it.
+- `audit/report.json`: the audit, 89 runs and 0 issues. Two sample full pages at 360 large text sit beside it.
 - `src/`:
   - `home.html`: the sections, written once and used for both phone and desktop.
   - `data.js`: the day's data, the four times of day, the example chart and the remedies.
@@ -98,7 +103,7 @@ Sections not listed here are as in 3.1.
 | Night | शुभ रात्रि Good night | Quiet: "Tomorrow, Wed 28: Tritiya", Krittika until 1:26 pm; two tiles only (sunrise tomorrow 6:30, Moon in Vrishabha since 9:06 pm); no festival strip | the Moon over the ghat | Night A |
 
 ## Checks
-Every check below is in `src/audit.js` and `src/tokencheck.js`. The audit has 54 runs (48, plus four pop-up runs and two streak runs): phone 390 and 360 and desktop 1440, × 4 times of day, × with and without details, × normal and large text. **0 issues.**
+Every check below is in `src/audit.js` and `src/tokencheck.js`. The audit has 89 runs: the 48, plus pop-up, streak and seen-row runs, and every story slide at 390 and at 360 large text: phone 390 and 360 and desktop 1440, × 4 times of day, × with and without details, × normal and large text. **0 issues.**
 - **AA contrast:** each text run is measured against the colour behind it (4.5:1, or 3:1 for large text). Text on photographs uses the on-photo tokens over a scrim. A self-test with low-contrast text was caught.
 - **Taps:** 44 px or more, including the remedy ticks (28 px circle in a 44 px hit area).
 - **One token set:** every computed colour on every state is in `tokens.json`. There is no blue. The evening painting's sky is a painting, not a UI colour.
@@ -110,6 +115,49 @@ Every check below is in `src/audit.js` and `src/tokencheck.js`. The audit has 54
   - The only prices are ₹399 / ₹99 + GST for Ask. The consultation shows none.
   - The founder's name appears nowhere.
   - The page title is "Today's panchang and your sky — Astro River".
+
+## Stories (4.4)
+**The row:** circles of 64 px (74 px on desktop), each with a label under it.
+- A new circle has a maroon→gold gradient ring (accent→gold in Night A). A seen circle has a muted ring (the `line` token) and moves to the end of the row, as on Instagram.
+- The rings reset at sunrise for the visitor's city.
+- Circle 6 shows only when the office's list has an item.
+
+**The viewer** is full screen, in the page's current theme (light by day, Night A at night).
+- At the top: one progress bar per slide, the circle's icon and name, pause and ×.
+- Every slide has real art (the deity paintings, festival pictures and ceremony photos), with the type on the page colour below it, never on a plain colour block.
+- The art panel and the text area take the same place on every slide.
+- Gestures: tap right = next, tap left = back, hold = pause, swipe down = close. It advances by itself after about 6 s.
+- With reduced motion, slides change without movement and the bars fill without animation. Auto-advance stays, and pause always works.
+- **Desktop:** a phone-sized panel (400 × 820) over the page dimmed by the scrim token, with ‹ › arrows; Esc and ← → work too.
+- Every tap target is 44 px or more, and the text meets AA.
+
+| Circle | Slides (all built daily from site data) | Ends with |
+|---|---|---|
+| 1 Today | the tithi and nakshatra with end times · sunrise and sunset, Rahu Kaal, the good window now · one line on the day (the weekday's deity) | "Full panchang →" /panchang |
+| 2 Your day | the Moon's house today and its line · the dasha now (MD–AD, end dates) · the remedy for your chart (natal Moon → its graha remedy). Without birth details: one slide, "Add your birth details" → /kundli | "Your kundli →" /kundli |
+| 3 Festival | the next festival within 14 days: the date · why it matters · what to do · **its puja with the real booking deadline** ("Book the puja →"), the only selling slide, shown only when the festival has a puja in Alchemies | the puja, or the festival's journal piece. Karwa Chauth has no puja, so it ends at "Read the katha →"; the Diwali variant shows the selling slide |
+| 4 Planets | this week's sign changes and retrogrades, in plain words | "All planets →" /planetary-positions |
+| 5 Today's deity | the deity · the mantra with the player · the verse (Hanuman: the Chalisa's opening doha) | "Chant now" → the remedy card |
+| 6 From the Institute | optional, from a short list the office edits (a puja performed, a sankalp recording sent, a client's words, with consent); hidden when the list is empty. The example is the Navagraha Shanti Puja of 20 Oct 2026, with the ceremony photo | the item's page |
+
+**DATA (stories)**
+| Field | Source |
+|---|---|
+| Circle 1 | panchang engine (as the almanac); the line on the day is static, one per weekday |
+| Circle 2 | kundli engine (Moon house, dasha, natal Moon); the house lines as in "Your sky" |
+| Circle 3 | journal festival dates (next within 14 days); "why" and "what to do" are static per festival; the puja and its deadline come from Alchemies (the same config as the top line, when it is the campaign) |
+| Circle 4 | the engine behind /planetary-positions (ingress and retrograde events for the week) |
+| Circle 5 | static, one deity, mantra and verse per weekday |
+| Circle 6 | the office's list (title, date, photo, link, expiry), shown only when non-empty |
+| Seen state | on the device; reset at sunrise for the city |
+
+**Taps (stories)**
+| On the page | Opens |
+|---|---|
+| A circle | the viewer, at that circle's first unseen slide |
+| Right / left of a slide · hold · swipe down · × · pause | next / back · pause · close · close · pause and resume |
+| Slide buttons | as in the table above (/panchang, /kundli, the puja or journal piece, /planetary-positions, the remedy card, the item's page) |
+| Desktop ‹ › · Esc | back / next · close |
 
 ## Tap list (4.2 additions)
 | On the page | Opens |
@@ -225,5 +273,6 @@ Start from this folder. `src/home.html` with `src/data.js` is the reference. Eac
 - **Part of day and theme:** use the code's four parts exactly. Night A switches on at the city's sunset, and the visitor's toggle wins.
 - **Your sky:** shown only when birth details are saved. Otherwise show the invitation with the ghosted example. There is no Ashtakavarga score.
 - **Ticks:** stored on the device and cleared at the next sunrise for the city.
+- **Stories:** build the six circles from the engines named in "Stories". Only circle 6 needs the office (a short list with expiry dates). Store seen rings on the device and reset them at sunrise.
 - **Soon:** a feature that is not live has an "Opening soon" line or tag, and never a button.
 - **The build starts only on the founder's explicit approval.**

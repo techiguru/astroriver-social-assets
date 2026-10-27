@@ -168,6 +168,53 @@
 .phone .acts{gap:6px}
 .phone .top .brand{font-size:13px;letter-spacing:.1em}
 @media (max-width:369px){.phone .top .brand{font-size:12px;letter-spacing:.04em;gap:6px}.phone .top{padding:0 14px 4px 16px}}
+/* ---- 4.4: stories row and viewer ---- */
+.srow{display:flex;gap:8px;overflow:hidden;padding:6px 16px 10px}
+.srow a{flex:none;width:74px;text-align:center;font:600 11px/1.2 "Inter";letter-spacing:-.01em;color:var(--text)}
+.srow .ring{width:64px;height:64px;margin:0 auto;border-radius:50%;padding:2.5px;background:conic-gradient(from 200deg,var(--primary),var(--gold),var(--flame),var(--primary))}
+[data-theme=dark] .srow .ring{background:conic-gradient(from 200deg,var(--accent),var(--gold),var(--flame),var(--accent))}
+.srow .seen .ring{background:var(--line)}
+.srow .seen{color:var(--text-muted)}
+.srow .ring img{width:100%;height:100%;border-radius:50%;border:2.5px solid var(--bg)}
+.srow span{display:block;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.desk .srow{padding:16px 64px 0;gap:20px;justify-content:center}.desk .srow a{width:80px;font-size:12.5px}.desk .srow .ring{width:74px;height:74px}
+/* first screen at 390 with the row: tighter greeting block and arch */
+.phone .alm .date .n{font-size:56px}.phone .alm .date{margin:0}.phone .alm .greet{font-size:19px}.phone .alm .greet .dev{font-size:17px}
+.phone .alm .date .w{font-size:21px}.phone .alm .date .w .dev{font-size:25px;margin:1px 0 3px}
+.phone .tr2{grid-template-columns:minmax(0,1fr) 100px;margin-top:8px}.phone .tr2 .arch{width:100px;height:122px}
+.phone .tr2 .tithi h1{font-size:40px}.phone .alm .capt{margin-top:4px;font-size:14.5px}
+.phone .alm .idline{margin:-2px 4px 6px}
+/* viewer */
+.sv{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;padding:10px 14px 18px}
+.sv .bars{display:flex;gap:4px;margin-top:2px}.sv .bars i{flex:1;height:3px;border-radius:2px;background:var(--line);position:relative;overflow:hidden}
+.sv .bars i b{position:absolute;inset:0;background:var(--heading);border-radius:2px}
+.sv .head{display:flex;align-items:center;gap:10px;margin-top:10px}
+.sv .head img{width:34px;height:34px;border-radius:50%;box-shadow:0 0 0 2px var(--gold)}
+.sv .head .n{flex:1;font:700 14px/1.2 "Inter";color:var(--text)}.sv .head .n small{display:block;font:500 12px/1.2 "Inter";color:var(--text-muted)}
+.sv .btn2{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--text)}
+.sv .btn2 svg{width:18px;height:18px}
+.sv .art{flex:1;min-height:0;margin-top:10px;border-radius:22px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+.sv .txt{padding:16px 4px 0}
+.sv .over{display:block}
+.sv h2{font:500 36px/1.08 "Cormorant";color:var(--heading);margin-top:6px}
+.sv h2.dev{font-family:"Tiro",serif;font-size:31px;line-height:1.3;color:var(--accent)}.sv h2.dev.small{font-size:21px;line-height:1.55}
+.sv h2 .hi{font-family:"Tiro",serif;font-size:26px;color:var(--accent);margin-left:8px}
+.sv p{font:500 16px/1.5 "Inter";color:var(--text);margin-top:8px}
+.sv .rows{margin-top:12px;display:grid;gap:8px}
+.sv .rows div{display:flex;justify-content:space-between;align-items:center;border-radius:14px;padding:12px 14px;font:700 13px/1 "Inter";letter-spacing:.08em;text-transform:uppercase}
+.sv .rows .bad{background:var(--bad-bg);color:var(--bad)}.sv .rows .good{background:var(--good-bg);color:var(--good)}
+.sv .rows div span{font:600 20px/1 "Cormorant";letter-spacing:0;text-transform:none}
+.sv .dl{display:flex;align-items:center;gap:8px;margin-top:10px;font:700 14.5px/1.3 "Inter";color:var(--accent)}
+.sv .dl:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none}
+.sv .cta{margin-top:14px}.sv .cta .btn{width:100%;min-height:50px;font-size:15px}
+.sv .player{margin-top:12px}
+.sv .zone{position:absolute;top:0;bottom:0;width:30%}.sv .zone.l{left:0}.sv .zone.r{right:0;width:70%}
+.svscrim{position:fixed;inset:0;z-index:69;background:var(--scrim-top)}
+.phone .svarrow,.phone .svesc,.phone .svscrim{display:none}
+.desk .sv{inset:50% auto auto 50%;width:400px;height:820px;transform:translate(-50%,-50%);border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.svarrow{position:fixed;top:50%;z-index:71;width:48px;height:48px;margin-top:-24px;border-radius:50%;background:var(--surface);display:grid;place-items:center;box-shadow:var(--shadow);color:var(--text)}
+.svarrow svg{width:20px;height:20px}.svarrow.l{left:calc(50% - 260px)}.svarrow.r{left:calc(50% + 212px)}
+.svesc{position:fixed;top:24px;right:32px;z-index:71;font:600 13px/1 "Inter";color:var(--on-photo);background:var(--scrim-top);padding:10px 14px;border-radius:999px}
 /* hit areas */
 .dm .c .brand{padding:3px 0}
 .top .brand{padding:7px 0}
@@ -241,6 +288,32 @@ const streak = () => {
 
 /* 4.3 · the streak in the header: lamp + day count; at 0 the unlit lamp, no number. Tap → the remedy card */
 const lampBadge = () => `<a href="#remedy" class="lampb${STREAK ? ' lit' : ''}" aria-label="${STREAK ? STREAK + ' days kept' : 'Light the first lamp'}">${LAMP}${STREAK ? `<b>${STREAK}</b>` : ''}</a>`;
+
+/* 4.4 · stories row: new rings first, seen ones move to the end */
+const storyList = () => [...STORIES.filter(s => !SEEN.includes(s.id)), ...STORIES.filter(s => SEEN.includes(s.id))];
+const storyRow = () => `<div class="srow" aria-label="Stories">${storyList().map(s => `<a href="#story-${s.id}"${SEEN.includes(s.id) ? ' class="seen"' : ''}><div class="ring"><img class="cover" src="${s.icon}" alt=""></div><span>${s.label}</span></a>`).join('')}</div>`;
+/* 4.4 · story viewer: current theme; tap right next, left back, hold pause, swipe down close; ~6 s a slide */
+const PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1.5"/><rect x="14" y="4" width="4" height="16" rx="1.5"/></svg>';
+const ARROW = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="${d ? 'M9 5l7 7-7 7' : 'M15 5l-7 7 7 7'}"/></svg>`;
+const viewer = () => {
+  const s = STORIES.find(x => x.id === Q.get('story')); if (!s) return '';
+  const n = Math.min(+(Q.get('slide') || 1), s.slides.length) - 1, sl = s.slides[n];
+  const XI = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  return `<div class="svscrim"></div><div class="sv" role="dialog" aria-label="${s.label}">
+    <div class="bars">${s.slides.map((_, i) => `<i><b style="width:${i < n ? 100 : i === n ? 38 : 0}%"></b></i>`).join('')}</div>
+    <div class="head"><img class="cover" src="${s.icon}" alt=""><div class="n">${s.label}<small>Astro River · ${T.clock} ${TOD === 'morning' ? 'am' : 'pm'}</small></div>
+      <span class="btn2" role="button" aria-label="Pause">${PAUSE}</span><span class="btn2" role="button" aria-label="Close">${XI}</span></div>
+    <div class="art"><img class="cover" src="${sl.art}" style="object-position:${sl.pos || '50% 40%'}" alt=""><span class="zone l" role="button" aria-label="Back"></span><span class="zone r" role="button" aria-label="Next"></span></div>
+    <div class="txt"><span class="over">${sl.over}</span>
+      <h2 class="${sl.dev ? 'dev' : ''}${sl.small ? ' small' : ''}">${sl.h}${sl.hHi ? `<span class="hi">${sl.hHi}</span>` : ''}</h2>
+      ${sl.rows ? `<div class="rows">${sl.rows.map(([k, v, c]) => `<div class="${c}">${k}<span>${v}</span></div>`).join('')}</div>` : ''}
+      ${sl.p ? `<p>${sl.p}</p>` : ''}
+      ${sl.player ? `<div class="player">${PLAY}<div class="wave">${wave(22)}</div><span class="count">× 108</span></div>` : ''}
+      ${sl.deadline ? `<div class="dl">${sl.deadline}</div>` : ''}
+      ${sl.cta ? `<div class="cta"><a class="btn ${sl.cta[2] || 'line'}" href="${sl.cta[1]}">${sl.cta[0]}</a></div>` : ''}
+    </div></div>
+    <a class="svarrow l" aria-label="Back">${ARROW(0)}</a><a class="svarrow r" aria-label="Next">${ARROW(1)}</a><span class="svesc">Esc to close</span>`;
+};
 
 /* 0 · header (phone) */
 const header = () => `
@@ -516,8 +589,8 @@ const footer = () => `
 
 /* ---------- phone: the sections in order ---------- */
 const ink = 'currentColor';
-document.getElementById('phone').innerHTML = statusbar(ink, T.clock) + topline() + header() + almanac() + sky() + planets() + chips() + remedy() + epooja()
-  + rashi() + week() + tomorrow() + verse() + texts() + tools() + learn() + pujas() + shop() + ask() + inscr() + papers() + how() + help() + footer() + tabbar(false) + sheet();
+document.getElementById('phone').innerHTML = statusbar(ink, T.clock) + topline() + header() + storyRow() + almanac() + sky() + planets() + chips() + remedy() + epooja()
+  + rashi() + week() + tomorrow() + verse() + texts() + tools() + learn() + pujas() + shop() + ask() + inscr() + papers() + how() + help() + footer() + tabbar(false) + sheet() + viewer();
 
 /* ---------- desktop: the same sections, two to a row where they pair ---------- */
 document.getElementById('desk').innerHTML = topline() + `
@@ -529,6 +602,7 @@ document.getElementById('desk').innerHTML = topline() + `
       ${lampBadge()}<span class="ic">${MOONICON}</span><a href="/login" class="si">Sign in</a></div>
   </div>
   <div class="rule" style="margin:0 64px"></div>
+  ${storyRow()}
   <div class="dhero2">
     <div class="alm">${greetBlock()}<div class="hair"></div>${tithiBlock()}${tiles()}${fest()}</div>
     <div>${arch()}</div>
@@ -545,6 +619,6 @@ document.getElementById('desk').innerHTML = topline() + `
     <div class="dpair"><div>${inscr()}<div style="height:28px"></div>${papers()}</div>${how()}</div>
     ${help()}
   </div>
-  ${footer()}` + sheet();
+  ${footer()}` + sheet() + viewer();
 </script>
 </body></html>

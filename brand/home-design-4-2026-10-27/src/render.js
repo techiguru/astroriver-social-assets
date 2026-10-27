@@ -51,6 +51,22 @@ const OUT = path.resolve(process.argv[2]); fs.mkdirSync(OUT, { recursive: true }
   { const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3 });
     await p.goto('file://' + path.resolve(__dirname, 'home.html') + '?v=phone&tod=morning&me=1&full=1'); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(500);
     await p.screenshot({ path: path.join(OUT, 'view-full-3x.png'), fullPage: true }); await p.close(); }
+  // 4.4: stories row and viewer
+  await shot('v=phone&tod=morning&me=1', 390, 844, 2, 'stories-row-phone390-light-all-new.png');
+  await shot('v=phone&tod=morning&me=1&seen=1', 390, 844, 2, 'stories-row-phone390-light-some-seen.png');
+  await shot('v=phone&tod=evening&me=1', 390, 844, 2, 'stories-row-phone390-night-all-new.png');
+  await shot('v=phone&tod=evening&me=1&seen=1', 390, 844, 2, 'stories-row-phone390-night-some-seen.png');
+  fs.mkdirSync(path.join(OUT, 'stories'), { recursive: true });
+  for (const [id, n, extra] of [['today', 3, '&me=1'], ['you', 3, '&me=1'], ['you', 1, '&me=0'], ['fest', 3, '&me=1'], ['fest', 2, '&me=1&fest=diwali'],
+      ['planets', 2, '&me=1'], ['deity', 3, '&me=1'], ['inst', 1, '&me=1']])
+    for (let i = 1; i <= n; i++) {
+      const tag = id + (extra.includes('me=0') ? '-no-details' : '') + (extra.includes('diwali') ? '-diwali' : '');
+      await shot(`v=phone&tod=morning${extra}&story=${id}&slide=${i}`, 390, 844, 2, `stories/${tag}-${i}-of-${n}-light.png`);
+    }
+  await shot('v=phone&tod=morning&me=1&theme=dark&story=today&slide=2', 390, 844, 2, 'stories/today-2-of-3-night.png');
+  await shot('v=phone&tod=morning&me=1&theme=dark&story=deity&slide=2', 390, 844, 2, 'stories/deity-2-of-3-night.png');
+  await shot('v=desktop&tod=morning&me=1&story=deity&slide=1', 1440, 900, 1, 'stories-desktop1440-viewer-light.png');
+  await shot('v=desktop&tod=evening&me=1&seen=1', 1440, 900, 1, 'stories-desktop1440-row-night.png');
   // logo: warm maroon, decided (4.2); logo-warm-maroon.png is round 3.1's tile
   await b.close(); console.log('done');
 })();
