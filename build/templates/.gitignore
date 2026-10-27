@@ -1,1 +1,4 @@
+# fonts are fetched by fonts.sh; out/ is ignored by ../.gitignore (out*/)
 fonts/
+# ../.gitignore ignores *.html; the template itself must be committed
+!post.html
