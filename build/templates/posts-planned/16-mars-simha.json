@@ -1,0 +1,20 @@
+{
+ "template": "transit",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "night-sky.jpg",
+  "pos": "50% 30%",
+  "transit": {
+   "graha": "Mars",
+   "from": "Karka",
+   "to": "Simha"
+  },
+  "over": "Transit · Thursday 12 November",
+  "h": "Mars enters Simha",
+  "body": "At 8:18 pm IST tonight. It leaves Karka for Simha."
+ }
+}
