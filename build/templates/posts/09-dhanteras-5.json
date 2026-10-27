@@ -1,0 +1,15 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "diwali-lakshmi.jpg",
+  "pos": "50% 30%",
+  "over": "What to buy",
+  "h": "Lasting things",
+  "body": "Gold or silver, copper or brass vessels, lamps, a broom. Traditionally avoided: iron and sharp tools, glass, black objects and empty vessels."
+ }
+}

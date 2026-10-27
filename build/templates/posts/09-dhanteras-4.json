@@ -1,0 +1,36 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "lakshmi-lotus.jpg",
+  "pos": "50% 30%",
+  "over": "Other cities · local time",
+  "h": "Where you are",
+  "rows": [
+   [
+    "New York",
+    "5:10 – 6:58 pm"
+   ],
+   [
+    "London",
+    "4:42 – 6:20 pm"
+   ],
+   [
+    "Dubai",
+    "6:06 – 8:03 pm"
+   ],
+   [
+    "Singapore",
+    "7:27 – 9:13 pm"
+   ],
+   [
+    "Sydney",
+    "8:13 – 9:32 pm"
+   ]
+  ]
+ }
+}

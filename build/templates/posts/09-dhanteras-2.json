@@ -1,0 +1,29 @@
+{
+ "template": "carousel-inner",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "brass.jpg",
+  "pos": "50% 55%",
+  "over": "New Delhi · Friday 6 November",
+  "h": "The puja window",
+  "body": "The muhurat is the part of pradosh in which Taurus rises.",
+  "rows": [
+   [
+    "Sunset",
+    "5:33 pm"
+   ],
+   [
+    "Pradosh kaal",
+    "5:33 – 8:10 pm"
+   ],
+   [
+    "Puja muhurat",
+    "6:02 – 7:58 pm"
+   ]
+  ]
+ }
+}

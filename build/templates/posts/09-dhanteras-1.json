@@ -1,0 +1,15 @@
+{
+ "template": "carousel-cover",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "dhanteras.jpg",
+  "pos": "50% 45%",
+  "over": "Dhanteras · Friday 6 November",
+  "h": "Dhanteras is this Friday",
+  "body": "The puja and buying window in New Delhi is 6:02 to 7:58 pm."
+ }
+}
