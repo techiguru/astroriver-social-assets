@@ -1,0 +1,6 @@
+{ "template": "transit", "formats": ["feed", "story"],
+  "content": { "theme": "night", "art": "night-sky.jpg", "pos": "50% 30%",
+    "transit": { "graha": "Jupiter", "from": "Karka", "to": "Simha" },
+    "over": "Transit · Saturday 31 October",
+    "h": "Jupiter enters Simha",
+    "body": "At 12:02 pm IST. It leaves Karka and stays in Simha until 25 January 2027." } }

@@ -1,0 +1,5 @@
+{ "template": "carousel-cover", "formats": ["feed", "story"],
+  "content": { "theme": "night", "art": "lakshmi-lotus.jpg", "pos": "50% 25%",
+    "over": "Diwali 2026 · 6 – 11 November",
+    "h": "The five days of Diwali",
+    "body": "From Dhanteras to Bhai Dooj: what each day is for, and when it falls this year." } }
