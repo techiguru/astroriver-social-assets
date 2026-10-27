@@ -61,7 +61,6 @@ def feed(tag, art, h1, body, cta, link):
 html,body{{width:{W}px;height:{H}px}} .s{{width:{W}px;height:{H}px}}
 .tr{{background:{SAND};padding:2px 10px;border-radius:4px}}</style></head><body><div class="s">
 {art_block(art, W, 540, 40)}
-<div class="wm" style="top:700px">astroriver.com</div><div class="tr" style="top:40px;right:92px">astroriver.com</div>
 <div class="c" style="top:596px">
  {chip(tag, 22)}
  <h1 style="font-size:78px;margin-top:22px">{h1}</h1>
@@ -69,7 +68,7 @@ html,body{{width:{W}px;height:{H}px}} .s{{width:{W}px;height:{H}px}}
  <div class="m" style="margin-top:30px;font-size:28px">{cta}</div>
  <div style="font:600 29px 'IN';color:#A8590A;margin-top:6px;letter-spacing:.2px">{link}</div>
 </div>
-<svg class="r" width="{W}" height="{H}">{riv}</svg>{tg}
+<svg class="r" width="{W}" height="{H}">{riv}</svg>
 <div class="foot" style="bottom:56px"><span class="n">Astro River</span><span class="u">astroriver.com</span></div>
 </div></body></html>"""
 
@@ -80,7 +79,6 @@ def story(tag, art, h1, body, cta, link):
 html,body{{width:{SW}px;height:{SH}px}} .s{{width:{SW}px;height:{SH}px}}
 .tr{{background:{SAND};padding:2px 10px;border-radius:4px}}</style></head><body><div class="s">
 {art_block(art, SW, 660, 170)}
-<div class="wm" style="top:980px">astroriver.com</div><div class="tr" style="top:104px;right:92px">astroriver.com</div>
 <div class="c" style="top:880px">
  {chip(tag, 26)}
  <h1 style="font-size:96px;margin-top:26px">{h1}</h1>
@@ -88,11 +86,11 @@ html,body{{width:{SW}px;height:{SH}px}} .s{{width:{SW}px;height:{SH}px}}
  <div class="m" style="margin-top:46px;font-size:33px">{cta}</div>
  <div style="font:600 33px 'IN';color:#A8590A;margin-top:8px">{link}</div>
 </div>
-<svg class="r" width="{SW}" height="{SH}">{riv}</svg>{tg}
+<svg class="r" width="{SW}" height="{SH}">{riv}</svg>
 <div class="foot" style="bottom:90px"><span class="n">Astro River</span><span class="u">astroriver.com</span></div>
 </div></body></html>"""
 
-JUP = ("SIGN TRANSIT", "art-jupiter-sand.svg",
+JUP = ("SIGN TRANSIT", "art-jupiter-disc-sand.svg",
        "Jupiter enters Leo on <em>31&nbsp;October</em>.",
        "At 12:02 pm IST, New Delhi time. It stays in Leo until 25&nbsp;January, then returns to Cancer.",
        "What it means for you, sign by sign:", "astroriver.com/journal/jupiter-in-leo-2026")

@@ -27,7 +27,7 @@ Follow us on Instagram: instagram.com/astroriverofficial
 #astroriver #jupitertransit #vedicastrology #jyotish #leo #simha #guru
 
 ## Threads (short, follow line)
-Jupiter leaves Cancer on Saturday. At 12:02 pm IST on 31 October it enters Leo, until 25 January. Comment your Moon sign or lagna. https://astroriver.com/journal/jupiter-in-leo-2026?utm_source=facebook&utm_medium=post&utm_campaign=jupiter-simha-2026-10-31
+Jupiter leaves Cancer on Saturday. At 12:02 pm IST on 31 October it enters Leo, until 25 January. Comment your Moon sign or lagna. https://astroriver.com/journal/jupiter-in-leo-2026?utm_source=threads&utm_medium=post&utm_campaign=jupiter-simha-2026-10-31
 
 Follow us on Instagram: instagram.com/astroriverofficial
 
