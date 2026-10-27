@@ -113,6 +113,12 @@
 .alm .capt{font-size:15px;margin-top:6px}.alm .idline{margin:-4px 4px 8px;font-size:11.5px}.alm .city{margin:2px 0 8px}.skysec{margin-top:14px}.skysec .shead{margin-bottom:10px}.skysec .h2{font-size:26px}.alm .fest{padding:6px 12px 6px 6px}.alm .fest img{width:38px;height:38px}
 .alm .times{margin-top:12px}.alm .times>*{padding:8px 12px}.alm .fest{margin-top:8px}
 /* night: quiet */
+/* hub: six equal tiles */
+.hub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hub a{display:flex;align-items:center;gap:10px;min-height:60px;padding:8px 12px 8px 8px;background:var(--surface);border:1px solid var(--line);border-radius:16px;font:600 14.5px/1.25 "Inter";color:var(--text)}
+.hub img{width:44px;height:44px;border-radius:12px;flex:none}
+.desk .hub{grid-template-columns:repeat(6,minmax(0,1fr))}
+.capnote{position:absolute;left:12px;bottom:10px;font:italic 500 15px/1.2 "Cormorant";color:var(--on-photo);background:var(--scrim-top);padding:5px 9px;border-radius:8px}
 /* hit areas */
 .dm .c .brand{padding:3px 0}
 .top .brand{padding:7px 0}
@@ -211,17 +217,17 @@ const planets = () => `
     <a href="/planetary-positions" class="planets">${PLANETS.map(([n,s,r]) => `<div class="gr"><b>${n}</b><span>${s}${r?'<i>℞</i>':''}</span></div>`).join('')}</a>
   </div>`;
 
-/* 4 · chips */
+/* 4 · what would you like to do today: six live actions, a 2 × 3 grid (no Soon items here) */
 const chips = () => `
   <div class="sec" style="margin-top:34px">
     <div class="h2" style="font-size:27px">What would you like to do today?</div>
-    <div class="chips" style="margin-top:14px">
-      <span class="chip"><img class="cover" src="img/puja-thali.jpg">Today's ePooja<em>SOON</em></span>
-      <a href="#remedy" class="chip"><img class="cover" src="img/mantra.jpg">Chant a mantra</a>
-      <a href="/kundli" class="chip"><img class="cover" src="img/learn.jpg">${ME?'My kundli':'Make my kundli'}</a>
-      <a href="/alchemies/diwali-lakshmi-puja-2026" class="chip"><img class="cover" src="img/lakshmi-lotus.jpg">Diwali puja</a>
-      <span class="chip"><img class="cover" src="img/texts.jpg">Read the Gita<em>SOON</em></span>
-      <a href="/alchemies" class="chip"><img class="cover" src="img/gems.jpg">Shop</a>
+    <div class="hub" style="margin-top:14px">
+      <a href="/ask"><img class="cover" src="img/learn.jpg" alt="">Ask a question</a>
+      <a href="/kundli"><img class="cover" src="img/moon-ghat.jpg" alt="">${ME?'My kundli':'Make my kundli'}</a>
+      <a href="/alchemies/category/pujas"><img class="cover" src="img/lakshmi-lotus.jpg" alt="">Book a puja</a>
+      <a href="/muhurat"><img class="cover" src="img/brass.jpg" alt="">A good day</a>
+      <a href="#remedy"><img class="cover" src="img/mantra.jpg" alt="">Chant</a>
+      <a href="/alchemies"><img class="cover" src="img/gems.jpg" alt="">Shop</a>
     </div>
   </div>`;
 
@@ -345,7 +351,7 @@ const pujas = () => `
     <div class="shead"><div><div class="over">Performed for you</div><div class="h2" style="margin-top:6px">Pujas</div></div><a href="/alchemies/category/pujas" class="more">All pujas →</a></div>
     <div class="hs" style="padding:0;margin-right:-20px">
       <div class="card pc"><div class="pic"><img class="cover" src="img/diwali-lakshmi.jpg"></div><div class="body"><b>Diwali Lakshmi Puja</b><span class="s">Sun 8 Nov, in the Lakshmi Puja window, in your name and gotra. Bookings close Sat 7 Nov, 6 pm.</span><a href="/alchemies/diwali-lakshmi-puja-2026" class="btn solid">Book the puja</a></div></div>
-      <div class="card pc"><div class="pic"><img class="cover" src="img/havan-kund.jpg"><span class="tag photo">PHOTOGRAPH</span></div><div class="body"><b>Navagraha Shanti Puja</b><span class="s">All nine grahas in one pujan, in your name and gotra. Book from anywhere.</span><a href="/alchemies/navagraha-shanti-puja" class="btn line">See the puja</a></div></div>
+      <div class="card pc"><div class="pic"><img class="cover" src="img/havan-kund.jpg"><div class="capnote">From the Institute’s ceremonies</div></div><div class="body"><b>Navagraha Shanti Puja</b><span class="s">All nine grahas in one pujan, in your name and gotra. Book from anywhere.</span><a href="/alchemies/navagraha-shanti-puja" class="btn line">See the puja</a></div></div>
       <a href="/alchemies/category/pujas" class="card pc all"><div class="over">Every puja we perform</div><b style="margin-top:8px">All pujas →</b><span class="s" style="margin-bottom:0">Graha shanti, festival pujas and the monthly group pujan.</span></a>
     </div>
     <div class="photonote">Photos of your puja are sent to you after the ceremony.</div>
@@ -372,10 +378,10 @@ const ask = () => `
         <div><b class="t">Ask a question</b><div class="price"><s>₹399</s> <span class="p">₹99</span> <em>+ GST</em><em class="f">your first question</em></div></div></div>
       <p>One question, answered in writing by an AI astrologer, from your chart. One clarification included. After the first, ₹399 + GST.</p>
       <span class="btn solid">Ask →</span></a>
-    <div class="live">AI ASTROLOGERS · NAMES FROM LIVE DATA</div>
+    <div class="live">AI ASTROLOGERS · BY THE MINUTE, ANY HOUR</div>
     <div class="ai" style="margin-top:8px">
-      <a href="/lobby"><img class="cover" src="img/shiva-wide.jpg" style="object-position:20% 55%"><div style="min-width:0"><b>Vedansh<span class="aitag">AI</span></b><span class="s">By the minute, any hour</span></div></a>
-      <a href="/lobby"><img class="cover" src="img/lakshmi-lotus.jpg" style="object-position:50% 20%"><div style="min-width:0"><b>Tara<span class="aitag">AI</span></b><span class="s">By the minute, any hour</span></div></a>
+      <a href="/lobby"><img class="cover" src="img/shiva-wide.jpg" style="object-position:20% 55%"><div style="min-width:0"><b>Vedansh<span class="aitag">AI</span></b><span class="s">Opens the lobby</span></div></a>
+      <a href="/lobby"><img class="cover" src="img/lakshmi-lotus.jpg" style="object-position:50% 20%"><div style="min-width:0"><b>Tara<span class="aitag">AI</span></b><span class="s">Opens the lobby</span></div></a>
     </div>
     <a href="/consultation" class="card ask2" style="display:block;margin-top:12px">
       <div class="top2"><div class="pic"><img class="cover" src="img/texts.jpg"></div>
@@ -406,7 +412,7 @@ const how = () => `
   <div class="sec">
     <div class="over">How we work</div><div class="h2" style="margin:6px 0 14px">An institute, since 2008</div>
     <div class="stats">30+ years of practice · 35,000+ charts read · Jalandhar</div>
-    <div class="card how"><div class="pic"><img class="cover" src="img/navagraha-temple.jpg"><span class="tag photo">PHOTOGRAPH</span></div><div class="list">
+    <div class="card how"><div class="pic"><img class="cover" src="img/navagraha-temple.jpg"><div class="capnote">From the Institute’s ceremonies</div></div><div class="list">
       <div class="it"><span class="l">1</span><div><b>One method</b><span>Parashari and KP, with our Ashtakavarga weighting</span></div></div>
       <div class="it"><span class="l">2</span><div><b>Our own panchang</b><span>Lahiri ayanamsa, sunrise to sunrise, for your city</span></div></div>
       <div class="it"><span class="l">3</span><div><b>Prices first</b><span>You see the price before you pay. Private, always.</span></div></div>

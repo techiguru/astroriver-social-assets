@@ -1,6 +1,13 @@
-# Home, round 4 (27 Oct 2026): your sky, the planets, the remedy, four times of day
+# Home, round 4.1 (27 Oct 2026): your sky, the planets, the remedy, four times of day
 
 Round 4 starts from round 3.1 (`../home-design-3-2026-10-27/`). It adds the astrology and the institute to the almanac without redesigning what was there. All the round 3 tokens and fixes are kept. Light is the default, and Night A (lamp-black) is the night mode. A build chat should start at "Build handover", at the end.
+
+**Round 4.1** (after KRISHNA 13's review):
+1. "What would you like to do today?" is now a tight 2 × 3 grid of six live actions: Ask a question · Make my kundli / My kundli · Book a puja · A good day · Chant · Shop. It has no Soon items; ePooja and the texts keep their own sections.
+2. The photographs are the Institute's own (the founder's photographs of 20 Oct 2026). The "PHOTOGRAPH" badge is replaced by a quiet caption, "From the Institute's ceremonies".
+3. The evening tile reads "Sandhya window", not "Pradosh".
+4. The Ask overline reads "AI astrologers · by the minute, any hour". That the names come from live data is a build note, kept here only.
+5. The consultation card keeps "in English, Hindi or Punjabi", which is quoted from the live /consultation page: "a private, live session with one of our senior astrologers, who reads your birth chart with you — on an audio call or by chat, in English, Hindi or Punjabi".
 
 **Render day: Tuesday 27 October 2026, New Delhi.** Data comes from astroriver.com/panchang and /planetary-positions (Lahiri), as read that morning. The "with details" screens use an **example chart** (lagna Karka, Moon in Kumbha, Dhanishta pada 3, Jupiter–Saturn dasha). In the build, the site's own kundli engine fills it in.
 
@@ -28,16 +35,16 @@ Sections not listed here are as in 3.1.
 | 1 | Almanac | **New** identity line under the greeting block: "The Astro River Institute's almanac, consultations and pujas · Jalandhar · since 2008". On the phone, the deity painting now sits beside the tithi (112 × 138 arch) instead of under it, so that the tiles and the start of "Your sky" fit on the first screen. Desktop keeps the large arch. Tuesday's deity is Hanuman: a new painting, `img/hanuman.jpg`. |
 | 2 | **Your sky today** (new) | **No details:** "Tell us your birth date, time and place once. Every morning this page reads your chart.", the button "Add my birth details" → /kundli, and a ghosted example of the filled card, marked EXAMPLE. **With details:** the heading "Moon in your 10th house". Below it: your Moon (sign, nakshatra, pada) and lagna; Mahadasha–Antardasha with end dates; "The Moon crosses your Nth house" with one plain line on what it tends to bring; a Sade Sati flag → /sade-sati; "Your full kundli →"; Edit → /profile. |
 | 3 | **Planets now** (new) | One strip with the nine grahas, each with its sign, and ℞ on Mercury, Venus and Saturn. The strip → /planetary-positions. |
-| 4 | Chips | "Chant a mantra" now scrolls to the remedy. "Make my kundli" becomes "My kundli" once details are saved. |
+| 4 | What would you like to do today? (4.1) | A 2 × 3 grid of equal tiles (picture and label), six live actions only: Ask a question → /ask · Make my kundli / My kundli → /kundli · Book a puja → /alchemies/category/pujas (it may read "Diwali puja" during Diwali) · A good day → /muhurat · Chant → the remedy on this page · Shop → /alchemies. On desktop the six tiles sit in one row. |
 | 5 | **Today's remedy** (changed; absorbs Mantra of the day) | The day's deity, and three tickable acts: the chant with the player (11 or 108), an offering, and what to wear or avoid. It shows "n of 3 done", and the ticks are kept until the next sunrise. Bridge with details: "The Moon in your chart: in Kumbha, in your 8th house. The Chandra remedy →" (/remedies). Without details: "Remedies for each graha →" (/remedies). In the evening it becomes the evening act: the diya at sunset, the aarti with the player, and the prasad. At night it keeps the evening ticks and adds a line on tomorrow's deity. |
 | 6 | Today's ePooja | Monday's Shiv puja becomes "Mangalvar Hanuman puja". Still opening soon, with no button. |
 | 7 | Rashifal | With details, Kumbha is pre-picked and labelled "your Moon sign", and the Moon's current sign is marked "Moon now". |
 | 8 | This week | Updated to 27 Oct: Karwa Chauth in 2 days, Dhanteras in 10, Diwali in 12. |
 | 9 | **Tomorrow at 6 am** (new) | One warm card: "Get tomorrow's panchang on WhatsApp", with "Follow the channel" → the channel, and a small Instagram link. |
 | 10–13 | Verse, texts, free tools, learn | Unchanged. The course card now reads "Today's is Bharani". |
-| 14 | **Pujas** (changed) | Three cards: Diwali Lakshmi Puja; Navagraha Shanti Puja with a photograph (`img/havan-kund.jpg`, from the live puja page); "All pujas →". Under them: "Photos of your puja are sent to you after the ceremony." |
-| 16 | **Ask** (changed) | The private consultation is now a full card, the same size as "Ask a question": what it is (live, audio or chat, English, Hindi or Punjabi, by the minute, fifteen minutes at least) and "Book →". It shows no price, because /consultation shows none. There is no face and no name. Vedansh and Tara keep a name and one line each, under "AI astrologers · names from live data". |
-| 19 | **How we work** (changed) | "30+ years of practice · 35,000+ charts read · Jalandhar" under the heading. The three numbered lines stay. The painting is replaced by a photograph (`img/navagraha-temple.jpg`, from the live puja page). |
+| 14 | **Pujas** (changed) | Three cards: Diwali Lakshmi Puja; Navagraha Shanti Puja with the Institute's own photograph (`img/havan-kund.jpg`, from the live puja page), captioned "From the Institute's ceremonies"; "All pujas →". Under them: "Photos of your puja are sent to you after the ceremony." |
+| 16 | **Ask** (changed) | The private consultation is now a full card, the same size as "Ask a question": what it is (live, audio or chat, English, Hindi or Punjabi, by the minute, fifteen minutes at least) and "Book →". It shows no price, because /consultation shows none. There is no face and no name. Vedansh and Tara keep a name and one line each ("Opens the lobby"), under "AI astrologers · by the minute, any hour". Build note: the names come from live data, the /lobby source; do not hard-code them. |
+| 19 | **How we work** (changed) | "30+ years of practice · 35,000+ charts read · Jalandhar" under the heading. The three numbered lines stay. The painting is replaced by the Institute's own photograph (`img/navagraha-temple.jpg`, from the live puja page), with the same caption. |
 | 20 | **Help** (new) | "A question about an order or a booking?" with "Chat with us" → /contact. |
 | 21 | Site footer | The live site's footer, as a plain block: four columns, the © line, the jurisdiction line and the guidance line. |
 | — | Stories row | **Removed.** The round 4 order does not list it. Its links still live in the chips and the festival cards. Say if it should come back. |
@@ -49,7 +56,7 @@ Sections not listed here are as in 3.1.
 |---|---|---|---|---|
 | Morning | शुभ प्रभात Good morning | Nakshatra · Sun (sunrise, sunset) · Good now (Char till 10:41) · Rahu Kaal 2:53–4:16 | Hanuman | light |
 | Afternoon | शुभ दोपहर Good afternoon | Nakshatra · **Next good window** (Vijaya Muhurat 1:57–2:41) · Good now (Amrit till 1:29) · Rahu Kaal (in 1 h 43 min) | Hanuman | light |
-| Evening | शुभ संध्या Good evening | Sunset 5:40 pm (Godhuli till 6:06) · **Pradosh window** 5:40–6:57 · **Moonrise** 6:23 pm · Next good window (Labh 7:17–8:53) | the lamp (`img/diya-dusk.jpg`) | Night A from sunset |
+| Evening | शुभ संध्या Good evening | Sunset 5:40 pm (Godhuli till 6:06) · **Sandhya window** 5:40–6:57 · **Moonrise** 6:23 pm · Next good window (Labh 7:17–8:53) | the lamp (`img/diya-dusk.jpg`) | Night A from sunset |
 | Night | शुभ रात्रि Good night | Quiet: "Tomorrow, Wed 28: Tritiya", Krittika until 1:26 pm; two tiles only (sunrise tomorrow 6:30, Moon in Vrishabha since 9:06 pm); no festival strip | the Moon over the ghat | Night A |
 
 ## Checks
@@ -78,12 +85,12 @@ Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means
 | Identity line | not a link |
 | City · change | city picker on the page |
 | Tithi block | /panchang |
-| Tiles | Nakshatra → /nakshatra/bharani · Sun, Rahu Kaal, Sunset, Pradosh, Moonrise, Sunrise tomorrow → /panchang · Good now, Next good window → /muhurat · Moon (night) → /planetary-positions |
+| Tiles | Nakshatra → /nakshatra/bharani · Sun, Rahu Kaal, Sunset, Sandhya, Moonrise, Sunrise tomorrow → /panchang · Good now, Next good window → /muhurat · Moon (night) → /planetary-positions |
 | Festival strip | /journal/karwa-chauth |
 | Your sky, no details: Add my birth details | /kundli (the ghosted example is not a link) |
 | Your sky, with details: Moon row, dasha row · transit row · Sade Sati flag · Your full kundli · Edit | /kundli · /planetary-positions · /sade-sati · /kundli · /profile |
 | Planets now: strip, All → | /planetary-positions |
-| Chips: Today's ePooja · Chant a mantra · Make my kundli / My kundli · Diwali puja · Read the Gita · Shop | SOON · the remedy on this page · /kundli · /alchemies/diwali-lakshmi-puja-2026 · SOON · /alchemies |
+| What would you like to do today: Ask a question · Make my kundli / My kundli · Book a puja · A good day · Chant · Shop | /ask · /kundli · /alchemies/category/pujas · /muhurat · the remedy on this page · /alchemies |
 | Remedy: ticks, player, × 108 | on the page (ticks kept on the device until sunrise; audio still undecided) |
 | Remedy bridge | /remedies (with or without details) |
 | Today's ePooja | SOON, with no button |
@@ -113,7 +120,7 @@ Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means
 | Greeting and part of day | the code's four parts of day (4–11, 12–16, 17–20, 21–3) for the city's local time |
 | Theme | light by day; Night A from sunset (panchang sunset for the city) until sunrise, or by the moon toggle |
 | Tithi, end time, next tithi; nakshatra and end time | panchang engine behind /panchang |
-| Sunrise, sunset, moonrise, Godhuli, Sayahna Sandhya (shown as the Pradosh window) | panchang engine (/panchang "Sun", "Moonrise", the GOOD bar) |
+| Sunrise, sunset, moonrise, Godhuli, Sayahna Sandhya (the "Sandhya window") | panchang engine (/panchang "Sun", "Moonrise", the GOOD bar). If a Pradosh window is wanted later, the Diwali code already has a Pradosh rule the build can reuse. |
 | Good now, next good window (choghadiya, Abhijit, Vijaya) | panchang engine (choghadiya and "Later today", the same data as /muhurat) |
 | Rahu Kaal and "in 1 h 43 min" | panchang engine; the countdown is computed on the page |
 | Tomorrow's tithi and nakshatra (night) | panchang engine, the "Tomorrow" view of /panchang |
@@ -139,13 +146,15 @@ Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means
 | Birth details themselves | saved by /kundli for the visitor; the home reads them (signed in: /profile) |
 
 ## Open questions
-1. **"Real photographs."** The Navagraha Shanti Puja page captions its pictures "Representative pictures from traditional ceremonies". So the havan kund (Pujas) and Navagraha temple (How we work) photos may not be the Institute's own ceremonies. I tagged them "PHOTOGRAPH", not "our ceremony". Can the founder's office confirm, or send photos of its own?
-2. **Pradosh window.** The live panchang has no Pradosh field. The tile shows its Sayahna Sandhya, 5:40–6:57 pm. Should the engine add a Pradosh kaal, and by which rule?
-3. **Consultation price.** /consultation lists no rate ("we share the latest pricing with you directly"), so the card has none, and booking is by WhatsApp from that page. Keep "Book →" pointing to /consultation?
-4. **Stories row:** dropped as per the round 4 order. Should it come back?
-5. **The house lines.** "What the Moon in your Nth house tends to bring" needs 12 short lines in the institute's voice. The two shown (10th, 11th) are drafts.
-6. **Remedy content.** The weekday acts (Hanuman: the chant, red flowers or jaggery and chana, red or saffron, no meat or alcohol; the evening diya, aarti and prasad) need the institute's sign-off. Mantra and aarti audio is still undecided.
-7. **Logo tile:** navy or warm maroon, the founder's pick.
+1. **The house lines.** "What the Moon in your Nth house tends to bring" needs 12 short lines in the institute's voice. The two shown (10th, 11th) are drafts.
+2. **Remedy content.** The weekday acts need the institute's sign-off: for Hanuman, the chant; red flowers, or jaggery and chana; red or saffron clothes, and no meat or alcohol. In the evening, the diya, the aarti and the prasad. Mantra and aarti audio is still undecided.
+3. **Logo tile:** navy or warm maroon, the founder's pick.
+
+Settled in 4.1:
+- The photographs are the Institute's own.
+- The evening tile reads "Sandhya window".
+- The consultation shows no price, because the live page shows none.
+- The stories row stays out until there is a story viewer.
 
 ## Build handover
 Start from this folder. `src/home.html` with `src/data.js` is the reference. Each section is one function, and the phone and desktop render the same functions.

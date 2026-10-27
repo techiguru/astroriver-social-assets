@@ -46,7 +46,7 @@ const TIMES = {
     pic: 'img/diya-dusk.jpg', picPos: '50% 60%', capt: 'Light the lamp at sunset, for Hanuman.',
     tiles: [
       { k: 'Sunset', v: '5:40 pm', s: 'Godhuli till 6:06 pm', href: '/panchang' },
-      { c: 'g', k: 'Pradosh window', v: '5:40 – 6:57', s: 'sandhya, now', href: '/panchang' },
+      { c: 'g', k: 'Sandhya window', v: '5:40 – 6:57', s: 'the evening sandhya, now', href: '/panchang' },
       { k: 'Moonrise', v: '6:23 pm', s: 'Moon in Mesha', href: '/panchang' },
       { c: 'g', k: 'Next good window', v: '7:17 – 8:53', s: 'Labh choghadiya', href: '/muhurat' },
     ],

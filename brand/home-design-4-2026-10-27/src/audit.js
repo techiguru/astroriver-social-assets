@@ -28,7 +28,7 @@ const CHECK = (ROUTES) => {
       let p = el.parentElement; while (p && getComputedStyle(p).overflow === 'visible') p = p.parentElement;
       if (p) { const a = el.getBoundingClientRect(), b = p.getBoundingClientRect(); if (a.right > b.right + 1 || a.left < b.left - 1) out.push(['outside', el.className || el.tagName, el.textContent.trim().slice(0, 40)]); }
     }
-    if (el.closest('.tag.photo,.pic .tag')) continue;      // text on photographs uses the on-photo tokens over a scrim
+    if (el.closest(".tag.photo,.pic .tag,.capnote")) continue;      // text on photographs uses the on-photo tokens over a scrim
     const bg = bgOf(el); if (!bg) continue;
     const cs = getComputedStyle(el); const fg = rgb(cs.color);
     const L1 = lum(fg), L2 = lum(bg); const ratio = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
