@@ -11,14 +11,14 @@
   "h": "<span style=\"font-family:Tiro,serif;font-weight:400\">किस काम के लिए शुभ</span>",
   "rows": [
    [
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">सोना-चाँदी</span>",
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">नया खाता या व्यापार</span>"
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">सोना-चाँदी</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">नया खाता या व्यापार</span>"
    ],
    [
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">घर या वाहन</span>",
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">पढ़ाई या नई आदत</span>"
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">घर या वाहन</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">पढ़ाई या नई आदत</span>"
    ]
   ],
-  "deadline": "<span style=\"font-family:Tiro,serif;font-weight:400\">विवाह के लिए नहीं</span>"
+  "deadline": "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">विवाह के लिए नहीं</span>"
  }
 }

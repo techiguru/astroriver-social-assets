@@ -1,5 +1,15 @@
-{ "template": "festival", "formats": ["feed", "story"],
-  "content": { "theme": "night", "art": "karwa.jpg", "pos": "62% 30%",
-    "over": "Karwa Chauth · Thursday 29 October",
-    "h": "Fasting today?",
-    "body": "Here’s when the Moon rises. <b style=\"color:var(--heading)\">New Delhi 8:17 pm.</b> Fast 6:31 am to 8:17 pm, puja after sunset, 5:39 pm.<br><span style=\"color:var(--muted);font-size:26px\">Mumbai 9:00 · Lucknow 8:06 · Jaipur 8:28 · Kolkata 7:47 · Chennai 8:44 pm</span>" } }
+{
+ "template": "festival",
+ "formats": [
+  "feed",
+  "story"
+ ],
+ "content": {
+  "theme": "night",
+  "art": "karwa.jpg",
+  "pos": "62% 30%",
+  "over": "Karwa Chauth · Thursday 29 October",
+  "h": "Fasting today?",
+  "body": "Here’s when the Moon rises. <b style=\"color:var(--heading)\">New Delhi 8:17 pm.</b> Fast 6:31 am to 8:17 pm, puja after sunset, 5:39 pm.<br>Mumbai 9:00 · Lucknow 8:06 · Jaipur 8:28 · Kolkata 7:47 · Chennai 8:44 pm"
+ }
+}

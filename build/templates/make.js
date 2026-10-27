@@ -20,9 +20,21 @@ const files = process.argv.length > 2 ? process.argv.slice(2).map(f => path.reso
       await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(250);
       const bad = await p.evaluate(({ fmt, h }) => {
         const out = []; const txt = document.querySelector('.txt').getBoundingClientRect(), sig = document.querySelector('.sig').getBoundingClientRect();
-        if (txt.bottom > sig.top - 24) out.push('text runs into the signature: shorten the body or set artHeight');
-        if (document.querySelector('.art').getBoundingClientRect().height < 400) out.push('picture squeezed under 400 px: shorten the text');
-        if (fmt === 'story') for (const e of document.querySelectorAll('.txt *, .sig')) { const r = e.getBoundingClientRect(); if (r.top < 250 || r.bottom > h - 250 + 1) out.push('outside the story safe zone: ' + e.className); }
+        const gap = sig.top - txt.bottom;
+        if (gap < 24) out.push(`text runs into the signature (gap ${Math.round(gap)} px): shorten the text`);
+        if (gap > 60) out.push(`empty band above the signature (gap ${Math.round(gap)} px, most 60)`);
+        if (document.querySelector('.art').getBoundingClientRect().height < 260) out.push('picture squeezed under 260 px: shorten the text');
+        const h1 = document.querySelector('h1'), hs = parseFloat(getComputedStyle(h1).fontSize);
+        if (hs < 80 || hs > 96) out.push('headline size ' + hs + ' px (80 to 96)');
+        if (window.headLines(h1) > 2) out.push('headline runs to three lines: shorten it');
+        for (const e of document.querySelectorAll('.txt *')) {
+          if (e.closest('h1')) continue;
+          const own = [...e.childNodes].some(n => n.nodeType === 3 && n.textContent.trim());
+          if (!own) continue;
+          const px = parseFloat(getComputedStyle(e).fontSize), min = e.classList.contains('over') ? 30 : 40;
+          if (px < min) out.push(`text under ${min} px (${px}): "${e.textContent.trim().slice(0, 30)}"`);
+        }
+        if (fmt === 'story') for (const e of document.querySelectorAll('.txt *, .sig')) { const r = e.getBoundingClientRect(); if (!r.width && !r.height) continue; if (r.top < 250 || r.bottom > h - 250 + 1) out.push('outside the story safe zone: ' + (e.className || e.tagName) + ' top ' + Math.round(r.top) + ' bottom ' + Math.round(r.bottom)); }
         return out;
       }, { fmt, h });
       for (const m of bad) { console.log(`${name} ${fmt}: ${m}`); problems++; }

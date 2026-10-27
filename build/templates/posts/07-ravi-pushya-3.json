@@ -11,18 +11,18 @@
   "h": "<span style=\"font-family:Tiro,serif;font-weight:400\">सूर्योदय 6:33 से सोमवार सुबह 4:30 तक</span>",
   "rows": [
    [
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">सुबह 6:33</span>",
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">सूर्योदय</span>"
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">सुबह 6:33</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">सूर्योदय</span>"
    ],
    [
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">सोमवार 4:30</span>",
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">पुष्य समाप्त</span>"
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">सोमवार 4:30</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">पुष्य समाप्त</span>"
    ],
    [
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">शाम 4:13–5:36</span>",
-    "<span style=\"font-family:Tiro,serif;font-weight:400\">राहुकाल: छोड़ें</span>"
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">शाम 4:13–5:36</span>",
+    "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">राहुकाल: छोड़ें</span>"
    ]
   ],
-  "deadline": "<span style=\"font-family:Tiro,serif;font-weight:400\">अपने शहर का समय: astroriver.com/panchang</span>"
+  "deadline": "<span style=\"font-family:Tiro,serif;font-weight:400;font-size:1.15em\">अपने शहर का समय: astroriver.com/panchang</span>"
  }
 }
