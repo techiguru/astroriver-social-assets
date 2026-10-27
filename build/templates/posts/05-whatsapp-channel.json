@@ -1,0 +1,5 @@
+{ "template": "channel", "formats": ["square", "story"],
+  "content": { "theme": "light", "art": "brass.jpg", "pos": "50% 55%",
+    "over": "On WhatsApp",
+    "h": "Festival dates, before they arrive",
+    "body": "The date, the muhurat for your city and what to do, from the Institute. Follow the channel." } }

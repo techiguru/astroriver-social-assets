@@ -1,0 +1,5 @@
+{ "template": "festival", "formats": ["feed", "story"],
+  "content": { "theme": "night", "art": "karwa.jpg", "pos": "62% 30%",
+    "over": "Festival · Thursday 29 October",
+    "h": "Karwa Chauth",
+    "body": "A fast from sunrise to moonrise for a long marriage. Eat the sargi before dawn, hear the katha, and break the fast after seeing the Moon." } }
