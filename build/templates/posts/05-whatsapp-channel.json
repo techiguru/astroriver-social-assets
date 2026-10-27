@@ -1,5 +1,5 @@
 { "template": "channel", "formats": ["square", "story"],
   "content": { "theme": "light", "art": "brass.jpg", "pos": "50% 55%",
-    "over": "Every morning at 6 am",
-    "h": "Tomorrow's panchang on WhatsApp",
-    "body": "The tithi, the nakshatra, Rahu Kaal and the day's remedy, before sunrise. Follow the Astro River channel." } }
+    "over": "On WhatsApp",
+    "h": "Festival dates, before they arrive",
+    "body": "The date, the muhurat for your city and what to do, from the Institute. Follow the channel." } }

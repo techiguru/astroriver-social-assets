@@ -39,7 +39,7 @@ node make.js posts/03-puja-diwali-lakshmi.json
 2. **Festival:** the date, why it matters and what to do, with the festival's painting.
 3. **Puja or sell:** the puja's painting or the Institute's ceremony photo, one line, and the real deadline. No price.
 4. **Carousel:** the cover (as a festival post), then inner pages with `rows`.
-5. **WhatsApp channel:** a square for the feed and a story.
+5. **WhatsApp channel:** a square for the feed and a story. Copy: "On WhatsApp" / "Festival dates, before they arrive". Never promise a daily or timed post; the founder posts by hand, before festivals.
 
 ## Rules (from the home page)
 - One strong picture per post: the deity paintings, the festival art, the Institute's own ceremony photos.

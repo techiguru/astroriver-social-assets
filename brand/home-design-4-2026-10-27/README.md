@@ -99,7 +99,7 @@ Sections not listed here are as in 3.1.
 | 6 | Today's ePooja | Monday's Shiv puja becomes "Mangalvar Hanuman puja". Still opening soon, with no button. |
 | 7 | Rashifal | With details, Kumbha is pre-picked and labelled "your Moon sign", and the Moon's current sign is marked "Moon now". |
 | 8 | This week | Updated to 27 Oct: Karwa Chauth in 2 days, Dhanteras in 10, Diwali in 12. |
-| 9 | **Tomorrow at 6 am** (new) | One warm card: "Get tomorrow's panchang on WhatsApp", with "Follow the channel" → the channel, and a small Instagram link. |
+| 9 | **On WhatsApp** (new; copy fixed after approval) | One warm card: overline "On WhatsApp", heading "Festival dates, before they arrive", line "The date, the muhurat for your city and what to do, from the Institute. Follow the channel." Then "Follow the channel" → the channel, and a small Instagram link. There is no daily-post promise: the founder posts by hand, before festivals. |
 | 10–13 | Verse, texts, free tools, learn | Unchanged. The course card now reads "Today's is Bharani". |
 | 14 | **Pujas** (changed) | Three cards: Diwali Lakshmi Puja; Navagraha Shanti Puja with the Institute's own photograph (`img/havan-kund.jpg`, from the live puja page), captioned "From the Institute's ceremonies"; "All pujas →". Under them: "Photos of your puja are sent to you after the ceremony." |
 | 16 | **Ask** (changed) | The private consultation is now a full card, the same size as "Ask a question": what it is (live, audio or chat, English, Hindi or Punjabi, by the minute, fifteen minutes at least) and "Book →". It shows no price, because /consultation shows none. There is no face and no name. Vedansh and Tara keep a name and one line each ("Opens the lobby"), under "AI astrologers · by the minute, any hour". Build note: the names come from live data, the /lobby source; do not hard-code them. |
@@ -208,7 +208,7 @@ Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means
 | Today's ePooja | SOON, with no button |
 | Rashifal signs | /rashifal/mesh … /rashifal/meen |
 | This week: heading, day cells, festival cards | /journal/jupiter-in-leo-2026 · /panchang (Thu → /journal/karwa-chauth, Sat → /journal/jupiter-in-leo-2026) · /journal/karwa-chauth, /journal/diwali/dhanteras, /journal/diwali |
-| Tomorrow at 6 am: Follow the channel · Instagram | https://whatsapp.com/channel/0029Vb92NvV2v1J203DyVy39 · https://instagram.com/astroriverofficial |
+| On WhatsApp: Follow the channel · Instagram | https://whatsapp.com/channel/0029Vb92NvV2v1J203DyVy39 · https://instagram.com/astroriverofficial |
 | Verse: Share | native share sheet |
 | The texts | SOON |
 | Charts and calculations (4 cards) · See all → | /kundli, /kundli-matching, /muhurat, /manglik-dosha · /tools (sign-in) |
@@ -289,6 +289,7 @@ Start from this folder. `src/home.html` with `src/data.js` is the reference. Eac
 - **Part of day and theme:** use the code's four parts exactly. Night A switches on at the city's sunset, and the visitor's toggle wins.
 - **Your sky:** shown only when birth details are saved. Otherwise show the invitation with the ghosted example. There is no Ashtakavarga score.
 - **Ticks:** stored on the device and cleared at the next sunrise for the city.
+- **WhatsApp card (after approval):** "On WhatsApp" / "Festival dates, before they arrive" / "The date, the muhurat for your city and what to do, from the Institute. Follow the channel." Never promise a daily or 6 am post; the channel is posted by hand, before festivals.
 - **Words (4.5):** "Charts and calculations", "Charts" in the tab bar and the desktop menu, and "See all →". The routes are unchanged.
 - **Stories:** build the six circles from the engines named in "Stories". Only circle 6 needs the office (a short list with expiry dates). Store seen rings on the device and reset them at sunrise.
 - **Soon:** a feature that is not live has an "Opening soon" line or tag, and never a button.
