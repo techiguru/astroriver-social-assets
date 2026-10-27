@@ -7,7 +7,7 @@ const ICON = {
   me: '<svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="5"/><path d="M2.5 22c.6-5 4.6-8 9.5-8s8.9 3 9.5 8z"/></svg>',
 };
 function tabbar(dark) {
-  const t = [['today', 'Today'], ['ask', 'Ask'], ['pujas', 'Pujas'], ['tools', 'Tools'], ['me', 'Me']];
+  const t = [['today', 'Today'], ['ask', 'Ask'], ['pujas', 'Pujas'], ['tools', 'Charts'], ['me', 'Me']];
   return `<nav class="tabbar${dark ? ' dark' : ''}">` + t.map(([k, l], i) =>
     `<a href="${['/', '/ask', '/alchemies/category/pujas', '/tools', '/profile'][i]}" class="${i === 0 ? 'on' : ''}">${ICON[k]}<span>${l}</span></a>`).join('') + '</nav>';
 }

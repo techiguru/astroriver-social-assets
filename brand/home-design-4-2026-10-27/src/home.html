@@ -176,7 +176,7 @@
 .srow .seen .ring{background:var(--line)}
 .srow .seen{color:var(--text-muted)}
 .srow .ring img{width:100%;height:100%;border-radius:50%;border:2.5px solid var(--bg)}
-.srow span{display:block;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srow span{display:block;margin-top:5px;white-space:nowrap}
 .desk .srow{padding:16px 64px 0;gap:20px;justify-content:center}.desk .srow a{width:80px;font-size:12.5px}.desk .srow .ring{width:74px;height:74px}
 /* first screen at 390 with the row: tighter greeting block and arch */
 .phone .alm .date .n{font-size:56px}.phone .alm .date{margin:0}.phone .alm .greet{font-size:19px}.phone .alm .greet .dev{font-size:17px}
@@ -301,10 +301,10 @@ const viewer = () => {
   const XI = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   return `<div class="svscrim"></div><div class="sv" role="dialog" aria-label="${s.label}">
     <div class="bars">${s.slides.map((_, i) => `<i><b style="width:${i < n ? 100 : i === n ? 38 : 0}%"></b></i>`).join('')}</div>
-    <div class="head"><img class="cover" src="${s.icon}" alt=""><div class="n">${s.label}<small>Astro River · ${T.clock} ${TOD === 'morning' ? 'am' : 'pm'}</small></div>
+    <div class="head"><img class="cover" src="${s.icon}" alt=""><div class="n">${s.name || s.label}<small>Astro River · ${T.clock} ${TOD === 'morning' ? 'am' : 'pm'}</small></div>
       <span class="btn2" role="button" aria-label="Pause">${PAUSE}</span><span class="btn2" role="button" aria-label="Close">${XI}</span></div>
     <div class="art"><img class="cover" src="${sl.art}" style="object-position:${sl.pos || '50% 40%'}" alt=""><span class="zone l" role="button" aria-label="Back"></span><span class="zone r" role="button" aria-label="Next"></span></div>
-    <div class="txt"><span class="over">${sl.over}</span>
+    <div class="txt"><span class="over">${sl.over}</span>${sl.example ? '<span class="tag soon" style="margin-left:8px">EXAMPLE</span>' : ''}
       <h2 class="${sl.dev ? 'dev' : ''}${sl.small ? ' small' : ''}">${sl.h}${sl.hHi ? `<span class="hi">${sl.hHi}</span>` : ''}</h2>
       ${sl.rows ? `<div class="rows">${sl.rows.map(([k, v, c]) => `<div class="${c}">${k}<span>${v}</span></div>`).join('')}</div>` : ''}
       ${sl.p ? `<p>${sl.p}</p>` : ''}
@@ -478,7 +478,7 @@ const texts = () => `
 /* 12 · free tools */
 const tools = () => `
   <div class="sec">
-    <div class="shead"><div><div class="over">Start here, free</div><div class="h2" style="margin-top:6px">Free tools</div></div><a href="/tools" class="more">All tools →</a></div>
+    <div class="shead"><div><div class="over">Free · from the Institute</div><div class="h2" style="margin-top:6px">Charts and calculations</div></div><a href="/tools" class="more">See all →</a></div>
     <div class="tools">
       <a href="/kundli" class="card tool"><div class="pic"><img class="cover" src="img/learn.jpg"></div><div class="body"><b>Your kundli</b><span>Your birth chart, free</span></div></a>
       <a href="/kundli-matching" class="card tool"><div class="pic"><img class="cover" src="img/karwa-courtyard.jpg" style="object-position:50% 30%"></div><div class="body"><b>Kundli matching</b><span>Two charts, side by side</span></div></a>
@@ -597,7 +597,7 @@ document.getElementById('desk').innerHTML = topline() + `
   <div class="dm">
     <div class="l">${DAY.city}<small>change city</small></div>
     <div class="c"><a href="/" class="brand"><img src="img/seal-warm-maroon.png" alt="">ASTRO RIVER</a>
-      <nav><a href="/" class="on">Today</a><a href="/panchang">Panchang</a><a href="/kundli">Kundli</a><a>ePooja<em>SOON</em></a><a href="/alchemies/category/pujas">Pujas</a><a href="/ask">Ask</a><a href="/tools">Free tools</a><a href="/journal">Journal</a><a href="/alchemies">Shop</a></nav></div>
+      <nav><a href="/" class="on">Today</a><a href="/panchang">Panchang</a><a href="/kundli">Kundli</a><a>ePooja<em>SOON</em></a><a href="/alchemies/category/pujas">Pujas</a><a href="/ask">Ask</a><a href="/tools">Charts</a><a href="/journal">Journal</a><a href="/alchemies">Shop</a></nav></div>
     <div class="r"><a class="ic search" href="/search">${SEARCH}</a><div class="lang"><span class="on">EN</span><a href="/hi/panchang" class="h">हिंदी</a></div>
       ${lampBadge()}<span class="ic">${MOONICON}</span><a href="/login" class="si">Sign in</a></div>
   </div>

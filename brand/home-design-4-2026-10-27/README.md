@@ -1,6 +1,22 @@
-# Home, round 4.4 (27 Oct 2026): your sky, the planets, the remedy, four times of day
+# Home, round 4.5 (27 Oct 2026): approved by the founder: your sky, the planets, the remedy, four times of day
 
 Round 4 starts from round 3.1 (`../home-design-3-2026-10-27/`). It adds the astrology and the institute to the almanac without redesigning what was there. All the round 3 tokens and fixes are kept. Light is the default, and Night A (lamp-black) is the night mode. A build chat should start at "Build handover", at the end.
+
+**Round 4.5** (the founder approved the design; these are the final fixes):
+1. **Your day:** slide 3's button now reads "The Chandra remedy →" (/remedies), and "Your kundli →" moved to slide 2, the dasha.
+2. **Planets:** both slides use a new, neutral night-sky painting (`img/night-sky.jpg`), with no graha, deity, Sun or Moon in it. The black stone idol read as one particular graha. Rule: never use one graha's image for another.
+3. **Planet dates** are from the engine, checked on astroriver.com/planetary-positions on 27 Oct 2026:
+   - Mercury turns direct on **Fri 13 Nov, 9:24 pm**.
+   - Venus turns direct on **Sat 14 Nov, 5:59 am**.
+   - Saturn turns direct on Fri 11 Dec, 6:00 am.
+
+   The social plan's "Mercury and Venus both on Sat 14 Nov" is wrong for Mercury.
+4. **Institute slide:** it is marked **EXAMPLE** on the render. Its date reads "[ceremony date]" and comes from the office's entry. 20 Oct 2026 is when the photos were added to the site, not necessarily a ceremony date. Each item also carries an expiry date.
+5. **Row labels:** short labels and never an ellipsis: "Karwa", "Diwali". The viewer header shows the full name.
+6. **Rename, words only** (the routes stay /tools and so on):
+   - The section overline becomes "FREE · FROM THE INSTITUTE" and its heading "Charts and calculations".
+   - The section link becomes "See all →".
+   - The phone tab bar "Tools" becomes "Charts", and the desktop menu "Free tools" becomes "Charts".
 
 **Round 4.4: stories** (the founder said yes). The full spec is in "Stories" below.
 - An Instagram-style row of six circles sits directly under the header, and under the top line when that shows.
@@ -91,7 +107,7 @@ Sections not listed here are as in 3.1.
 | 20 | **Help** (new) | "A question about an order or a booking?" with "Chat with us" → /contact. |
 | 21 | Site footer | The live site's footer, as a plain block: four columns, the © line, the jurisdiction line and the guidance line. |
 | — | Stories row | **Removed.** The round 4 order does not list it. Its links still live in the chips and the festival cards. Say if it should come back. |
-| — | Desktop | Desktop now carries every phone section, in phone order: two to a row where they pair, and Free tools and Help full width. The menu has Kundli and Journal in place of the three Soon items, Mantras and Learn. ePooja stays, marked SOON. |
+| — | Desktop | Desktop now carries every phone section, in phone order: two to a row where they pair, and Charts and calculations and Help full width. The menu has Kundli and Journal in place of the three Soon items, Mantras and Learn. ePooja stays, marked SOON. |
 
 **Four times of day** (fixed by code: morning 4–11, afternoon 12–16, evening 17–20, night 21–3). The mockups are shown at 9:32 am, 1:10 pm, 6:05 pm and 10:40 pm.
 
@@ -138,7 +154,7 @@ Every check below is in `src/audit.js` and `src/tokencheck.js`. The audit has 89
 | 3 Festival | the next festival within 14 days: the date · why it matters · what to do · **its puja with the real booking deadline** ("Book the puja →"), the only selling slide, shown only when the festival has a puja in Alchemies | the puja, or the festival's journal piece. Karwa Chauth has no puja, so it ends at "Read the katha →"; the Diwali variant shows the selling slide |
 | 4 Planets | this week's sign changes and retrogrades, in plain words | "All planets →" /planetary-positions |
 | 5 Today's deity | the deity · the mantra with the player · the verse (Hanuman: the Chalisa's opening doha) | "Chant now" → the remedy card |
-| 6 From the Institute | optional, from a short list the office edits (a puja performed, a sankalp recording sent, a client's words, with consent); hidden when the list is empty. The example is the Navagraha Shanti Puja of 20 Oct 2026, with the ceremony photo | the item's page |
+| 6 From the Institute | optional, from a short list the office edits (a puja performed, a sankalp recording sent, a client's words, with consent); hidden when the list is empty. The example (marked EXAMPLE) is a Navagraha Shanti Puja with the ceremony photo; its date comes from the office's entry. Each item has an expiry date | the item's page |
 
 **DATA (stories)**
 | Field | Source |
@@ -195,7 +211,7 @@ Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means
 | Tomorrow at 6 am: Follow the channel · Instagram | https://whatsapp.com/channel/0029Vb92NvV2v1J203DyVy39 · https://instagram.com/astroriverofficial |
 | Verse: Share | native share sheet |
 | The texts | SOON |
-| Free tools · All tools | /kundli, /kundli-matching, /muhurat, /manglik-dosha · /tools (sign-in) |
+| Charts and calculations (4 cards) · See all → | /kundli, /kundli-matching, /muhurat, /manglik-dosha · /tools (sign-in) |
 | Learn: course · Saturn piece · kundli guide · Journal → | SOON · /journal/saturn-retrograde-2026 · SOON · /journal |
 | Pujas: Book the puja · See the puja · All pujas card · All pujas → | /alchemies/diwali-lakshmi-puja-2026 · /alchemies/navagraha-shanti-puja · /alchemies/category/pujas · /alchemies/category/pujas |
 | Shop: Visit · four circles | /alchemies · /alchemies/category/gemstones, /rudrakshas, /yantras, /pujas |
@@ -206,8 +222,8 @@ Unchanged rows from 3.1 are repeated, so this is the whole list. "Sign-in" means
 | Founder papers A–D · Library | /archives/first-principles, /dasha-systems, /nature-of-nakshatras, /jaimini-sutras · /archives |
 | Help: Chat with us | /contact (it has the chat widget) |
 | Site footer | the live footer's own links, unchanged |
-| Tab bar: Today · Ask · Pujas · Tools · Me | / · /ask · /alchemies/category/pujas · /tools · /profile |
-| Desktop menu | Today / · Panchang /panchang · Kundli /kundli · ePooja SOON · Pujas /alchemies/category/pujas · Ask /ask · Free tools /tools · Journal /journal · Shop /alchemies · Sign in /login |
+| Tab bar: Today · Ask · Pujas · Charts · Me | / · /ask · /alchemies/category/pujas · /tools · /profile |
+| Desktop menu | Today / · Panchang /panchang · Kundli /kundli · ePooja SOON · Pujas /alchemies/category/pujas · Ask /ask · Charts /tools · Journal /journal · Shop /alchemies · Sign in /login |
 
 ## DATA: where each shown field comes from
 | Field | Source |
@@ -273,6 +289,7 @@ Start from this folder. `src/home.html` with `src/data.js` is the reference. Eac
 - **Part of day and theme:** use the code's four parts exactly. Night A switches on at the city's sunset, and the visitor's toggle wins.
 - **Your sky:** shown only when birth details are saved. Otherwise show the invitation with the ghosted example. There is no Ashtakavarga score.
 - **Ticks:** stored on the device and cleared at the next sunrise for the city.
+- **Words (4.5):** "Charts and calculations", "Charts" in the tab bar and the desktop menu, and "See all →". The routes are unchanged.
 - **Stories:** build the six circles from the engines named in "Stories". Only circle 6 needs the office (a short list with expiry dates). Store seen rings on the device and reset them at sunrise.
 - **Soon:** a feature that is not live has an "Opening soon" line or tag, and never a button.
 - **The build starts only on the founder's explicit approval.**

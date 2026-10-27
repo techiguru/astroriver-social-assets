@@ -149,14 +149,14 @@ const STORIES = [
     { art: 'img/moon-ghat.jpg', over: 'Your day · from your chart', h: 'The Moon crosses your 10th house',
       p: 'The house of work and standing. Days like this tend to put your work where others see it: finish what will be seen.' },
     { art: 'img/learn.jpg', over: 'Your dasha now', h: 'Jupiter – Saturn',
-      p: 'Jupiter Mahadasha until Aug 2033. Saturn Antardasha until Feb 2027.' },
+      p: 'Jupiter Mahadasha until Aug 2033. Saturn Antardasha until Feb 2027.', cta: ['Your kundli →', '/kundli'] },
     { art: 'img/mantra.jpg', over: 'A remedy for your chart', h: 'The Chandra remedy',
-      p: 'The Moon in your chart is in Kumbha, in your 8th house. Its remedy is on the remedies page.', cta: ['Your kundli →', '/kundli'] },
+      p: 'The Moon in your chart is in Kumbha, in your 8th house. Its remedy is on the remedies page.', cta: ['The Chandra remedy →', '/remedies'] },
   ] : [
     { art: 'img/learn.jpg', over: 'Your day', h: 'Add your birth details',
       p: 'Tell us your birth date, time and place once. Every morning this circle reads your chart.', cta: ['Add my birth details', '/kundli', 'solid'] },
   ]},
-  { id: 'fest', label: 'Karwa Chauth', icon: 'img/karwa.jpg', slides: [
+  { id: 'fest', label: 'Karwa', name: 'Karwa Chauth', icon: 'img/karwa.jpg', slides: [
     { art: 'img/karwa.jpg', pos: '62% 30%', over: 'In 2 days', h: 'Karwa Chauth', p: 'Thursday 29 October, on Krishna Chaturthi.' },
     { art: 'img/karwa-courtyard.jpg', over: 'Why it matters', h: 'A fast for a long marriage',
       p: 'Married women keep a fast from sunrise to moonrise for their husband\'s long life, and hear the Karwa Chauth katha together.' },
@@ -164,11 +164,11 @@ const STORIES = [
       p: 'Eat the sargi before sunrise. Hear the katha in the evening. Break the fast after seeing the Moon; the moonrise for your city is on the panchang that day.',
       cta: ['Read the katha →', '/journal/karwa-chauth'] },
   ]},
-  { id: 'planets', label: 'Planets', icon: 'img/navagraha-temple.jpg', slides: [
-    { art: 'img/navagraha-temple.jpg', over: 'This week in the sky', h: 'Jupiter enters Simha on Saturday',
+  { id: 'planets', label: 'Planets', icon: 'img/night-sky.jpg', slides: [
+    { art: 'img/night-sky.jpg', over: 'This week in the sky', h: 'Jupiter enters Simha on Saturday',
       p: 'At 12:02 pm on 31 October. It leaves Karka and stays in Simha until 25 January.' },
-    { art: 'img/shiva-wide.jpg', pos: '30% 50%', over: 'Moving backwards', h: 'Mercury, Venus and Saturn are retrograde',
-      p: 'Seen from here they seem to move backwards. Mercury turns direct on 13 Nov, Venus on 14 Nov, Saturn on 11 Dec.', cta: ['All planets →', '/planetary-positions'] },
+    { art: 'img/night-sky.jpg', pos: '50% 20%', over: 'Moving backwards', h: 'Mercury, Venus and Saturn are retrograde',
+      p: 'Seen from here they seem to move backwards. Mercury turns direct on Fri 13 Nov, Venus on Sat 14 Nov, Saturn on Fri 11 Dec.', cta: ['All planets →', '/planetary-positions'] },
   ]},
   { id: 'deity', label: 'Hanuman', icon: 'img/hanuman.jpg', slides: [
     { art: 'img/hanuman.jpg', pos: '50% 20%', over: "Today's deity", h: 'Hanuman', hHi: 'हनुमान', p: 'Tuesday is kept for Hanuman: strength, courage and devotion.' },
@@ -178,13 +178,13 @@ const STORIES = [
   ]},
   // Circle 6: only when the office's list has an item. Example item for the mockup.
   { id: 'inst', label: 'Institute', icon: 'img/havan-kund.jpg', slides: [
-    { art: 'img/havan-kund.jpg', over: 'From the Institute · 20 Oct 2026', h: 'A Navagraha Shanti Puja',
+    { art: 'img/havan-kund.jpg', example: true, over: 'From the Institute · [ceremony date]', h: 'A Navagraha Shanti Puja',
       p: 'Performed at the Institute. The photos and the sankalp recording go to each family after the ceremony.', cta: ['See the puja →', '/alchemies/navagraha-shanti-puja'] },
   ]},
 ];
 // The festival circle sells only on its last slide, and only when the festival has a puja with a real deadline.
 // Karwa Chauth has none in Alchemies, so it ends at the katha. Diwali (?fest=diwali) shows the selling slide:
-if (Q.get('fest') === 'diwali') Object.assign(STORIES[2], { label: 'Diwali', icon: 'img/lakshmi-lotus.jpg', slides: [
+if (Q.get('fest') === 'diwali') Object.assign(STORIES[2], { label: 'Diwali', name: 'Diwali', icon: 'img/lakshmi-lotus.jpg', slides: [
   { art: 'img/lakshmi-lotus.jpg', over: 'In 12 days', h: 'Diwali', p: 'Sunday 8 November. Lakshmi Puja in New Delhi, 5:54 – 7:50 pm.' },
   { art: 'img/diwali-lakshmi.jpg', over: 'Performed for you', h: 'Diwali Lakshmi Puja',
     p: 'On Sun 8 Nov, in the Lakshmi Puja window, in your name and gotra.', deadline: 'Bookings close Sat 7 Nov, 6 pm', cta: ['Book the puja →', '/alchemies/diwali-lakshmi-puja-2026', 'solid'] },
