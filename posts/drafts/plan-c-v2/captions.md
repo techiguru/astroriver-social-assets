@@ -42,7 +42,7 @@ Diwali is on Sunday. The Lakshmi Puja muhurat in New Delhi is 5:54 to 7:50 pm.
 
 Sunday 8 November. Pradosh kaal is 5:31 to 8:09 pm. Local times for other cities are on the page.
 
-Can't be home? Our pandits perform the Lakshmi Puja in your name and gotra; bookings close Saturday 7 November, 6:00 pm IST: https://astroriver.com/alchemies/diwali-lakshmi-puja-2026?utm_source=instagram&utm_medium=post&utm_campaign=lakshmi-puja-2026-11-06
+Can't be home? Maa Lakshmi's puja, performed by Vedic pandits on Diwali evening in your name and gotra. Photos after the ceremony. Bookings close Saturday 7 November, 6:00 pm IST: https://astroriver.com/alchemies/diwali-lakshmi-puja-2026?utm_source=instagram&utm_medium=post&utm_campaign=lakshmi-puja-2026-11-06
 
 Muhurat for your city: https://astroriver.com/journal/diwali?utm_source=instagram&utm_medium=post&utm_campaign=diwali-preview-2026-11-06
 
@@ -55,7 +55,7 @@ Diwali is on Sunday. The Lakshmi Puja muhurat in New Delhi is 5:54 to 7:50 pm.
 
 Sunday 8 November. Pradosh kaal is 5:31 to 8:09 pm. Local times for other cities are on the page.
 
-Can't be home? Our pandits perform the Lakshmi Puja in your name and gotra; bookings close Saturday 7 November, 6:00 pm IST: https://astroriver.com/alchemies/diwali-lakshmi-puja-2026?utm_source=facebook&utm_medium=post&utm_campaign=lakshmi-puja-2026-11-06
+Can't be home? Maa Lakshmi's puja, performed by Vedic pandits on Diwali evening in your name and gotra. Photos after the ceremony. Bookings close Saturday 7 November, 6:00 pm IST: https://astroriver.com/alchemies/diwali-lakshmi-puja-2026?utm_source=facebook&utm_medium=post&utm_campaign=lakshmi-puja-2026-11-06
 
 Muhurat for your city: https://astroriver.com/journal/diwali?utm_source=facebook&utm_medium=post&utm_campaign=diwali-preview-2026-11-06
 
