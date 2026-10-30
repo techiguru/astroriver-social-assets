@@ -44,3 +44,5 @@ Execute times expected (UTC): 6 Nov 02:30 and 14:00; 7, 8, 10, 11 Nov 02:30; 12 
 | Comment checks | counted in: one fetch_comments per post per check, only on posts published since the last check; max 3 checks a day, and none when nothing published | 60 |
 | Reserve (fixes, updates) | do not touch unless K14 agrees | 30 |
 Rules: log every call in this file the day it is made; at 150 used stop and tell K14; at 220 only fixes. Check the remaining credits on the first call of the day (the error message names the count). Do not run test calls.
+
+## Founder rule from 30 Oct (via K14): every new picture is PICHWAI style, and the founder sees it before it is used in a post. Order for every new post: picture first, shown to the founder via K14, then render on template v2, then schedule. (The pictures already made in "painted devotional style" for 6-14 Nov are already scheduled; ask K14 whether they stay.)
