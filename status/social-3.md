@@ -57,3 +57,7 @@ Rules: log every call in this file the day it is made; at 150 used stop and tell
 Run the 10:00 IST check each day, skip the 21:00 ones. At most 2 credits per check. Stop the checks as soon as the month's remaining budget is under 60 (15-30 Nov posts still to create). Reply only to a real question from a real person; never to spam; never with a sell line. Log every check here in one line.
 Check log:
 - 1 Nov 10:00 IST: Lakshmi (31 Oct) and Jupiter (31 Oct) Instagram posts, 0 comments each, 2 credits, nothing to reply.
+
+## 1 Nov evening: Diwali Lakshmi Puja promotion (K15's order, Armaan saw the graphics)
+- Mon 2 Nov 11:00 IST feed (IG + FB) 6ae78222b6b4358a2909b739; 11:05 IST IG story 6ae7822bf31ddc77020b65bb. Media 6ae7820a12388b60420092a8 (feed), 6ae7820f56dbf8e1e4017e15 (story). Caption exactly as given (no UTM, 4 hashtags, English only). Fetched back: scheduled, execute_time 05:30Z / 05:35Z. Credits used: 5 (2 uploads, 2 creates, 1 fetch).
+- Note: this is a second sell post this week besides Fri 6 Nov 19:30 (lead's call).
