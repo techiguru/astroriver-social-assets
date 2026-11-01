@@ -1,11 +1,18 @@
 {
  "template": "festival",
- "formats": ["feed", "story"],
+ "formats": [
+  "feed",
+  "story"
+ ],
  "content": {
   "theme": "night",
-  "art": "stars",
-  "over": "Ahoi Ashtami · Sunday 1 November",
-  "h": "Ahoi Ashtami is today",
-  "body": "Ashtami begins at 2:52 pm, New Delhi. Mothers fast for their children and open the fast at dusk, after the stars appear."
+  "art": "ahoi-stock.jpg",
+  "pos": "46% 40%",
+  "over": "Sunday 1 November",
+  "hiHead": "अहोई अष्टमी",
+  "h": "Ahoi Ashtami",
+  "body": "The fast opens when the stars appear.",
+  "cap": true,
+  "posStory": "62% 40%"
  }
 }

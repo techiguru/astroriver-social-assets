@@ -26,5 +26,6 @@ Are you fasting today? Tell us in the comments who you keep it for.
 English: Ahoi Ashtami is today. Ashtami begins at 2:52 pm (New Delhi); mothers open the fast in the evening, after the stars appear. astroriver.com/panchang
 Hindi: आज अहोई अष्टमी है। अष्टमी दोपहर 2:52 बजे से (नई दिल्ली); तारे दिखने पर माताएँ व्रत खोलती हैं। astroriver.com/panchang
 
-## Picture
-No approved painting fits and is free of the 7-day rule (karwa 29 Oct, night-sky 31 Oct, lakshmi/diwali pictures in the Oct 31 to Nov 8 posts). The draft uses a plain maroon dusk with gold stars (no picture). If the founder wants a painting: see the prompt in the report.
+
+## Picture credit
+Adobe Stock 392003633 (licensed from K15 session). The full-size original is kept out of git; only the finished graphics are committed.
