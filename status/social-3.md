@@ -52,3 +52,7 @@ Rules: log every call in this file the day it is made; at 150 used stop and tell
 - 1 x fetch_posts (all posts from 1 Nov): all 30 posts for 2 Nov, 4 Nov, 6-12 Nov, 14 Nov are status scheduled with the right execute_time (2 Nov 03:30Z, 4 Nov 03:30Z, 6 Nov 02:30Z and 14:00Z, 7/8/10/11 Nov 02:30Z, 12 Nov 05:30Z, 14 Nov 04:30Z), media counts as planned (carousels 2 and 5 images, cover-only on Pinterest/GBP), no "&amp;", UTM sources correct, the Fri 6 19:30 sell line in the product page's words with "Saturday 7 November, 6:00 pm IST".
 - Credits used this round: 4 (3 + 1). Credits left for November: at most 246 (other sessions' calls not counted here).
 - Lakshmi 31 Oct re-word: moot (published). Nothing else open.
+
+## Comment-check rule (K14, 1 Nov)
+Run the 10:00 IST check each day, skip the 21:00 ones. At most 2 credits per check. Stop the checks as soon as the month's remaining budget is under 60 (15-30 Nov posts still to create). Reply only to a real question from a real person; never to spam; never with a sell line. Log every check here in one line.
+Check log:
