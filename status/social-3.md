@@ -1,4 +1,4 @@
-# Social 3 status, 27 Oct 2026 (IST times). Reports to K14 (session_013noAoAgUW7e4f41MXVDGpR).
+# Social 3 status (IST times). Reports to K15 (session_013noAo8MyDNmHpS5P3NCZqR) from 1 Nov 2026; before that K14 (session_013noAoAgUW7e4f41MXVDGpR).
 ContentStudio workspace 5c5f067f2df1b10c6f490d94. scheduled_at is read as IST. 3 posts per item: IG / FB+LI×2+Tumblr+Threads / Pinterest+GBP.
 
 ## BLOCKER: ContentStudio API credits used 250 of 250 (error API_CREDIT_LIMIT_EXCEEDED). Resets 1 Nov 2026. No create/update/fetch works until then or until credits are added in Billing (not done: needs the owner's decision).
