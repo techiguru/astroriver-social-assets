@@ -56,3 +56,4 @@ Rules: log every call in this file the day it is made; at 150 used stop and tell
 ## Comment-check rule (K14, 1 Nov)
 Run the 10:00 IST check each day, skip the 21:00 ones. At most 2 credits per check. Stop the checks as soon as the month's remaining budget is under 60 (15-30 Nov posts still to create). Reply only to a real question from a real person; never to spam; never with a sell line. Log every check here in one line.
 Check log:
+- 1 Nov 10:00 IST: Lakshmi (31 Oct) and Jupiter (31 Oct) Instagram posts, 0 comments each, 2 credits, nothing to reply.
