@@ -46,3 +46,9 @@ Execute times expected (UTC): 6 Nov 02:30 and 14:00; 7, 8, 10, 11 Nov 02:30; 12 
 Rules: log every call in this file the day it is made; at 150 used stop and tell K14; at 220 only fixes. Check the remaining credits on the first call of the day (the error message names the count). Do not run test calls.
 
 ## Founder rule from 30 Oct (via K14): every new picture is PICHWAI style, and the founder sees it before it is used in a post. Order for every new post: picture first, shown to the founder via K14, then render on template v2, then schedule. (The pictures already made in "painted devotional style" for 6-14 Nov are already scheduled; ask K14 whether they stay.)
+
+## 1 Nov 06:15 IST round (credits reset; 250 for November) — LOG
+- 3 x create_post: Sat 14 Nov 10:00 IST Mercury/Venus: IG 6ae68bfc334a8048b5046d08 / FB 6ae68c0a458e0731b6028219 / Pin+GBP 6ae68c147cf483052206f598 (media 6ae09904fa9801d1950104da)
+- 1 x fetch_posts (all posts from 1 Nov): all 30 posts for 2 Nov, 4 Nov, 6-12 Nov, 14 Nov are status scheduled with the right execute_time (2 Nov 03:30Z, 4 Nov 03:30Z, 6 Nov 02:30Z and 14:00Z, 7/8/10/11 Nov 02:30Z, 12 Nov 05:30Z, 14 Nov 04:30Z), media counts as planned (carousels 2 and 5 images, cover-only on Pinterest/GBP), no "&amp;", UTM sources correct, the Fri 6 19:30 sell line in the product page's words with "Saturday 7 November, 6:00 pm IST".
+- Credits used this round: 4 (3 + 1). Credits left for November: at most 246 (other sessions' calls not counted here).
+- Lakshmi 31 Oct re-word: moot (published). Nothing else open.
