@@ -55,8 +55,11 @@ const linework = t => `<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" a
     <span>${t.from.toUpperCase()}</span><span>${t.to.toUpperCase()}</span></div>
   <div style="position:absolute;left:calc(50% + 26px);top:calc(56% - 14px);width:28px;height:28px;border-radius:50%;background:#e2bd72;box-shadow:0 0 0 8px rgba(226,189,114,.22)"></div>
   <div style="position:absolute;left:calc(50% + 4px);top:calc(56% - 64px);font:700 22px/1 Inter;letter-spacing:.2em;color:#e2bd72">${t.graha.toUpperCase()}</div>`;
+// Picture-free panel for evening posts that have no approved painting yet: deep maroon dusk with a scatter of gold stars.
+const starPanel = () => { let x = 7, r = () => (x = (x * 9301 + 49297) % 233280) / 233280; const dots = Array.from({ length: 34 }, () => `<circle cx="${(r() * 1000).toFixed(0)}" cy="${(r() * 1000).toFixed(0)}" r="${(1.5 + r() * 3).toFixed(1)}" fill="#e2bd72" opacity="${(.45 + r() * .5).toFixed(2)}"/>`).join('');
+  return `<div style="position:absolute;inset:0;background:linear-gradient(180deg,#5a1f2c 0%,#2a1218 55%,#15100c 100%)"></div><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">${dots}</svg>`; };
 document.getElementById('post').outerHTML = `<div class="post ${fmt}">
-  <div class="art"><img src="art/${d.art}" style="object-position:${d.pos || '50% 40%'}" alt="">${d.transit ? linework(d.transit) : ''}</div>
+  <div class="art">${d.art === 'stars' ? starPanel() : `<img src="art/${d.art}" style="object-position:${d.pos || '50% 40%'}" alt="">`}${d.transit ? linework(d.transit) : ''}</div>
   <div class="txt">
     <div class="over">${d.over}</div>
     <h1>${d.h}${d.hHi ? `<span class="dev">${d.hHi}</span>` : ''}</h1>
