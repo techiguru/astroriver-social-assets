@@ -66,3 +66,4 @@ Check log:
 - 2 Nov 10:00 IST: five-days IG carousel (today 09:00) and Lakshmi (31 Oct) IG post, 0 comments each, 2 credits, nothing to reply. Credits used in Nov so far about 24 (estimate, other sessions not counted). Next check 3 Nov 10:00 IST.
 - 3 Nov 10:00 IST: Lakshmi puja promotion feed (2 Nov 11:00 IG+FB, 6ae78222b6b4358a2909b739) and five-days IG carousel, 0 comments each, 2 credits, nothing to reply. Nov credits used about 26 (estimate). Next check 4 Nov 10:00 IST.
 - 4 Nov 10:00 IST: Dhanteras IG post (4 Nov 09:00, 6ae090da04b8b5760909f976) and Lakshmi puja promotion feed (6ae78222b6b4358a2909b739), 0 comments each, 2 credits, nothing to reply. Nov credits used about 28 (estimate). Next check 5 Nov 10:00 IST.
+- 5 Nov 10:00 IST: Dhanteras IG post (6ae090da04b8b5760909f976) and Lakshmi puja promotion feed (6ae78222b6b4358a2909b739), 0 comments each, 2 credits, nothing to reply. Nov credits used about 30 (estimate). Next check 6 Nov 10:00 IST.
