@@ -1,4 +1,4 @@
-# Social 3 status (IST times). Reports to K15 (session_013noAo8MyDNmHpS5P3NCZqR) from 1 Nov 2026; before that K14 (session_013noAoAgUW7e4f41MXVDGpR).
+# Social 3 status (IST times). Reports to K24 (session_013noAoAyZer6Jkm7tmxuphZ) from 8 Nov 2026; before that K23, K22, K15, K14.
 ContentStudio workspace 5c5f067f2df1b10c6f490d94. scheduled_at is read as IST. 3 posts per item: IG / FB+LI×2+Tumblr+Threads / Pinterest+GBP.
 
 ## BLOCKER: ContentStudio API credits used 250 of 250 (error API_CREDIT_LIMIT_EXCEEDED). Resets 1 Nov 2026. No create/update/fetch works until then or until credits are added in Billing (not done: needs the owner's decision).
@@ -81,3 +81,4 @@ Check log:
 - 8 Nov: K23 said go. IG feed 6ae0979917f5fd69af041e16 now uses the 1080x1350 Govardhan picture (media 6af00a04e53c7decfc030b12), same caption, 10 Nov 07:30 IST, fetched back. Nothing else changed. Credits 3 (Nov estimate about 49).
 - 8 Nov: K23 (founder: social takes too much time and credits): Govardhan CLOSED, no more checks or changes there. Only the 9 Nov evening WhatsApp link, one line. From now: post simply, report in one line, no extra rounds. Asked K23 if the daily 10:00 comment check should stop; skipping the 9 Nov check until answered.
 - 8 Nov: K23 changed the comment check from daily to WEEKLY, Mondays 10:00 IST (next: Mon 9 Nov, reminder trig_01FtrH22AQTCfBbK8C4V5kYy stays; each check sets the next Monday). Report to K23 only if a comment is found. Same rules: at most 2 credits, reply only to a real question from a real person, never spam or a sell line, log one line.
+- 8 Nov 12:16 UTC: K24 (session_013noAoAyZer6Jkm7tmxuphZ, child of K23) leads; K23 done. Report to K24: the Govardhan WhatsApp link (9 Nov evening, reminder trig_012btF7PbmeVK418shE4ySfe updated to K24) and the Monday comment check (report only if a comment is found).
