@@ -1,4 +1,4 @@
-# Social 3 status (IST times). Reports to K25 (session_013noAoBT49Axo8y6ARMsbry) from 9 Nov 2026; before that K24, K23, K22, K15, K14.
+# Social 3 status (IST times). Reports to K26 (session_013noAo9f2ApCDmJXCJkRBNF) from 9 Nov 2026; before that K25, K24, K23, K22, K15, K14.
 ContentStudio workspace 5c5f067f2df1b10c6f490d94. scheduled_at is read as IST. 3 posts per item: IG / FB+LI×2+Tumblr+Threads / Pinterest+GBP.
 
 ## BLOCKER: ContentStudio API credits used 250 of 250 (error API_CREDIT_LIMIT_EXCEEDED). Resets 1 Nov 2026. No create/update/fetch works until then or until credits are added in Billing (not done: needs the owner's decision).
@@ -84,3 +84,4 @@ Check log:
 - 8 Nov 12:16 UTC: K24 (session_013noAoAyZer6Jkm7tmxuphZ, child of K23) leads; K23 done. Report to K24: the Govardhan WhatsApp link (9 Nov evening, reminder trig_012btF7PbmeVK418shE4ySfe updated to K24) and the Monday comment check (report only if a comment is found).
 - 9 Nov 03:53 UTC: K25 (session_013noAoBT49Axo8y6ARMsbry, child of K24) leads. Report to K25: the Govardhan WhatsApp link this evening (reminder trig_012btF7PbmeVK418shE4ySfe updated to K25) and the weekly Monday comment check (only if a comment is found).
 - Mon 9 Nov 10:00 IST (weekly): Diwali greeting IG (8 Nov, 6ae0977cdd0cfdaaa30eb148) and Choti Diwali IG (7 Nov, 6ae092028b72263b230b54a7), 0 comments each, 2 credits, nothing to reply, no report to K25 (only if a comment is found). Nov credits used about 51 (estimate). Next check Mon 16 Nov 10:00 IST.
+- 9 Nov 07:11 UTC: K26 (session_013noAo9f2ApCDmJXCJkRBNF, child of K25) leads. HOLD on everything; only the Govardhan WhatsApp link this evening (reminder trig_012btF7PbmeVK418shE4ySfe updated to K26) and the weekly Monday comment check (trig_012tvdSksvYkiN2KMQw9zH9K updated).
