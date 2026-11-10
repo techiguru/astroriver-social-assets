@@ -1,4 +1,4 @@
-# Social 3 status (IST times). Reports to K28 (session_013noAoAdVR6z8XFrxrV3oNJ) from 9 Nov 2026; before that K27, K26, K25, K24, K23, K22, K15, K14.
+# Social 3 status (IST times). Reports to K29 (session_013noAoBvBYftmpzPWuYY5g9) from 10 Nov 2026; before that K28, K27, K26, K25, K24, K23, K22, K15, K14.
 ContentStudio workspace 5c5f067f2df1b10c6f490d94. scheduled_at is read as IST. 3 posts per item: IG / FB+LI×2+Tumblr+Threads / Pinterest+GBP.
 
 ## BLOCKER: ContentStudio API credits used 250 of 250 (error API_CREDIT_LIMIT_EXCEEDED). Resets 1 Nov 2026. No create/update/fetch works until then or until credits are added in Billing (not done: needs the owner's decision).
@@ -88,3 +88,4 @@ Check log:
 - 9 Nov 10:26 UTC: K27 (session_013noAo8gJnK9QU5a7hKUwCa, child of K26) leads. Govardhan WhatsApp status link sent to K27 (one line; the 18:00 reminder is deleted). Weekly comment check Mon 16 Nov 10:00 IST (trig_012tvdSksvYkiN2KMQw9zH9K): report only if a comment is found. HOLD on everything else.
 - 9 Nov 10:30 UTC: K27 found the Govardhan art shows the INDEX finger, brief was the LITTLE finger. Told K27: all 5 posts (IG feed 6ae0979917f5fd69af041e16, FB set 6ae098b3a6a3f3ef090669ff, Pin/GBP 6ae098c77706e434b0015a94, IG story 6af009369797f0e2bb0b3202, FB story 6af0094688b3ca66e6035cbb) are scheduled for 10 Nov 07:30 IST with that art; I cannot redraw; offered to pause all five (set to draft) on K27 saying pause, or swap new files within ~15 min. Nothing changed yet.
 - 9 Nov 19:42 UTC: K28 (session_013noAoAdVR6z8XFrxrV3oNJ, child of K27) leads; HOLD. Told K28 the open Govardhan finger issue (5 posts publish 10 Nov 07:30 IST with the index-finger art; waiting for "pause" or corrected files). Nothing changed.
+- 10 Nov 01:50 UTC: K29 (session_013noAoBvBYftmpzPWuYY5g9, child of K28) leads; HOLD. Alerted K29 that the 5 Govardhan posts publish at 02:00Z (07:30 IST) with the index-finger art; no pause or new files received, nothing changed.
