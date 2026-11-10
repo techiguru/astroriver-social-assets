@@ -1,4 +1,4 @@
-# Social 3 status (IST times). Reports to K29 (session_013noAoBvBYftmpzPWuYY5g9) from 10 Nov 2026; before that K28, K27, K26, K25, K24, K23, K22, K15, K14.
+# Social 3 status (IST times). Reports to K30 (session_013noAoAuNPtCuDZSgkP1Qqq) from 10 Nov 2026; before that K29, K28, K27, K26, K25, K24, K23, K22, K15, K14.
 ContentStudio workspace 5c5f067f2df1b10c6f490d94. scheduled_at is read as IST. 3 posts per item: IG / FB+LI×2+Tumblr+Threads / Pinterest+GBP.
 
 ## BLOCKER: ContentStudio API credits used 250 of 250 (error API_CREDIT_LIMIT_EXCEEDED). Resets 1 Nov 2026. No create/update/fetch works until then or until credits are added in Billing (not done: needs the owner's decision).
@@ -90,3 +90,4 @@ Check log:
 - 9 Nov 19:42 UTC: K28 (session_013noAoAdVR6z8XFrxrV3oNJ, child of K27) leads; HOLD. Told K28 the open Govardhan finger issue (5 posts publish 10 Nov 07:30 IST with the index-finger art; waiting for "pause" or corrected files). Nothing changed.
 - 10 Nov 01:50 UTC: K29 (session_013noAoBvBYftmpzPWuYY5g9, child of K28) leads; HOLD. Alerted K29 that the 5 Govardhan posts publish at 02:00Z (07:30 IST) with the index-finger art; no pause or new files received, nothing changed.
 - 10 Nov 03:51 UTC: KRISHNA 30 (session_013noAoAuNPtCuDZSgkP1Qqq) says it leads: HOLD, no new posts or changes, reports max ~12 lines with detail in a repo file. Its record: started from the Android app, no parent session, both repos attached. Asked K29 to confirm; until then I act on nothing but HOLD. Header still K29 until confirmed.
+- 10 Nov 03:52 UTC: K29 CONFIRMED K30 (session_013noAoAuNPtCuDZSgkP1Qqq) is the real successor (founder started it from his phone). K30 leads. HOLD, no new posts or changes; reports max ~12 lines with detail in a repo file (path given). Weekly comment check Mon 16 Nov 10:00 IST: report only if a comment is found.
